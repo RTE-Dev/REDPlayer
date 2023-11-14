@@ -1,0 +1,124 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.xingin.openredplayer"
+        minSdk 21
+        targetSdk 28
+        versionCode 1
+        versionName "1.0"
+        resConfigs "en"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("redplayer")
+            storePassword "123456"
+            keyAlias "redplayer"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        pickFirst 'lib/armeabi-v7a/libredbase.so'
+        pickFirst 'lib/arm64-v8a/libredbase.so'
+        pickFirst 'lib/armeabi-v7a/libreddownload.so'
+        pickFirst 'lib/arm64-v8a/libreddownload.so'
+        pickFirst 'lib/armeabi-v7a/libredlog.so'
+        pickFirst 'lib/arm64-v8a/libredlog.so'
+        pickFirst 'lib/armeabi-v7a/libredstrategycenter.so'
+        pickFirst 'lib/arm64-v8a/libredstrategycenter.so'
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        compose true
+        viewBinding true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.3.2'
+    }
+
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "RedPlayer-Demo.apk"
+        }
+        def outputFilePath = "${rootDir.absolutePath}/docs/"
+        File outputFile = new File(outputFilePath)
+        variant.assemble.doLast {
+            copy {
+                variant.outputs.all { file ->
+                    copy {
+                        from file.outputFile
+                        into outputFile
+                    }
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation platform('org.jetbrains.kotlin:kotlin-bom:1.8.0')
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+    implementation 'androidx.activity:activity-compose:1.8.2'
+    implementation platform('androidx.compose:compose-bom:2022.10.00')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    // 小红书自研播放器相关库
+    implementation project(path: ':OpenRedPreload')
+    implementation project(path: ':OpenRedPlayerCore')
+    // 一些其它第三方依赖库
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation "io.reactivex.rxjava3:rxjava:3.1.8"
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
+    implementation 'com.github.tbruyelle:rxpermissions:0.12'
+    implementation 'com.wang.avi:library:2.1.3'
+}

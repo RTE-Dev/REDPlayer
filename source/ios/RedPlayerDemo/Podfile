@@ -1,0 +1,47 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '10.0'
+use_frameworks!
+
+workspace 'RedPlayerDemo'
+
+def pods_dependency
+  pod "XYMediaFfmpeg", :path => "./Submodules/XYMediaFfmpeg"
+  pod "opensoundtouch", :path => "./Submodules/opensoundtouch"
+  pod "RedPlayer", :path => "../"
+  
+end
+
+def common_pods_all
+  pod 'Masonry'
+end
+
+target 'RedPlayerDemo' do
+  project 'RedPlayerDemo'
+  
+  pods_dependency
+  common_pods_all
+end
+
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS"] = "armv7 armv7s"
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+  
+  installer.pods_project.targets.each do |sub_target|
+    sub_target.build_configurations.each do |sub_config|
+      sub_config.build_settings["EXCLUDED_ARCHS"] = "armv7 armv7s"
+      sub_config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+  end
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+        target.build_configurations.each do |config|
+            config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        end
+      end
+    end
+  end
+end

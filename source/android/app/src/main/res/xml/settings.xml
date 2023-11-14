@@ -1,0 +1,71 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/pref_title_render">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_enable_surface_view"
+            android:persistent="true"
+            android:summary="@string/pref_summary_enable_surface_view"
+            android:title="@string/pref_title_enable_surface_view" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_enable_debug_info_view"
+            android:persistent="true"
+            android:summary="@string/pref_summary_enable_debug_info_view"
+            android:title="@string/pref_title_enable_debug_info_view" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_title_player_core">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_using_media_codec"
+            android:persistent="true"
+            android:summary="@string/pref_summary_using_media_codec"
+            android:title="@string/pref_title_using_media_codec" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_using_android_media_player"
+            android:persistent="true"
+            android:summary="@string/pref_summary_using_android_media_player"
+            android:title="@string/pref_title_using_android_media_player" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_title_video">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_video_play_loop"
+            android:persistent="true"
+            android:title="@string/pref_title_video_play_loop" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_video_play_auto_next"
+            android:persistent="true"
+            android:summary="@string/pref_summary_video_play_auto_next"
+            android:title="@string/pref_title_video_play_auto_next" />
+
+        <com.xingin.openredplayer.setting.view.XhsListPreference
+            android:defaultValue="1.0f"
+            android:entries="@array/pref_entry_values_player_speed"
+            android:entryValues="@array/pref_entry_values_player_speed"
+            android:key="@string/pref_key_player_speed"
+            android:persistent="true"
+            android:title="@string/pref_title_player_speed"
+            app:entrySummaries="@array/pref_entry_values_player_speed" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_video_play_cover"
+            android:persistent="true"
+            android:summary="@string/pref_summary_video_play_cover"
+            android:title="@string/pref_title_video_play_cover" />
+
+        <Preference
+            android:key="@string/pref_key_video_window"
+            android:summary="@string/pref_summary_video_window"
+            android:title="@string/pref_title_video_window" />
+    </PreferenceCategory>
+</PreferenceScreen>

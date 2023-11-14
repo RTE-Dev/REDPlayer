@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dip"
+    app:cardElevation="5dip">
+
+    <com.xingin.openredplayer.player.XhsVideoPlayerView
+        android:id="@+id/window_video_view"
+        android:layout_width="120dp"
+        android:layout_height="215dp"
+        android:background="@color/black"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <ImageView
+        android:id="@+id/window_close_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/item_corners_10_background_4d000000"
+        android:padding="2dp"
+        android:src="@drawable/icon_close"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/window_full_screen_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/item_corners_10_background_4d000000"
+        android:padding="2dp"
+        android:src="@drawable/icon_full_screen"
+        android:visibility="visible" />
+
+</androidx.cardview.widget.CardView>

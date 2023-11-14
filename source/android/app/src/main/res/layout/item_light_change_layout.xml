@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_corners_10_background_80000000"
+    android:paddingVertical="10dp"
+    tools:ignore="MissingDefaultResource">
+
+    <!-- 音量图标 -->
+    <ImageView
+        android:id="@+id/icon_battery"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/icon_battery" />
+
+    <!-- 进度条 -->
+    <com.xingin.openredplayer.player.progress.XhsProgressBar
+        android:id="@+id/battery_seek_bar"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/icon_battery"
+        android:paddingTop="16dp"
+        app:ssb_max="1000"
+        app:ssb_min="0"
+        app:ssb_second_track_color="#ffffff"
+        app:ssb_thumb_color="#ffffff"
+        app:ssb_track_color="#aaaaaa" />
+
+</RelativeLayout>
