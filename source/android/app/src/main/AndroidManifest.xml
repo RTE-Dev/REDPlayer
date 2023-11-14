@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xingin.openredplayer">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SENSOR" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:name=".XhsMediaApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/icon_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:testOnly="false"
+        android:theme="@style/Theme.OpenRedPlayer"
+        tools:targetApi="28">
+
+        <!-- 首页 -->
+        <activity
+            android:name=".home.XhsHomeActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 输入页 -->
+        <activity
+            android:name=".input.XhsInputActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 直播输入页 -->
+        <activity
+            android:name=".live.XhsLiveInputActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 双列Feed页 -->
+        <activity
+            android:name=".feed.XhsFeedActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 相册页 -->
+        <activity
+            android:name="com.kelin.photoselector.PhotoSelectorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design" />
+
+        <!-- 视频播放页 -->
+        <activity
+            android:name=".player.XhsPlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- 小窗播放后台服务 -->
+        <service android:name=".floating.XhsFloatingService" />
+    </application>
+
+</manifest>

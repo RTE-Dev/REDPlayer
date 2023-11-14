@@ -1,0 +1,14 @@
+//
+//  RedPlayerDemo-Prefix.pch
+//  RedPlayerDemo
+//
+//  Created by zijie on 2024/1/20.
+//  Copyright © 2024 Xiaohongshu. All rights reserved.
+//
+
+#ifndef RedPlayerDemo_Prefix_h
+#define RedPlayerDemo_Prefix_h
+
+#import "RedPlayerDemo-Swift.h"
+
+#endif /* RedPlayerDemo_Prefix_h */

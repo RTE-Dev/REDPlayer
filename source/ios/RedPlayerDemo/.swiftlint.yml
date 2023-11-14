@@ -1,0 +1,225 @@
+# 执行时排除掉的规则
+disabled_rules:
+#  - block_based_kvo
+#  - class_delegate_protocol
+#  - closing_brace
+#  - closure_parameter_position
+#  - colon
+#  - comma
+#  - compiler_protocol_init
+#  - control_statement
+#  - custom_rules
+  - cyclomatic_complexity
+#  - deployment_target
+#  - discarded_notification_center_observer
+#  - discouraged_direct_init
+#  - duplicate_enum_cases
+#  - duplicate_imports
+#  - dynamic_inline
+#  - empty_enum_arguments
+#  - empty_parameters
+#  - empty_parentheses_with_trailing_closure
+#  - file_length
+#  - for_where
+#  - force_cast
+#  - force_try
+  - function_body_length
+  - function_parameter_count
+#  - generic_type_name
+  - identifier_name
+#  - implicit_getter
+#  - inert_defer
+#  - is_disjoint
+#  - large_tuple
+#  - leading_whitespace
+#  - legacy_cggeometry_functions
+#  - legacy_constant
+#  - legacy_constructor
+#  - legacy_hashing
+#  - legacy_nsgeometry_functions
+  - line_length
+#  - mark
+#  - multiple_closures_with_trailing_closure
+#  - nesting
+#  - no_fallthrough_only
+#  - no_space_in_method_call
+#  - notification_center_detachment
+#  - nsobject_prefer_isequal
+#  - opening_brace
+#  - operator_whitespace
+#  - orphaned_doc_comment
+#  - private_over_fileprivate
+#  - private_unit_test
+#  - protocol_property_accessors_order
+#  - reduce_boolean
+#  - redundant_discardable_let
+#  - redundant_objc_attribute
+#  - redundant_optional_initialization
+#  - redundant_set_access_control
+#  - redundant_string_enum_value
+#  - redundant_void_return
+#  - return_arrow_whitespace
+#  - shorthand_operator
+#  - statement_position
+#  - superfluous_disable_command
+#  - switch_case_alignment
+#  - syntactic_sugar
+#  - todo
+#  - trailing_comma
+  - trailing_newline
+#  - trailing_semicolon
+  - trailing_whitespace
+  - type_body_length
+  - type_name
+#  - unneeded_break_in_switch
+#  - unused_capture_list
+#  - unused_closure_parameter
+#  - unused_control_flow_label
+#  - unused_enumerated
+#  - unused_optional_binding
+#  - unused_setter_value
+#  - valid_ibinspectable
+#  - vertical_parameter_alignment
+  - vertical_whitespace
+#  - void_return
+#  - weak_delegate
+#  - xctfail_message
+# 一些规则仅仅是可选的
+opt_in_rules:
+  - anyobject_protocol
+  - array_init
+  - attributes
+#  - closure_body_length
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - conditional_returns_on_newline
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
+#  - discouraged_object_literal
+  - discouraged_optional_boolean
+#  - discouraged_optional_collection
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - empty_xctest_method
+#  - enum_case_associated_values_count
+#  - expiring_todo
+#  - explicit_acl
+#  - explicit_enum_raw_value
+  - explicit_init
+  - explicit_self
+#  - explicit_top_level_acl
+#  - explicit_type_interface
+#  - extension_access_modifier
+  - fallthrough
+  - fatal_error_message
+#  - file_header
+#  - file_name
+  - file_name_no_space
+#  - file_types_order
+  - first_where
+  - flatmap_over_map_reduce
+  - force_unwrapping
+  - function_default_parameter_at_end
+  - identical_operands
+  - implicit_return
+  - implicitly_unwrapped_optional
+#  - indentation_width
+  - joined_default_parameter
+  - last_where
+  - legacy_multiple
+  - legacy_random
+  - let_var_whitespace
+  - literal_expression_end_indentation
+#  - lower_acl_than_parent
+#  - missing_docs
+#  - modifier_order
+  - multiline_arguments
+  - multiline_arguments_brackets
+#  - multiline_function_chains
+  - multiline_literal_brackets
+  - multiline_parameters
+  - multiline_parameters_brackets
+  - nimble_operator
+#  - no_extension_access_modifier
+#  - no_grouping_extension
+#  - nslocalizedstring_key
+  - nslocalizedstring_require_bundle
+#  - number_separator
+#  - object_literal
+  - operator_usage_whitespace
+  - optional_enum_case_matching
+  - overridden_super_call
+  - override_in_extension
+  - pattern_matching_keywords
+  - prefer_self_type_over_type_of_self
+  - prefixed_toplevel_constant
+  - private_action
+  - private_outlet
+  - prohibited_interface_builder
+  - prohibited_super_call
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+  - raw_value_for_camel_cased_codable_enum
+  - reduce_into
+  - redundant_nil_coalescing
+#  - redundant_type_annotation
+#  - required_deinit
+  - required_enum_case
+  - single_test_class
+  - sorted_first_last
+#  - sorted_imports
+  - static_operator
+  - strict_fileprivate
+  - strong_iboutlet
+  - switch_case_on_newline
+  - toggle_bool
+  - trailing_closure
+#  - type_contents_order
+#  - unavailable_function
+  - unneeded_break_in_switch
+  - unneeded_parentheses_in_closure_argument
+  - unowned_variable_capture
+  - untyped_error_in_catch
+  - unused_declaration
+  - unused_import
+  - vertical_parameter_alignment_on_call
+#  - vertical_whitespace_between_cases
+#  - vertical_whitespace_closing_braces
+#  - vertical_whitespace_opening_braces
+  - xct_specific_matcher
+#  - yoda_condition
+  # 可以通过执行如下指令来查找所有可用的规则:
+  # swiftlint rules
+included: # 执行 linting 时包含的路径。如果出现这个 `--path` 会被忽略。
+#  - Source
+excluded: # 执行 linting 时忽略的路径。 优先级比 `included` 更高。
+  - Pods
+
+# 可配置的规则可以通过这个配置文件来自定义
+# 二进制规则可以设置他们的严格程度
+weak_delegate: error
+legacy_nsgeometry_functions: error
+legacy_constructor: error
+legacy_cggeometry_functions: error
+legacy_constant: error
+contains_over_range_nil_comparison: error
+discouraged_direct_init: error
+empty_collection_literal: error
+empty_string: error
+file_name_no_space: error
+force_unwrapping: error
+identical_operands: error
+legacy_random: error
+toggle_bool: error
+unused_import: error
+file_length: 600
+nesting: 
+  type_level: 3
+  statement_level: 5
+reporter: "xcode" # 报告类型 (xcode, json, csv, checkstyle, junit, html, emoji)

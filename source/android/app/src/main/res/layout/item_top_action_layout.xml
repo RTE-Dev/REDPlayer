@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/player_bottom_action_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- 蒙层 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/item_graditent_00000000_80000000" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/top_action_back_view"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/video_title_view"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="5dp"
+            android:layout_toStartOf="@+id/top_action_more_view"
+            android:layout_toEndOf="@+id/top_action_back_view"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="@string/play_title"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/top_action_like_view"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="18dp"
+            android:layout_toStartOf="@+id/top_action_share_view"
+            android:background="@drawable/icon_like"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/top_action_share_view"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@+id/top_action_more_view"
+            android:background="@drawable/icon_share"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/top_action_more_view"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:background="@mipmap/icon_more" />
+    </RelativeLayout>
+
+</RelativeLayout>

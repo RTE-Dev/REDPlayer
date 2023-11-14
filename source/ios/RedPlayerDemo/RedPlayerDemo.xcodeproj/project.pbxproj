@@ -1,0 +1,678 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3503385E24C5C205002781D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503385D24C5C205002781D5 /* AppDelegate.swift */; };
+		3503386024C5C205002781D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3503385F24C5C205002781D5 /* SceneDelegate.swift */; };
+		3503386724C5C206002781D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3503386624C5C206002781D5 /* Assets.xcassets */; };
+		3503386A24C5C206002781D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3503386824C5C206002781D5 /* LaunchScreen.storyboard */; };
+		67FC58ADD0F574C098AB2A9B /* Pods_RedPlayerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70C67EFC87A099B6E5EDD32 /* Pods_RedPlayerDemo.framework */; };
+		A016C7842B68E74D00C1F23A /* TestVideos in Resources */ = {isa = PBXBuildFile; fileRef = A016C7832B68E74D00C1F23A /* TestVideos */; };
+		A0389FE32B0471F700F7827F /* RedSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0389FE02B0471F700F7827F /* RedSettingsViewController.m */; };
+		A0389FE42B0471F700F7827F /* RedPlayerSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = A0389FE12B0471F700F7827F /* RedPlayerSettings.m */; };
+		A038A0042B04B20D00F7827F /* RedDemoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A038A0032B04B20D00F7827F /* RedDemoPlayerViewController.m */; };
+		A038A0072B04B27800F7827F /* RedMediaControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A038A0062B04B27800F7827F /* RedMediaControl.m */; };
+		A065BC252B5E3C3B008CE919 /* RedExtendedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065BC242B5E3C3B008CE919 /* RedExtendedButton.swift */; };
+		A06FDCA82B3AA57C0064952F /* RedFlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FDCA72B3AA57C0064952F /* RedFlowCell.swift */; };
+		A06FDCAA2B3AA8380064952F /* RedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FDCA92B3AA8380064952F /* RedFlowLayout.swift */; };
+		A06FDCAC2B3C07CF0064952F /* RedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FDCAB2B3C07CF0064952F /* RedTabBar.swift */; };
+		A06FDCBB2B42A65E0064952F /* RedPreloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A06FDCBA2B42A65E0064952F /* RedPreloadManager.m */; };
+		A06FDCC12B4681D60064952F /* video_source.plist in Resources */ = {isa = PBXBuildFile; fileRef = A06FDCC02B4681D60064952F /* video_source.plist */; };
+		A06FDCC42B4693080064952F /* RedPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A06FDCC32B4693080064952F /* RedPopoverViewController.m */; };
+		A06FDD0F2B46E4030064952F /* RedLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06FDD0E2B46E4030064952F /* RedLoadingView.m */; };
+		A0909A062B493D020030008F /* opensoundtouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0909A052B493D020030008F /* opensoundtouch.framework */; };
+		A0909A072B493D030030008F /* opensoundtouch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0909A052B493D020030008F /* opensoundtouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A092591B2B5AA17900B9FD4D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092591A2B5AA17900B9FD4D /* MainViewController.swift */; };
+		A092591D2B5AA94400B9FD4D /* RedAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092591C2B5AA94400B9FD4D /* RedAlertView.swift */; };
+		A092591F2B5B918300B9FD4D /* RedMediaUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092591E2B5B918300B9FD4D /* RedMediaUtil.swift */; };
+		A0C0B5C22B318B49001ED143 /* RedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0B5C12B318B49001ED143 /* RedTabBarController.swift */; };
+		A0C0B5C82B318BEC001ED143 /* RedFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0B5C72B318BEC001ED143 /* RedFlowViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0909A082B493D030030008F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0909A072B493D030030008F /* opensoundtouch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3503385B24C5C205002781D5 /* RedPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3503385D24C5C205002781D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3503385F24C5C205002781D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3503386624C5C206002781D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3503386924C5C206002781D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3503386B24C5C206002781D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		492BD2ACB44D06B848BBC53C /* Pods-RedPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedPlayerDemo.release.xcconfig"; path = "Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8A3C032F887E10B0FBF91575 /* Pods-XYRedPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYRedPlayerDemo.debug.xcconfig"; path = "Target Support Files/Pods-XYRedPlayerDemo/Pods-XYRedPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A016C7832B68E74D00C1F23A /* TestVideos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestVideos; sourceTree = "<group>"; };
+		A0389FC42B0393FC00F7827F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A0389FC62B03940300F7827F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A0389FD02B04719500F7827F /* RedPlayerDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedPlayerDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A0389FDF2B0471F700F7827F /* RedPlayerSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPlayerSettings.h; sourceTree = "<group>"; };
+		A0389FE02B0471F700F7827F /* RedSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedSettingsViewController.m; sourceTree = "<group>"; };
+		A0389FE12B0471F700F7827F /* RedPlayerSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedPlayerSettings.m; sourceTree = "<group>"; };
+		A0389FE22B0471F700F7827F /* RedSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedSettingsViewController.h; sourceTree = "<group>"; };
+		A0389FE52B0472CC00F7827F /* CoreAudioTypes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioTypes.framework; path = System/Library/Frameworks/CoreAudioTypes.framework; sourceTree = SDKROOT; };
+		A0389FEB2B04749700F7827F /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		A0389FED2B04749C00F7827F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		A038A0022B04B20D00F7827F /* RedDemoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedDemoPlayerViewController.h; sourceTree = "<group>"; };
+		A038A0032B04B20D00F7827F /* RedDemoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedDemoPlayerViewController.m; sourceTree = "<group>"; };
+		A038A0052B04B27800F7827F /* RedMediaControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedMediaControl.h; sourceTree = "<group>"; };
+		A038A0062B04B27800F7827F /* RedMediaControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedMediaControl.m; sourceTree = "<group>"; };
+		A038A0092B04BF0500F7827F /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		A038A00C2B04BF3800F7827F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A038A00E2B04BF6300F7827F /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		A038A0102B04BF6700F7827F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		A038A0122B04BF7200F7827F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A038A0142B04BF7700F7827F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A038A0192B04BFA900F7827F /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		A038A01B2B04C15600F7827F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		A04F89092B0733FA0056BEBA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A04F890B2B0734260056BEBA /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
+		A04F890F2B07354B0056BEBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A065BC242B5E3C3B008CE919 /* RedExtendedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedExtendedButton.swift; sourceTree = "<group>"; };
+		A06FDCA72B3AA57C0064952F /* RedFlowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedFlowCell.swift; sourceTree = "<group>"; };
+		A06FDCA92B3AA8380064952F /* RedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedFlowLayout.swift; sourceTree = "<group>"; };
+		A06FDCAB2B3C07CF0064952F /* RedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedTabBar.swift; sourceTree = "<group>"; };
+		A06FDCB92B42A65E0064952F /* RedPreloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedPreloadManager.h; sourceTree = "<group>"; };
+		A06FDCBA2B42A65E0064952F /* RedPreloadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedPreloadManager.m; sourceTree = "<group>"; };
+		A06FDCC02B4681D60064952F /* video_source.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = video_source.plist; sourceTree = "<group>"; };
+		A06FDCC22B4693080064952F /* RedPopoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedPopoverViewController.h; sourceTree = "<group>"; };
+		A06FDCC32B4693080064952F /* RedPopoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedPopoverViewController.m; sourceTree = "<group>"; };
+		A06FDD0D2B46E4030064952F /* RedLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedLoadingView.h; sourceTree = "<group>"; };
+		A06FDD0E2B46E4030064952F /* RedLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedLoadingView.m; sourceTree = "<group>"; };
+		A075086E2B58D3B900016798 /* RedPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RedPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0909A052B493D020030008F /* opensoundtouch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opensoundtouch.framework; path = Submodules/opensoundtouch/Sources/opensoundtouch.framework; sourceTree = "<group>"; };
+		A092591A2B5AA17900B9FD4D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A092591C2B5AA94400B9FD4D /* RedAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedAlertView.swift; sourceTree = "<group>"; };
+		A092591E2B5B918300B9FD4D /* RedMediaUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedMediaUtil.swift; sourceTree = "<group>"; };
+		A09259202B5B93B900B9FD4D /* RedPlayerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedPlayerDemo-Prefix.pch"; sourceTree = "<group>"; };
+		A0C0B5C12B318B49001ED143 /* RedTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedTabBarController.swift; sourceTree = "<group>"; };
+		A0C0B5C72B318BEC001ED143 /* RedFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedFlowViewController.swift; sourceTree = "<group>"; };
+		A70C67EFC87A099B6E5EDD32 /* Pods_RedPlayerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedPlayerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5740F6B77D5190FC8297200 /* Pods-RedPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedPlayerDemo.debug.xcconfig"; path = "Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DB9D7078CDB92DC116F1CFF9 /* Pods-XYRedPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYRedPlayerDemo.release.xcconfig"; path = "Target Support Files/Pods-XYRedPlayerDemo/Pods-XYRedPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3503385824C5C205002781D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0909A062B493D020030008F /* opensoundtouch.framework in Frameworks */,
+				67FC58ADD0F574C098AB2A9B /* Pods_RedPlayerDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3503385C24C5C205002781D5 /* RedPlayerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A026DD582B4CF2E000F7EB0D /* Util */,
+				3503385D24C5C205002781D5 /* AppDelegate.swift */,
+				3503385F24C5C205002781D5 /* SceneDelegate.swift */,
+				A0C0B5C12B318B49001ED143 /* RedTabBarController.swift */,
+				A06FDCAB2B3C07CF0064952F /* RedTabBar.swift */,
+				A092591A2B5AA17900B9FD4D /* MainViewController.swift */,
+				A092591C2B5AA94400B9FD4D /* RedAlertView.swift */,
+				A0C0B5C72B318BEC001ED143 /* RedFlowViewController.swift */,
+				A06FDCA72B3AA57C0064952F /* RedFlowCell.swift */,
+				A06FDCA92B3AA8380064952F /* RedFlowLayout.swift */,
+				A065BC242B5E3C3B008CE919 /* RedExtendedButton.swift */,
+				A06FDCB82B42A64F0064952F /* Preload */,
+				A038A0082B04B28100F7827F /* Player */,
+				A0389FD82B0471D400F7827F /* Settings */,
+				3503386624C5C206002781D5 /* Assets.xcassets */,
+				A09259202B5B93B900B9FD4D /* RedPlayerDemo-Prefix.pch */,
+				3503386824C5C206002781D5 /* LaunchScreen.storyboard */,
+				3503386B24C5C206002781D5 /* Info.plist */,
+				A0389FD02B04719500F7827F /* RedPlayerDemo-Bridging-Header.h */,
+				A06FDCC02B4681D60064952F /* video_source.plist */,
+			);
+			path = RedPlayerDemo;
+			sourceTree = "<group>";
+		};
+		35E2C97F22DA428E0069248B = {
+			isa = PBXGroup;
+			children = (
+				A016C7832B68E74D00C1F23A /* TestVideos */,
+				3503385C24C5C205002781D5 /* RedPlayerDemo */,
+				35E2C98A22DA428E0069248B /* Products */,
+				35E2C9DB22DA43D20069248B /* Frameworks */,
+				C5D598E8FD5DABF45299D7ED /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		35E2C98A22DA428E0069248B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3503385B24C5C205002781D5 /* RedPlayerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35E2C9DB22DA43D20069248B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A075086E2B58D3B900016798 /* RedPlayer.framework */,
+				A0909A052B493D020030008F /* opensoundtouch.framework */,
+				A04F890F2B07354B0056BEBA /* AudioToolbox.framework */,
+				A04F890B2B0734260056BEBA /* AVFAudio.framework */,
+				A04F89092B0733FA0056BEBA /* AVFoundation.framework */,
+				A038A01B2B04C15600F7827F /* libresolv.tbd */,
+				A038A0192B04BFA900F7827F /* CoreServices.framework */,
+				A038A0142B04BF7700F7827F /* CoreMedia.framework */,
+				A038A0122B04BF7200F7827F /* CoreVideo.framework */,
+				A038A0102B04BF6700F7827F /* AVKit.framework */,
+				A038A00E2B04BF6300F7827F /* libbz2.tbd */,
+				A038A00C2B04BF3800F7827F /* libz.tbd */,
+				A038A0092B04BF0500F7827F /* VideoToolbox.framework */,
+				A0389FED2B04749C00F7827F /* CoreAudio.framework */,
+				A0389FEB2B04749700F7827F /* MetalKit.framework */,
+				A0389FE52B0472CC00F7827F /* CoreAudioTypes.framework */,
+				A0389FC62B03940300F7827F /* Foundation.framework */,
+				A0389FC42B0393FC00F7827F /* UIKit.framework */,
+				A70C67EFC87A099B6E5EDD32 /* Pods_RedPlayerDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A026DD582B4CF2E000F7EB0D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A092591E2B5B918300B9FD4D /* RedMediaUtil.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		A0389FD82B0471D400F7827F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A0389FDF2B0471F700F7827F /* RedPlayerSettings.h */,
+				A0389FE12B0471F700F7827F /* RedPlayerSettings.m */,
+				A0389FE22B0471F700F7827F /* RedSettingsViewController.h */,
+				A0389FE02B0471F700F7827F /* RedSettingsViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A038A0082B04B28100F7827F /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A038A0052B04B27800F7827F /* RedMediaControl.h */,
+				A038A0062B04B27800F7827F /* RedMediaControl.m */,
+				A038A0022B04B20D00F7827F /* RedDemoPlayerViewController.h */,
+				A038A0032B04B20D00F7827F /* RedDemoPlayerViewController.m */,
+				A06FDCC22B4693080064952F /* RedPopoverViewController.h */,
+				A06FDCC32B4693080064952F /* RedPopoverViewController.m */,
+				A06FDD0D2B46E4030064952F /* RedLoadingView.h */,
+				A06FDD0E2B46E4030064952F /* RedLoadingView.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		A06FDCB82B42A64F0064952F /* Preload */ = {
+			isa = PBXGroup;
+			children = (
+				A06FDCB92B42A65E0064952F /* RedPreloadManager.h */,
+				A06FDCBA2B42A65E0064952F /* RedPreloadManager.m */,
+			);
+			path = Preload;
+			sourceTree = "<group>";
+		};
+		C5D598E8FD5DABF45299D7ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A3C032F887E10B0FBF91575 /* Pods-XYRedPlayerDemo.debug.xcconfig */,
+				DB9D7078CDB92DC116F1CFF9 /* Pods-XYRedPlayerDemo.release.xcconfig */,
+				D5740F6B77D5190FC8297200 /* Pods-RedPlayerDemo.debug.xcconfig */,
+				492BD2ACB44D06B848BBC53C /* Pods-RedPlayerDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3503385A24C5C205002781D5 /* RedPlayerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3503386C24C5C206002781D5 /* Build configuration list for PBXNativeTarget "RedPlayerDemo" */;
+			buildPhases = (
+				72C7B007317E55B99864649A /* [CP] Check Pods Manifest.lock */,
+				3503385724C5C205002781D5 /* Sources */,
+				3503385824C5C205002781D5 /* Frameworks */,
+				3503385924C5C205002781D5 /* Resources */,
+				4E6EE214411D7443C512148B /* [CP] Embed Pods Frameworks */,
+				A0909A082B493D030030008F /* Embed Frameworks */,
+				4241A669D4E5592D93D11DC8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RedPlayerDemo;
+			productName = XYRedPlayerDemo;
+			productReference = 3503385B24C5C205002781D5 /* RedPlayerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35E2C98022DA428E0069248B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = XingIn;
+				TargetAttributes = {
+					3503385A24C5C205002781D5 = {
+						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1500;
+					};
+				};
+			};
+			buildConfigurationList = 35E2C98322DA428E0069248B /* Build configuration list for PBXProject "RedPlayerDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 35E2C97F22DA428E0069248B;
+			productRefGroup = 35E2C98A22DA428E0069248B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3503385A24C5C205002781D5 /* RedPlayerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3503385924C5C205002781D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A016C7842B68E74D00C1F23A /* TestVideos in Resources */,
+				3503386A24C5C206002781D5 /* LaunchScreen.storyboard in Resources */,
+				3503386724C5C206002781D5 /* Assets.xcassets in Resources */,
+				A06FDCC12B4681D60064952F /* video_source.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4241A669D4E5592D93D11DC8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E6EE214411D7443C512148B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72C7B007317E55B99864649A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RedPlayerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3503385724C5C205002781D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A038A0072B04B27800F7827F /* RedMediaControl.m in Sources */,
+				A06FDCAA2B3AA8380064952F /* RedFlowLayout.swift in Sources */,
+				A092591D2B5AA94400B9FD4D /* RedAlertView.swift in Sources */,
+				A0C0B5C82B318BEC001ED143 /* RedFlowViewController.swift in Sources */,
+				A06FDCBB2B42A65E0064952F /* RedPreloadManager.m in Sources */,
+				A038A0042B04B20D00F7827F /* RedDemoPlayerViewController.m in Sources */,
+				A065BC252B5E3C3B008CE919 /* RedExtendedButton.swift in Sources */,
+				A06FDCC42B4693080064952F /* RedPopoverViewController.m in Sources */,
+				A092591B2B5AA17900B9FD4D /* MainViewController.swift in Sources */,
+				3503385E24C5C205002781D5 /* AppDelegate.swift in Sources */,
+				A0389FE32B0471F700F7827F /* RedSettingsViewController.m in Sources */,
+				A06FDD0F2B46E4030064952F /* RedLoadingView.m in Sources */,
+				3503386024C5C205002781D5 /* SceneDelegate.swift in Sources */,
+				A0389FE42B0471F700F7827F /* RedPlayerSettings.m in Sources */,
+				A092591F2B5B918300B9FD4D /* RedMediaUtil.swift in Sources */,
+				A0C0B5C22B318B49001ED143 /* RedTabBarController.swift in Sources */,
+				A06FDCA82B3AA57C0064952F /* RedFlowCell.swift in Sources */,
+				A06FDCAC2B3C07CF0064952F /* RedTabBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3503386824C5C206002781D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3503386924C5C206002781D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3503386D24C5C206002781D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5740F6B77D5190FC8297200 /* Pods-RedPlayerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = WA7K45T45A;
+				EXCLUDED_ARCHS = "armv7 armv7s";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Submodules/opensoundtouch/Sources",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RedPlayerDemo/RedPlayerDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources/XYMediaFfmpeg.framework/Headers\"",
+					"\"$(SRCROOT)/Submodules/RedStrategyCenter/Sources/RedStrategyCenter.framework/Headers\"",
+				);
+				INFOPLIST_FILE = RedPlayerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fcxx-modules",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"XYMediaFfmpeg\"",
+					"-framework",
+					opensoundtouch,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xingin.RedPlayerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = debug_wildcard;
+				REEXPORTED_LIBRARY_PATHS = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "RedPlayerDemo/RedPlayerDemo-Bridging-Header.h";
+				SWIFT_OBJC_INTEROP_MODE = objc;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3503386E24C5C206002781D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 492BD2ACB44D06B848BBC53C /* Pods-RedPlayerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = WA7K45T45A;
+				EXCLUDED_ARCHS = "armv7 armv7s";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Submodules/opensoundtouch/Sources",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RedPlayerDemo/RedPlayerDemo-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources/XYMediaFfmpeg.framework/Headers\"",
+					"\"$(SRCROOT)/Submodules/RedStrategyCenter/Sources/RedStrategyCenter.framework/Headers\"",
+				);
+				INFOPLIST_FILE = RedPlayerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-fcxx-modules",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"XYMediaFfmpeg\"",
+					"-framework",
+					opensoundtouch,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xingin.RedPlayerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = debug_wildcard;
+				REEXPORTED_LIBRARY_PATHS = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "RedPlayerDemo/RedPlayerDemo-Bridging-Header.h";
+				SWIFT_OBJC_INTEROP_MODE = objc;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		35E2C99B22DA428E0069248B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		35E2C99C22DA428E0069248B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3503386C24C5C206002781D5 /* Build configuration list for PBXNativeTarget "RedPlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3503386D24C5C206002781D5 /* Debug */,
+				3503386E24C5C206002781D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35E2C98322DA428E0069248B /* Build configuration list for PBXProject "RedPlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35E2C99B22DA428E0069248B /* Debug */,
+				35E2C99C22DA428E0069248B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35E2C98022DA428E0069248B /* Project object */;
+}

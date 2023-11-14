@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_corners_10_background_80000000"
+    android:padding="10dp"
+    tools:ignore="MissingDefaultResource">
+
+    <ImageView
+        android:id="@+id/icon_speed"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_speed" />
+
+    <TextView
+        android:id="@+id/speed_info_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@+id/icon_speed"
+        android:text="@string/play_speed"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

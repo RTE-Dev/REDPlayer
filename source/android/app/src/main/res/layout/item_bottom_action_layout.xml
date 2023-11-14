@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/player_bottom_action_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- 蒙层 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/item_graditent_80000000_00000000" />
+
+    <!-- 底部控制栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="100dp">
+
+        <ImageView
+            android:id="@+id/play_pause_button"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/icon_play" />
+
+        <ImageView
+            android:id="@+id/play_next_button"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/icon_next_v2" />
+
+        <com.xingin.openredplayer.player.progress.XhsProgressBar
+            android:id="@+id/video_view_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="11dp"
+            app:ssb_max="1000"
+            app:ssb_min="0"
+            app:ssb_second_track_color="#ffffff"
+            app:ssb_section_count="6"
+            app:ssb_show_progress_in_float="true"
+            app:ssb_show_section_mark="true"
+            app:ssb_show_sign="false"
+            app:ssb_show_thumb_shadow="true"
+            app:ssb_sign_show_border="false"
+            app:ssb_thumb_color="#ffffff"
+            app:ssb_track_color="#aaaaaa" />
+
+        <TextView
+            android:id="@+id/video_section_view"
+            android:layout_width="40dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="3dp"
+            android:gravity="center"
+            android:text="@string/play_section"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/video_screen_switch_btn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/icon_hv_switch" />
+    </LinearLayout>
+
+</RelativeLayout>

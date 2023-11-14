@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Red Player</string>
+    <string name="detail_play_section_title">The Video All Sections</string>
+    <string name="detail_play_section_item_title">The Video Section</string>
+
+    <string name="pref_title_render">Media Render Setting</string>
+    <string name="pref_key_enable_debug_info_view">pref.enable_debug_info_view</string>
+    <string name="pref_title_enable_debug_info_view">Display Debug Panel</string>
+    <string name="pref_summary_enable_debug_info_view">Can view FPS, decoder, and other information.</string>
+
+    <string name="pref_key_enable_surface_view">pref.enable_surface_view</string>
+    <string name="pref_title_enable_surface_view">Force Use SurfaceView</string>
+    <string name="pref_summary_enable_surface_view">Default, use TextureView, opening use SurfaceView</string>
+
+
+    <string name="pref_title_player_core">Media Player Setting</string>
+    <string name="pref_key_using_media_codec">pref.using_media_codec</string>
+    <string name="pref_title_using_media_codec">Use MediaCodec Decode</string>
+    <string name="pref_summary_using_media_codec">Default, MediaCodec decoding is used. opening, soft decoder used</string>
+
+    <string name="pref_key_using_android_media_player">pref.using_android_media_player</string>
+    <string name="pref_title_using_android_media_player">Use System Media Player</string>
+    <string name="pref_summary_using_android_media_player">Default, open source player is used. opening, the system player will be used</string>
+
+    <string name="pref_title_video">Video Play Setting</string>
+    <string name="pref_key_video_play_loop">pref.video_play_loop</string>
+    <string name="pref_title_video_play_loop">Loop Play</string>
+
+    <string name="pref_key_video_play_auto_next">pref.video_play_auto_next</string>
+    <string name="pref_title_video_play_auto_next">Auto Play Next</string>
+    <string name="pref_summary_video_play_auto_next">The auto play of the next only takes effect when the loop switch is turned on.</string>
+
+    <string name="pref_key_video_play_cover">pref.video_cover</string>
+    <string name="pref_title_video_play_cover">Feed Cover Play</string>
+    <string name="pref_summary_video_play_cover">Opening, the home feed will play dynamic covers</string>
+
+
+    <string name="pref_key_video_window">pref.video_window</string>
+    <string name="pref_title_video_window">Support Pip Play</string>
+    <string name="pref_summary_video_window">To support pip play, please apply for window floating permission first. Click to apply.</string>
+
+    <string name="pref_key_player_speed">pref.player_speed</string>
+    <string name="pref_title_player_speed">Select Speed</string>
+    <string-array name="pref_entry_values_player_speed">
+        <item>0.25</item>
+        <item>0.5</item>
+        <item>0.75</item>
+        <item>1.0</item>
+        <item>1.25</item>
+        <item>1.5</item>
+        <item>2.0</item>
+    </string-array>
+
+    <string name="home_tab_home_title">Home</string>
+    <string name="home_tab_setting_title">Settings</string>
+    <string name="home_title">Demo Of Video Feed Page</string>
+    <string name="home_item_url">URL/JSON</string>
+    <string name="home_item_live_url">LIVE URL</string>
+    <string name="home_item_album">Play Local Resource</string>
+    <string name="home_item_feed">Online Samples</string>
+    <string name="home_item_window">Pip Samples</string>
+    <string name="home_red_player">RedPlayer</string>
+    <string name="home">Home</string>
+    <string name="setting">Settings</string>
+
+    <string name="input_url_title">Demo Of Custom URL Page</string>
+    <string name="input_url_hint">Input url or json play</string>
+    <string name="input_url_default">Url</string>
+    <string name="input_json_default">Json</string>
+    <string name="input_clear">Clear</string>
+    <string name="input_jump">Play</string>
+
+    <string name="input_live_url_title">Demo of Live URL Page</string>
+    <string name="input_live_url_default">Live URL</string>
+    <string name="input_live_url_hint">Input live url to play</string>
+
+    <string name="play_section">All</string>
+    <string name="play_speed">Playing Speed</string>
+    <string name="play_show_or_hide">Show/Hide</string>
+    <string name="play_title">Demo Of Video Detail Page</string>
+
+</resources>
