@@ -47,6 +47,11 @@
             android:name=".input.XhsInputActivity"
             android:screenOrientation="portrait" />
 
+        <!-- 直播输入页 -->
+        <activity
+            android:name=".live.XhsLiveInputActivity"
+            android:screenOrientation="portrait" />
+
         <!-- 双列Feed页 -->
         <activity
             android:name=".feed.XhsFeedActivity"

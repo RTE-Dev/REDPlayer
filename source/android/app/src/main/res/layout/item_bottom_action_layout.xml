@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/player_bottom_action_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:showIn="@layout/activity_xhs_player_layout">
+    android:layout_height="wrap_content">
 
     <!-- 蒙层 -->
     <View

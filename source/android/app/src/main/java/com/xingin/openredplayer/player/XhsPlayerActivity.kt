@@ -47,6 +47,7 @@ class XhsPlayerActivity : AppCompatActivity(), XhsSectionAdapter.OnSectionItemCl
         const val INTENT_KEY_URLS = "video_urls"
         const val INTENT_KEY_INDEX = "video_index"
         const val INTENT_KEY_SHOW_LOADING = "show_loading"
+        const val INTENT_KEY_IS_LIVE = "is_live"
     }
 
     /** DrawerLayout UI */
@@ -88,6 +89,7 @@ class XhsPlayerActivity : AppCompatActivity(), XhsSectionAdapter.OnSectionItemCl
 
     /** data **/
     private var isShowLoading = false
+    private var isLive = false
     private var videoUrls = arrayListOf<String>()
     private var playIndex = 0
 
@@ -124,6 +126,7 @@ class XhsPlayerActivity : AppCompatActivity(), XhsSectionAdapter.OnSectionItemCl
     private fun initData() {
         playIndex = intent.getIntExtra(INTENT_KEY_INDEX, 0)
         isShowLoading = intent.getBooleanExtra(INTENT_KEY_SHOW_LOADING, false)
+        isLive = intent.getBooleanExtra(INTENT_KEY_IS_LIVE, false)
         val list = intent.getSerializableExtra(INTENT_KEY_URLS) as List<String>
         videoUrls.addAll(list)
         // init config
@@ -236,26 +239,34 @@ class XhsPlayerActivity : AppCompatActivity(), XhsSectionAdapter.OnSectionItemCl
     /** update the video play progress */
     private fun initVideoProgressView() {
         progressSeekBar = findViewById(R.id.video_view_seekbar)
-        progressSeekBar.setOnProgressChangedListener(object :
-            XhsProgressBar.OnProgressChangedListener {
-            override fun onProgressChanged(
-                signSeekBar: XhsProgressBar, progress: Int, progressFloat: Float, fromUser: Boolean
-            ) {
-            }
+        if (!isLive) {
+            progressSeekBar.setOnProgressChangedListener(object :
+                XhsProgressBar.OnProgressChangedListener {
+                override fun onProgressChanged(
+                    signSeekBar: XhsProgressBar,
+                    progress: Int,
+                    progressFloat: Float,
+                    fromUser: Boolean
+                ) {
+                }
 
-            override fun getProgressOnActionUp(
-                signSeekBar: XhsProgressBar, progress: Int, progressFloat: Float
-            ) {
-                val percentage = progress / 1000.0
-                videoPlayerView.seekTo((percentage * videoPlayerView.duration).toInt())
-                progressSeekBar.setProgress(progressFloat)
-            }
+                override fun getProgressOnActionUp(
+                    signSeekBar: XhsProgressBar, progress: Int, progressFloat: Float
+                ) {
+                    val percentage = progress / 1000.0
+                    videoPlayerView.seekTo((percentage * videoPlayerView.duration).toInt())
+                    progressSeekBar.setProgress(progressFloat)
+                }
 
-            override fun getProgressOnFinally(
-                signSeekBar: XhsProgressBar, progress: Int, progressFloat: Float, fromUser: Boolean
-            ) {
-            }
-        })
+                override fun getProgressOnFinally(
+                    signSeekBar: XhsProgressBar,
+                    progress: Int,
+                    progressFloat: Float,
+                    fromUser: Boolean
+                ) {
+                }
+            })
+        }
         // update the seekbar
         val handler = Handler(Looper.getMainLooper())
         var position: Int
@@ -342,7 +353,10 @@ class XhsPlayerActivity : AppCompatActivity(), XhsSectionAdapter.OnSectionItemCl
         }
         videoPlayerView.setOnErrorListener { _, what, extra -> handleVideoErrorEvent(what, extra) }
         // 1.1 set the video url and wait play
-        videoPlayerView.setVideoPath(getCurrentPlayUrl())
+        videoPlayerView.setVideoPath(getCurrentPlayUrl(), isLive)
+        if (isLive) {
+            playPauseButton.visibility = View.GONE
+        }
     }
 
     /** init the video debug info view */
@@ -539,7 +553,7 @@ class XhsPlayerActivity : AppCompatActivity(), XhsSectionAdapter.OnSectionItemCl
 
     /** handle video speed play: support 0.75，1.0，1.25，1.5，2.0 */
     private fun handleVideoSpeedPlay(speed: Float, isShow: Boolean) {
-        if (!videoPlayerView.isPlaying) {
+        if (!videoPlayerView.isPlaying || isLive) {
             return
         }
         videoPlayerView.setSpeed(speed)

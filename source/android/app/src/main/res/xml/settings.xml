@@ -19,7 +19,7 @@
 
     <PreferenceCategory android:title="@string/pref_title_player_core">
         <SwitchPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="@string/pref_key_using_media_codec"
             android:persistent="true"
             android:summary="@string/pref_summary_using_media_codec"

@@ -3,9 +3,9 @@
 ![示例图片](./redplayer.jpg)
 
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/badge/release-v1.0.0-blue)
-![GitHub issues](https://img.shields.io/github/issues/badges/RedPlayer/open)
-![GitHub pull requests](https://img.shields.io/bitbucket/pr/badge/RedPlayer?label=pull%20requests)
 ![GitHub license](https://img.shields.io/badge/license-LGPL2.1-blue)
+<!-- [GitHub issues](https://img.shields.io/github/issues/badges/RedPlayer/open) -->
+<!-- [GitHub pull requests](https://img.shields.io/bitbucket/pr/badge/RedPlayer?label=pull%20requests) -->
 
  Platform | Build Status
  -------- | ------------
@@ -64,6 +64,9 @@
 
 
 ### Open Content
+    ```bash
+    # Describe the main contents of current open source and the estimated time and contents of the next open source
+    ```
 - [CONTENTS.md](CONTENTS.md)
 
 ### Usage

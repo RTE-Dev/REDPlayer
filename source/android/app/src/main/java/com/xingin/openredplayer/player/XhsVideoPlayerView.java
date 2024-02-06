@@ -29,6 +29,7 @@ import java.io.IOException;
 public class XhsVideoPlayerView extends FrameLayout implements MediaController.MediaPlayerControl {
     private String TAG = "VideoPlayerView";
     private String mUrl;
+    private Boolean mIsLive;
     private static final int STATE_ERROR = -1;
     private static final int STATE_IDLE = 0;
     private static final int STATE_PREPARING = 1;
@@ -136,6 +137,11 @@ public class XhsVideoPlayerView extends FrameLayout implements MediaController.M
         }
     }
 
+    public void setVideoPath(String path, boolean isLive) {
+        mIsLive = isLive;
+        setVideoPath(path);
+    }
+
     public void setVideoPath(String path) {
         mUrl = path;
         mSeekWhenPrepared = 0;
@@ -217,10 +223,11 @@ public class XhsVideoPlayerView extends FrameLayout implements MediaController.M
 
     private IMediaPlayer createMediaPlayer() {
         IMediaPlayer mediaPlayer = mSettings.getEnableAndroidMediaPlayer() ? new AndroidMediaPlayer() : new RedMediaPlayer();
-        // 设置播放器使用硬解: 具体是否有硬解可用,内核来决定
         mediaPlayer.setEnableMediaCodec(mSettings.getUsingMediaCodec());
-        // 设置视频缓存路径: 边播边下的视频缓存路径，设置后无网可播播过的视频
+        // set video cache url: downloading when playing, if network error, can also play
         mediaPlayer.setVideoCacheDir(Utils.INSTANCE.getVideCacheDir());
+        // set whether url is live
+        mediaPlayer.setLiveMode(mIsLive);
         return mediaPlayer;
     }
 

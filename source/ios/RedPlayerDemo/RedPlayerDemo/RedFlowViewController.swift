@@ -245,7 +245,7 @@ open class RedFlowViewController: UIViewController, RedFlowLayoutDelegate, UICol
             videoDictArray.append(videoDict)
         }
 
-        RedDemoPlayerViewController.present(from: self, withTitle: "", url: playUrl, isJson: item.isJson, playList: videoDictArray, playListIndex: indexPath.item, completion: nil) {
+        RedDemoPlayerViewController.present(from: self, withTitle: "", url: playUrl, isJson: item.isJson, isLive: false, playList: videoDictArray, playListIndex: indexPath.item, completion: nil) {
             self.playingCell = nil
             self.scrollViewEndDecelerating()
         }

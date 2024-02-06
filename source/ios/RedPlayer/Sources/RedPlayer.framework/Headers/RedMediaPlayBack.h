@@ -184,6 +184,9 @@ typedef NS_ENUM(NSUInteger, RedRenderType) {
 /// Sets whether Video Toolbox is enabled.
 - (void)setEnableVTB:(BOOL)enable;
 
+/// Sets whether video is live source.
+- (void)setLiveMode:(BOOL)enable;
+
 /// Returns whether Video Toolbox is open.
 - (BOOL)isVideoToolboxOpen;
 

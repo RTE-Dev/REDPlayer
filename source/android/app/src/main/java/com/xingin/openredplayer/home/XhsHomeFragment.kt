@@ -17,6 +17,7 @@ import com.xingin.openredplayer.feed.model.covertToVideoUrls
 import com.xingin.openredplayer.floating.XhsFloatingService
 import com.xingin.openredplayer.floating.XhsFloatingWindowHelper
 import com.xingin.openredplayer.input.XhsInputActivity
+import com.xingin.openredplayer.live.XhsLiveInputActivity
 import com.xingin.openredplayer.player.XhsPlayerActivity
 import io.reactivex.rxjava3.disposables.Disposable
 import java.io.Serializable
@@ -24,6 +25,7 @@ import java.io.Serializable
 class XhsHomeFragment : Fragment() {
     private lateinit var rootView: View
     private lateinit var itemUrlView: View
+    private lateinit var itemLiveUrlView: View
     private lateinit var itemAlbumView: View
     private lateinit var itemFeedView: View
     private lateinit var itemWindowView: View
@@ -53,6 +55,8 @@ class XhsHomeFragment : Fragment() {
     private fun initView() {
         itemUrlView = rootView.findViewById(R.id.layout_play_url)
         itemUrlView.setOnClickListener { openInputPage() }
+        itemLiveUrlView = rootView.findViewById(R.id.layout_play_live_url)
+        itemLiveUrlView.setOnClickListener { openLiveInputPage() }
         itemAlbumView = rootView.findViewById(R.id.layout_local_album)
         itemAlbumView.setOnClickListener { openAlbumPage() }
         itemFeedView = rootView.findViewById(R.id.layout_double_column)
@@ -65,6 +69,11 @@ class XhsHomeFragment : Fragment() {
 
     private fun openInputPage() {
         val intent = Intent(this.activity, XhsInputActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun openLiveInputPage() {
+        val intent = Intent(this.activity, XhsLiveInputActivity::class.java)
         startActivity(intent)
     }
 

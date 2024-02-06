@@ -14,6 +14,7 @@
 - (void)switchPrevious:(id)sender;
 - (void)switchNext:(id)sender;
 - (void)onClickMute:(id)sender;
+- (void)mediaControlLiveRefresh;
 - (void)didSliderTouchUpInside;
 - (void)slideCancelMediaControlHide;
 - (void)slideContinueMediaControlHide;
@@ -35,7 +36,8 @@
 - (id)initWithFrame:(CGRect)frame 
      viewController:(UIViewController *)viewController
            playList:(NSArray *)playList
-             isLoop:(BOOL)isLoop;
+             isLoop:(BOOL)isLoop
+             isLive:(BOOL)isLive;
 - (float)progressValue;
 - (void)updatePlayPauseBtn:(BOOL)isPlaying;
 - (void)updateMuteBtn:(BOOL)isMute;

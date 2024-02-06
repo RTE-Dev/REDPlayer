@@ -82,14 +82,14 @@ class MainViewController: UIViewController,
         
     }
 
-    func playURLResource() {
+    func playURLResource(isLive: Bool) {
         inputAlertViewBgView = UIView(frame: self.view.bounds)
         if let bgView = inputAlertViewBgView {
             bgView.backgroundColor = UIColor.gray.withAlphaComponent(0.2)
             self.view.addSubview(bgView)
         }
 
-        inputAlertView = RedAlertView(frame: CGRect(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height / 2, width: 0, height: 0))
+        inputAlertView = RedAlertView(frame: CGRect(x: self.view.bounds.size.width / 2, y: self.view.bounds.size.height / 2, width: 0, height: 0), isLive: isLive)
         inputAlertView?.translatesAutoresizingMaskIntoConstraints = false
         if let alertView = inputAlertView {
             alertView.playButtonTapped = { [weak self] input, isJSON in
@@ -109,7 +109,7 @@ class MainViewController: UIViewController,
                     self?.present(alertController, animated: true, completion: nil)
                     return
                 }
-                RedDemoPlayerViewController.present(from: self, withTitle: "", url: input, isJson: isJSON, playList: nil, playListIndex: 0, completion: nil, close: nil)
+                RedDemoPlayerViewController.present(from: self, withTitle: "", url: input, isJson: isJSON, isLive: isLive, playList: nil, playListIndex: 0, completion: nil, close: nil)
             }
             alertView.closeButtonTapped = { [weak self] in
                 self?.closeAlertView()
@@ -249,7 +249,7 @@ class MainViewController: UIViewController,
 
                 DispatchQueue.main.async {
                     self.dismiss(animated: true) {
-                        RedDemoPlayerViewController.present(from: self, withTitle: "", url: firstUrl, isJson: false, playList: videoDictArray, playListIndex: 0, completion: nil, close: nil)
+                        RedDemoPlayerViewController.present(from: self, withTitle: "", url: firstUrl, isJson: false, isLive: false, playList: videoDictArray, playListIndex: 0, completion: nil, close: nil)
                     }
                 }
             }
@@ -316,7 +316,7 @@ class MainViewController: UIViewController,
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -324,12 +324,15 @@ extension MainViewController: UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            cell.iconImageView.image = UIImage(named: "link")?.withRenderingMode(.alwaysTemplate)
-            cell.titleLabel.text = "Play URL / Json"
+            cell.iconImageView.image = UIImage(named: "vod_link")?.withRenderingMode(.alwaysTemplate)
+            cell.titleLabel.text = "VOD URL / Json"
         case 1:
+            cell.iconImageView.image = UIImage(named: "live_link")?.withRenderingMode(.alwaysTemplate)
+            cell.titleLabel.text = "LIVE URL"
+        case 2:
             cell.iconImageView.image = UIImage(named: "album")?.withRenderingMode(.alwaysTemplate)
             cell.titleLabel.text = "Play Local Resources"
-        case 2:
+        case 3:
             cell.iconImageView.image = UIImage(named: "flow_icon")?.withRenderingMode(.alwaysTemplate)
             cell.titleLabel.text = "Video Samples"
         default:
@@ -352,10 +355,12 @@ extension MainViewController: UITableViewDelegate {
         
         switch indexPath.row {
         case 0:
-            playURLResource()
+            playURLResource(isLive: false)
         case 1:
-            playLocalVideo()
+            playURLResource(isLive: true)
         case 2:
+            playLocalVideo()
+        case 3:
             showRedFlowViewController()
         default:
             break

@@ -88,7 +88,13 @@ self.player.notPauseGlviewBackground = NO;
 - Set whether to use hardware decoding (VideoToolbox). **The default is software decoding (NO**):
 
 ```objective-c
-[self.player setEnableVTB:![RedPlayerSettings sharedInstance].softDecoder];
+[self.player setEnableVTB:YES];
+```
+
+- **Be sure** to set it to YES if it is a **live broadcast** scene. **The default is NO**:
+
+```objective-c
+[self.player setLiveMode:YES];
 ```
 
 - Set the cache path. **The default is no caching**:

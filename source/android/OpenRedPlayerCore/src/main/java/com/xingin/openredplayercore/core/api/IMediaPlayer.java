@@ -104,6 +104,8 @@ public interface IMediaPlayer {
      */
     void setVideoCacheDir(String dir);
 
+    void setLiveMode(boolean enable);
+
     void setDataSource(Context context, Uri uri) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException;
 
     void setDataSource(Context context, Uri uri, Map<String, String> headers) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException;

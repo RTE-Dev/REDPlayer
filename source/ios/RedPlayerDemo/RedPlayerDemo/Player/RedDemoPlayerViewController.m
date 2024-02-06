@@ -34,6 +34,7 @@ typedef NS_ENUM(NSUInteger, RedTipsPosition) {
 @interface RedDemoPlayerViewController () <RedMediaControlDelegate>
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, assign) BOOL isJson;
+@property (nonatomic, assign) BOOL isLive;
 @property (nonatomic, strong) NSArray *playList;
 @property (nonatomic, assign) NSInteger playListIndex;
 @property (nonatomic, assign) RedScalingMode scaleMode;
@@ -88,13 +89,14 @@ typedef NS_ENUM(NSUInteger, RedTipsPosition) {
                         withTitle:(NSString *)title
                               URL:(NSString *)url
                            isJson:(BOOL)isJson
+                           isLive:(BOOL)isLive
                          playList:(NSArray *)playList
                     playListIndex:(NSInteger)playListIndex
                        completion:(void (^)(void))completion
                        closeBlock:(void (^)(void))closeBlock {
     
     [RedDemoPlayerViewController setupLogCallback];
-    RedDemoPlayerViewController *demoPlayerVC = [[RedDemoPlayerViewController alloc] initWithURL:url isJson:isJson];
+    RedDemoPlayerViewController *demoPlayerVC = [[RedDemoPlayerViewController alloc] initWithURL:url isJson:isJson isLive:isLive];
     demoPlayerVC.playList = [playList copy];
     demoPlayerVC.playListIndex = playListIndex;
     demoPlayerVC.modalPresentationStyle = UIModalPresentationFullScreen;
@@ -103,11 +105,12 @@ typedef NS_ENUM(NSUInteger, RedTipsPosition) {
     demoPlayerVC.closeBlock = closeBlock;
 }
 
-- (instancetype)initWithURL:(NSString *)url isJson:(BOOL)isJson {
+- (instancetype)initWithURL:(NSString *)url isJson:(BOOL)isJson isLive:(BOOL)isLive {
     self = [super init];
     if (self) {
         self.url = url;
         self.isJson = isJson;
+        self.isLive = isLive;
     }
     return self;
 }
@@ -216,7 +219,9 @@ typedef NS_ENUM(NSUInteger, RedTipsPosition) {
     [self.player setMute:NO];
     [self.player setEnableVTB:![RedPlayerSettings sharedInstance].softDecoder];
     [self.player setVideoCacheDir:[RedMediaUtil cachePath]];
-
+    if (self.isLive) {
+        [self.player setLiveMode:YES]; // config live mode
+    }
     [self.view addSubview:self.player.view];
     [self.view sendSubviewToBack:self.player.view];
     [self installMovieNotificationObservers];
@@ -417,6 +422,9 @@ typedef NS_ENUM(NSUInteger, RedTipsPosition) {
 - (void)closeClick:(id)sender {
     [self shutdown];
     [self stopLoading];
+    [self.mediaControl removeFromSuperview];
+    [self.mediaControl stopRefresh];
+    self.mediaControl = nil;
     [self dismissViewControllerAnimated:NO completion:^{
         if (self.closeBlock) {
             self.closeBlock();
@@ -498,7 +506,7 @@ typedef NS_ENUM(NSUInteger, RedTipsPosition) {
         self.mediaControl.delegatePlayer = nil;
         self.mediaControl = nil;
     }
-    self.mediaControl = [[RedMediaControl alloc] initWithFrame:CGRectZero viewController:self playList:[self.playList copy] isLoop:self.isLoop];
+    self.mediaControl = [[RedMediaControl alloc] initWithFrame:CGRectZero viewController:self playList:[self.playList copy] isLoop:self.isLoop isLive:self.isLive];
     self.mediaControl.playListIndex = _playListIndex;
     self.mediaControl.layer.cornerRadius = 10;
     self.mediaControl.layer.masksToBounds = YES;
@@ -526,7 +534,6 @@ typedef NS_ENUM(NSUInteger, RedTipsPosition) {
 }
 
 - (void)hideMediaControl {
-    [self.mediaControl stopRefresh];
     self.mediaControl.hidden = YES;
     self.closeButton.hidden = YES;
     self.scaleModeButton.hidden = YES;
@@ -597,21 +604,25 @@ typedef NS_ENUM(NSUInteger, RedTipsPosition) {
 
 // MARK: Gestures
 - (void)addGestureControls {
-    // Long Press - 2x Playback Speed
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-    [self.view addGestureRecognizer:longPress];
-
-    // Double Tap
-    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
-    doubleTap.numberOfTapsRequired = 2;
-    [self.view addGestureRecognizer:doubleTap];
+    UITapGestureRecognizer *doubleTap = nil;
+    if (!self.isLive) {
+        // Long Press - 2x Playback Speed
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+        [self.view addGestureRecognizer:longPress];
+        
+        // Double Tap
+        doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+        doubleTap.numberOfTapsRequired = 2;
+        [self.view addGestureRecognizer:doubleTap];
+    }
     
     // Single Tap - Show/Hide tips
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     singleTap.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:singleTap];
-    
-    [singleTap requireGestureRecognizerToFail:doubleTap];
+    if (doubleTap) {
+        [singleTap requireGestureRecognizerToFail:doubleTap];
+    }
     
     // Pan - Volume/Brightness
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
@@ -962,5 +973,9 @@ typedef NS_ENUM(NSUInteger, RedTipsPosition) {
     [self performSelector:@selector(hideMediaControl) withObject:nil afterDelay:5];
 }
 
+- (void)mediaControlLiveRefresh {
+    [self shutdown];
+    [self setupPlayer];
+}
 @end
     

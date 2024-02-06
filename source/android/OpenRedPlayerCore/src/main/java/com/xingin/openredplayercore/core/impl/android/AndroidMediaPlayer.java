@@ -139,6 +139,10 @@ public class AndroidMediaPlayer extends AbstractMediaPlayer {
     }
 
     @Override
+    public void setLiveMode(boolean enable) {
+    }
+
+    @Override
     public String getAudioCodecInfo() {
         return "unknown";
     }

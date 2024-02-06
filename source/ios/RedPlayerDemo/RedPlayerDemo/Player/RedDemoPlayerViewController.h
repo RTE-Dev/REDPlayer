@@ -17,6 +17,7 @@ typedef void(^DemoCloseBlock)(void);
                         withTitle:(NSString *)title
                               URL:(NSString *)url
                            isJson:(BOOL)isJson
+                           isLive:(BOOL)isLive
                          playList:(NSArray *)playList
                     playListIndex:(NSInteger)playListIndex
                        completion:(void(^)(void))completion

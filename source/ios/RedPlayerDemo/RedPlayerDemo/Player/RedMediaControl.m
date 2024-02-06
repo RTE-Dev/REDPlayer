@@ -26,10 +26,13 @@
 @property (nonatomic, strong) UIButton *muteButton;
 
 @property (nonatomic, strong) UIButton *loopButton;
-@property (nonatomic, assign) BOOL isLoop;
 @property (nonatomic, strong) UIButton *listButton;
+@property (nonatomic, strong) UIButton *liveRefreshButton;
+
 @property (nonatomic, strong) NSArray *playList;
 
+@property (nonatomic, assign) BOOL isLoop;
+@property (nonatomic, assign) BOOL isLive;
 @end
 
 @implementation RedMediaControl {
@@ -45,7 +48,8 @@
 - (id)initWithFrame:(CGRect)frame
      viewController:(UIViewController *)viewController
            playList:(NSArray *)playList
-             isLoop:(BOOL)isLoop {
+             isLoop:(BOOL)isLoop
+             isLive:(BOOL)isLive {
     self = [super initWithFrame:frame];
     if (self) {
         _viewController = viewController;
@@ -54,6 +58,7 @@
         self.playListIndex = 0;
         self.playList = playList;
         self.isLoop = isLoop;
+        self.isLive = isLive;
         [self setupSubviews];
         [self startRefresh];
 
@@ -71,56 +76,71 @@
 #define kTimeLabelWidth 50
 #define kTimeLabelHeight 30
 - (void)setupSubviews {
-    if (!self.playButton) {
-        self.playButton = [[UIButton alloc] initWithFrame:CGRectZero];
-        [self.playButton setImage:[UIImage imageNamed:@"btn_player_pause"] forState:UIControlStateNormal];
-        [self.playButton addTarget:self action:@selector(playAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.playButton];
-    }
-    [self.playButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.centerY.mas_equalTo(self);
-        make.width.height.mas_equalTo(kPlayButtonWidth);
-    }];
-    
-    if (self.playList.count > 0) {
-        if (!self.preButton) {
-            self.preButton = [[UIButton alloc] initWithFrame:CGRectZero];
-            [self.preButton setImage:[UIImage imageNamed:@"icon_pre"] forState:UIControlStateNormal];
-            [self.preButton addTarget:self action:@selector(preAction:) forControlEvents:UIControlEventTouchUpInside];
-            [self addSubview:self.preButton];
+    if (!_isLive) {
+        if (!self.playButton) {
+            self.playButton = [[UIButton alloc] initWithFrame:CGRectZero];
+            [self.playButton setImage:[UIImage imageNamed:@"btn_player_pause"] forState:UIControlStateNormal];
+            [self.playButton addTarget:self action:@selector(playAction:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:self.playButton];
         }
-        self.preButton.enabled = (self.playListIndex > 0);
-        [self.preButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(self);
-            make.right.mas_equalTo(self.playButton.mas_left).offset(-20);
+        [self.playButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.centerY.mas_equalTo(self);
             make.width.height.mas_equalTo(kPlayButtonWidth);
         }];
-        if (!self.nextButton) {
-            self.nextButton = [[UIButton alloc] initWithFrame:CGRectZero];
-            [self.nextButton setImage:[UIImage imageNamed:@"icon_next"] forState:UIControlStateNormal];
-            [self.nextButton addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
-            [self addSubview:self.nextButton];
+        
+        if (self.playList.count > 0) {
+            if (!self.preButton) {
+                self.preButton = [[UIButton alloc] initWithFrame:CGRectZero];
+                [self.preButton setImage:[UIImage imageNamed:@"icon_pre"] forState:UIControlStateNormal];
+                [self.preButton addTarget:self action:@selector(preAction:) forControlEvents:UIControlEventTouchUpInside];
+                [self addSubview:self.preButton];
+            }
+            self.preButton.enabled = (self.playListIndex > 0);
+            [self.preButton mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerY.mas_equalTo(self);
+                make.right.mas_equalTo(self.playButton.mas_left).offset(-20);
+                make.width.height.mas_equalTo(kPlayButtonWidth);
+            }];
+            if (!self.nextButton) {
+                self.nextButton = [[UIButton alloc] initWithFrame:CGRectZero];
+                [self.nextButton setImage:[UIImage imageNamed:@"icon_next"] forState:UIControlStateNormal];
+                [self.nextButton addTarget:self action:@selector(nextAction:) forControlEvents:UIControlEventTouchUpInside];
+                [self addSubview:self.nextButton];
+            }
+            self.nextButton.enabled = (self.playListIndex < self.playList.count - 1);
+            [self.nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerY.mas_equalTo(self);
+                make.left.mas_equalTo(self.playButton.mas_right).offset(20);
+                make.width.height.mas_equalTo(kPlayButtonWidth);
+            }];
         }
-        self.nextButton.enabled = (self.playListIndex < self.playList.count - 1);
-        [self.nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(self);
-            make.left.mas_equalTo(self.playButton.mas_right).offset(20);
+    } else { // Live refresh
+        if (!self.liveRefreshButton) {
+            self.liveRefreshButton = [[UIButton alloc] initWithFrame:CGRectZero];
+            [self.liveRefreshButton setImage:[UIImage imageNamed:@"icon_refresh"] forState:UIControlStateNormal];
+            [self.liveRefreshButton addTarget:self action:@selector(refreshButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:self.liveRefreshButton];
+        }
+        [self.liveRefreshButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.centerY.mas_equalTo(self);
             make.width.height.mas_equalTo(kPlayButtonWidth);
         }];
     }
-    
     if (!self.mediaProgressSlider) {
         self.mediaProgressSlider = [[UISlider alloc] initWithFrame:CGRectZero];
         self.mediaProgressSlider.maximumTrackTintColor = UIColor.grayColor;
         self.mediaProgressSlider.tintColor = UIColor.redColor;
         [self.mediaProgressSlider setThumbImage:[UIImage imageNamed:@"slider"] forState:UIControlStateNormal];
         [self addSubview:self.mediaProgressSlider];
-        
-        [self.mediaProgressSlider addTarget:self action:@selector(slideTouchDown) forControlEvents:UIControlEventTouchDown];
-        [self.mediaProgressSlider addTarget:self action:@selector(slideTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
-        [self.mediaProgressSlider addTarget:self action:@selector(slideValueChanged) forControlEvents:UIControlEventValueChanged];
-        [self.mediaProgressSlider addTarget:self action:@selector(slideTouchUpOutside) forControlEvents:UIControlEventTouchUpOutside];
-        [self.mediaProgressSlider addTarget:self action:@selector(slideTouchCancel) forControlEvents:UIControlEventTouchCancel];
+        if (!_isLive) {
+            [self.mediaProgressSlider addTarget:self action:@selector(slideTouchDown) forControlEvents:UIControlEventTouchDown];
+            [self.mediaProgressSlider addTarget:self action:@selector(slideTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
+            [self.mediaProgressSlider addTarget:self action:@selector(slideValueChanged) forControlEvents:UIControlEventValueChanged];
+            [self.mediaProgressSlider addTarget:self action:@selector(slideTouchUpOutside) forControlEvents:UIControlEventTouchUpOutside];
+            [self.mediaProgressSlider addTarget:self action:@selector(slideTouchCancel) forControlEvents:UIControlEventTouchCancel];
+        } else {
+            self.mediaProgressSlider.userInteractionEnabled = NO;
+        }
     }
     [self.mediaProgressSlider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self);
@@ -184,56 +204,61 @@
         make.height.mas_equalTo(30);
     }];
     
-    
-    if (!self.listButton) {
-        self.listButton = [[UIButton alloc] initWithFrame:CGRectZero];
-        self.listButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.listButton setImage:[UIImage imageNamed:@"list"] forState:UIControlStateNormal];
-        [self.listButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        if (self.playList.count == 0) {
-            self.listButton.enabled = NO;
+    if (!_isLive) {
+        if (!self.listButton) {
+            self.listButton = [[UIButton alloc] initWithFrame:CGRectZero];
+            self.listButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+            [self.listButton setImage:[UIImage imageNamed:@"list"] forState:UIControlStateNormal];
+            if (self.playList.count == 0) {
+                self.listButton.enabled = NO;
+            }
+            [self.listButton addTarget:self action:@selector(listButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:self.listButton];
         }
-        [self.listButton addTarget:self action:@selector(listButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.listButton];
-    }
-    [self.listButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self).offset(-kSliderMargin);
-        make.centerY.mas_equalTo(self.hudButton);
-        make.width.mas_equalTo(20);
-        make.height.mas_equalTo(20);
-    }];
+        [self.listButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self).offset(-kSliderMargin);
+            make.centerY.mas_equalTo(self.hudButton);
+            make.width.mas_equalTo(20);
+            make.height.mas_equalTo(20);
+        }];
         
-    if (!self.loopButton) {
-        self.loopButton = [[UIButton alloc] initWithFrame:CGRectZero];
-        self.loopButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.loopButton setImage:[UIImage imageNamed:self.isLoop ? @"loop" : @"sequence"] forState:UIControlStateNormal];
-        [self.loopButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        [self.loopButton addTarget:self action:@selector(loopButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.loopButton];
+        if (!self.loopButton) {
+            self.loopButton = [[UIButton alloc] initWithFrame:CGRectZero];
+            self.loopButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+            [self.loopButton setImage:[UIImage imageNamed:self.isLoop ? @"loop" : @"sequence"] forState:UIControlStateNormal];
+            [self.loopButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+            [self.loopButton addTarget:self action:@selector(loopButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:self.loopButton];
+        }
+        [self.loopButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.listButton.mas_left).offset(-20);
+            make.centerY.mas_equalTo(self.hudButton);
+            make.width.mas_equalTo(20);
+            make.height.mas_equalTo(20);
+        }];
+        
+        if (!self.speedButton) {
+            self.speedButton = [[UIButton alloc] initWithFrame:CGRectZero];
+            self.speedButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+            [self.speedButton setTitle:@"1.0x" forState:UIControlStateNormal];
+            [self.speedButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+            self.speedButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+            [self.speedButton addTarget:self action:@selector(speedButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:self.speedButton];
+        }
+        [self.speedButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(self.loopButton.mas_left).offset(-10);
+            make.centerY.mas_equalTo(self.hudButton);
+            make.width.mas_equalTo(50);
+            make.height.mas_equalTo(30);
+        }];
     }
-    [self.loopButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.listButton.mas_left).offset(-20);
-        make.centerY.mas_equalTo(self.hudButton);
-        make.width.mas_equalTo(20);
-        make.height.mas_equalTo(20);
-    }];
-    
-    if (!self.speedButton) {
-        self.speedButton = [[UIButton alloc] initWithFrame:CGRectZero];
-        self.speedButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.speedButton setTitle:@"1.0x" forState:UIControlStateNormal];
-        [self.speedButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        self.speedButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-        [self.speedButton addTarget:self action:@selector(speedButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.speedButton];
-    }
-    [self.speedButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.loopButton.mas_left).offset(-10);
-        make.centerY.mas_equalTo(self.hudButton);
-        make.width.mas_equalTo(50);
-        make.height.mas_equalTo(30);
-    }];
+}
 
+- (void)refreshButtonClick:(UIButton *)sender {
+    if ([self.delegatePlayer respondsToSelector:@selector(mediaControlLiveRefresh)]) {
+        [self.delegatePlayer mediaControlLiveRefresh];
+    }
 }
 
 - (void)loopButtonClick:(UIButton *)sender {

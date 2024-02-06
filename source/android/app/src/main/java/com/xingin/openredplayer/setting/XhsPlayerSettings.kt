@@ -29,7 +29,7 @@ class XhsPlayerSettings(context: Context) {
     val usingMediaCodec: Boolean
         get() {
             val key = mAppContext.getString(R.string.pref_key_using_media_codec)
-            return mSharedPreferences.getBoolean(key, false)
+            return mSharedPreferences.getBoolean(key, true)
         }
 
     val enableAndroidMediaPlayer: Boolean

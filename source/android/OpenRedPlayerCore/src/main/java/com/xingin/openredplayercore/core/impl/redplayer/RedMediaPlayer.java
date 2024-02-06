@@ -323,6 +323,13 @@ public class RedMediaPlayer extends AbstractMediaPlayer {
 
     private native void _setVideoCacheDir(String dir);
 
+    @Override
+    public void setLiveMode(boolean enable) {
+        _setLiveMode(enable);
+    }
+
+    private native void _setLiveMode(boolean enable);
+
 
     @Override
     public String getAudioCodecInfo() {

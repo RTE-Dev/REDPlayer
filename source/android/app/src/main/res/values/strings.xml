@@ -17,7 +17,7 @@
     <string name="pref_title_player_core">Media Player Setting</string>
     <string name="pref_key_using_media_codec">pref.using_media_codec</string>
     <string name="pref_title_using_media_codec">Use MediaCodec Decode</string>
-    <string name="pref_summary_using_media_codec">Default, software decoding is used. opening, hardware decoder used"</string>
+    <string name="pref_summary_using_media_codec">Default, MediaCodec decoding is used. opening, soft decoder used</string>
 
     <string name="pref_key_using_android_media_player">pref.using_android_media_player</string>
     <string name="pref_title_using_android_media_player">Use System Media Player</string>
@@ -55,7 +55,8 @@
     <string name="home_tab_home_title">Home</string>
     <string name="home_tab_setting_title">Settings</string>
     <string name="home_title">Demo Of Video Feed Page</string>
-    <string name="home_item_url">Play URL/JSON</string>
+    <string name="home_item_url">URL/JSON</string>
+    <string name="home_item_live_url">LIVE URL</string>
     <string name="home_item_album">Play Local Resource</string>
     <string name="home_item_feed">Online Samples</string>
     <string name="home_item_window">Pip Samples</string>
@@ -69,6 +70,10 @@
     <string name="input_json_default">Json</string>
     <string name="input_clear">Clear</string>
     <string name="input_jump">Play</string>
+
+    <string name="input_live_url_title">Demo of Live URL Page</string>
+    <string name="input_live_url_default">Live URL</string>
+    <string name="input_live_url_hint">Input live url to play</string>
 
     <string name="play_section">All</string>
     <string name="play_speed">Playing Speed</string>
