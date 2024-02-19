@@ -64,9 +64,11 @@
 
 
 ### Open Content
-    ```bash
-    # Describe the main contents of current open source and the estimated time and contents of the next open source
-    ```
+
+```bash
+# Describe the main contents of current open source and the estimated time and contents of the next open source
+```
+
 - [CONTENTS.md](CONTENTS.md)
 
 ### Usage
