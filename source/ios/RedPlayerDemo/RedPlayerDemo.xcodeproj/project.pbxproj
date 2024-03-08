@@ -25,28 +25,12 @@
 		A06FDCC12B4681D60064952F /* video_source.plist in Resources */ = {isa = PBXBuildFile; fileRef = A06FDCC02B4681D60064952F /* video_source.plist */; };
 		A06FDCC42B4693080064952F /* RedPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A06FDCC32B4693080064952F /* RedPopoverViewController.m */; };
 		A06FDD0F2B46E4030064952F /* RedLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = A06FDD0E2B46E4030064952F /* RedLoadingView.m */; };
-		A0909A062B493D020030008F /* opensoundtouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0909A052B493D020030008F /* opensoundtouch.framework */; };
-		A0909A072B493D030030008F /* opensoundtouch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0909A052B493D020030008F /* opensoundtouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A092591B2B5AA17900B9FD4D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092591A2B5AA17900B9FD4D /* MainViewController.swift */; };
 		A092591D2B5AA94400B9FD4D /* RedAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092591C2B5AA94400B9FD4D /* RedAlertView.swift */; };
 		A092591F2B5B918300B9FD4D /* RedMediaUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A092591E2B5B918300B9FD4D /* RedMediaUtil.swift */; };
 		A0C0B5C22B318B49001ED143 /* RedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0B5C12B318B49001ED143 /* RedTabBarController.swift */; };
 		A0C0B5C82B318BEC001ED143 /* RedFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0B5C72B318BEC001ED143 /* RedFlowViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		A0909A082B493D030030008F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A0909A072B493D030030008F /* opensoundtouch.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3503385B24C5C205002781D5 /* RedPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0909A062B493D020030008F /* opensoundtouch.framework in Frameworks */,
 				67FC58ADD0F574C098AB2A9B /* Pods_RedPlayerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +241,6 @@
 				3503385824C5C205002781D5 /* Frameworks */,
 				3503385924C5C205002781D5 /* Resources */,
 				4E6EE214411D7443C512148B /* [CP] Embed Pods Frameworks */,
-				A0909A082B493D030030008F /* Embed Frameworks */,
 				4241A669D4E5592D93D11DC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -428,7 +410,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = WA7K45T45A;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = B92R44VSX2;
 				EXCLUDED_ARCHS = "armv7 armv7s";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -484,7 +466,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = WA7K45T45A;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = B92R44VSX2;
 				EXCLUDED_ARCHS = "armv7 armv7s";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
