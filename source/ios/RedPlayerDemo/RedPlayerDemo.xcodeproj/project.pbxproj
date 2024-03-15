@@ -17,6 +17,8 @@
 		A0389FE42B0471F700F7827F /* RedPlayerSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = A0389FE12B0471F700F7827F /* RedPlayerSettings.m */; };
 		A038A0042B04B20D00F7827F /* RedDemoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A038A0032B04B20D00F7827F /* RedDemoPlayerViewController.m */; };
 		A038A0072B04B27800F7827F /* RedMediaControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A038A0062B04B27800F7827F /* RedMediaControl.m */; };
+		A05D69892BA0873100B62E0F /* RedPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D69882BA0873100B62E0F /* RedPlayer.framework */; };
+		A05D69CA2BA1838200B62E0F /* RedRenderShaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = A05D69C92BA1838200B62E0F /* RedRenderShaders.metallib */; };
 		A065BC252B5E3C3B008CE919 /* RedExtendedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A065BC242B5E3C3B008CE919 /* RedExtendedButton.swift */; };
 		A06FDCA82B3AA57C0064952F /* RedFlowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FDCA72B3AA57C0064952F /* RedFlowCell.swift */; };
 		A06FDCAA2B3AA8380064952F /* RedFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06FDCA92B3AA8380064952F /* RedFlowLayout.swift */; };
@@ -40,7 +42,6 @@
 		3503386924C5C206002781D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3503386B24C5C206002781D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		492BD2ACB44D06B848BBC53C /* Pods-RedPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedPlayerDemo.release.xcconfig"; path = "Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
-		8A3C032F887E10B0FBF91575 /* Pods-XYRedPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYRedPlayerDemo.debug.xcconfig"; path = "Target Support Files/Pods-XYRedPlayerDemo/Pods-XYRedPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A016C7832B68E74D00C1F23A /* TestVideos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestVideos; sourceTree = "<group>"; };
 		A0389FC42B0393FC00F7827F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A0389FC62B03940300F7827F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,6 +68,8 @@
 		A04F89092B0733FA0056BEBA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A04F890B2B0734260056BEBA /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
 		A04F890F2B07354B0056BEBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A05D69882BA0873100B62E0F /* RedPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RedPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A05D69C92BA1838200B62E0F /* RedRenderShaders.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = RedRenderShaders.metallib; sourceTree = "<group>"; };
 		A065BC242B5E3C3B008CE919 /* RedExtendedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedExtendedButton.swift; sourceTree = "<group>"; };
 		A06FDCA72B3AA57C0064952F /* RedFlowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedFlowCell.swift; sourceTree = "<group>"; };
 		A06FDCA92B3AA8380064952F /* RedFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedFlowLayout.swift; sourceTree = "<group>"; };
@@ -78,8 +81,6 @@
 		A06FDCC32B4693080064952F /* RedPopoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedPopoverViewController.m; sourceTree = "<group>"; };
 		A06FDD0D2B46E4030064952F /* RedLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedLoadingView.h; sourceTree = "<group>"; };
 		A06FDD0E2B46E4030064952F /* RedLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedLoadingView.m; sourceTree = "<group>"; };
-		A075086E2B58D3B900016798 /* RedPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RedPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0909A052B493D020030008F /* opensoundtouch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opensoundtouch.framework; path = Submodules/opensoundtouch/Sources/opensoundtouch.framework; sourceTree = "<group>"; };
 		A092591A2B5AA17900B9FD4D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A092591C2B5AA94400B9FD4D /* RedAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedAlertView.swift; sourceTree = "<group>"; };
 		A092591E2B5B918300B9FD4D /* RedMediaUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedMediaUtil.swift; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		A0C0B5C72B318BEC001ED143 /* RedFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedFlowViewController.swift; sourceTree = "<group>"; };
 		A70C67EFC87A099B6E5EDD32 /* Pods_RedPlayerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedPlayerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5740F6B77D5190FC8297200 /* Pods-RedPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedPlayerDemo.debug.xcconfig"; path = "Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		DB9D7078CDB92DC116F1CFF9 /* Pods-XYRedPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYRedPlayerDemo.release.xcconfig"; path = "Target Support Files/Pods-XYRedPlayerDemo/Pods-XYRedPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05D69892BA0873100B62E0F /* RedPlayer.framework in Frameworks */,
 				67FC58ADD0F574C098AB2A9B /* Pods_RedPlayerDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +134,7 @@
 		35E2C97F22DA428E0069248B = {
 			isa = PBXGroup;
 			children = (
+				A05D69C82BA1838200B62E0F /* Resources */,
 				A016C7832B68E74D00C1F23A /* TestVideos */,
 				3503385C24C5C205002781D5 /* RedPlayerDemo */,
 				35E2C98A22DA428E0069248B /* Products */,
@@ -152,8 +154,7 @@
 		35E2C9DB22DA43D20069248B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A075086E2B58D3B900016798 /* RedPlayer.framework */,
-				A0909A052B493D020030008F /* opensoundtouch.framework */,
+				A05D69882BA0873100B62E0F /* RedPlayer.framework */,
 				A04F890F2B07354B0056BEBA /* AudioToolbox.framework */,
 				A04F890B2B0734260056BEBA /* AVFAudio.framework */,
 				A04F89092B0733FA0056BEBA /* AVFoundation.framework */,
@@ -209,6 +210,15 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		A05D69C82BA1838200B62E0F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A05D69C92BA1838200B62E0F /* RedRenderShaders.metallib */,
+			);
+			name = Resources;
+			path = ../../redplayercore/extra/redrender/ios/Resources;
+			sourceTree = "<group>";
+		};
 		A06FDCB82B42A64F0064952F /* Preload */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,8 +231,6 @@
 		C5D598E8FD5DABF45299D7ED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8A3C032F887E10B0FBF91575 /* Pods-XYRedPlayerDemo.debug.xcconfig */,
-				DB9D7078CDB92DC116F1CFF9 /* Pods-XYRedPlayerDemo.release.xcconfig */,
 				D5740F6B77D5190FC8297200 /* Pods-RedPlayerDemo.debug.xcconfig */,
 				492BD2ACB44D06B848BBC53C /* Pods-RedPlayerDemo.release.xcconfig */,
 			);
@@ -241,7 +249,6 @@
 				3503385824C5C205002781D5 /* Frameworks */,
 				3503385924C5C205002781D5 /* Resources */,
 				4E6EE214411D7443C512148B /* [CP] Embed Pods Frameworks */,
-				4241A669D4E5592D93D11DC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A016C7842B68E74D00C1F23A /* TestVideos in Resources */,
+				A05D69CA2BA1838200B62E0F /* RedRenderShaders.metallib in Resources */,
 				3503386A24C5C206002781D5 /* LaunchScreen.storyboard in Resources */,
 				3503386724C5C206002781D5 /* Assets.xcassets in Resources */,
 				A06FDCC12B4681D60064952F /* video_source.plist in Resources */,
@@ -302,23 +310,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4241A669D4E5592D93D11DC8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RedPlayerDemo/Pods-RedPlayerDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4E6EE214411D7443C512148B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,25 +396,26 @@
 			baseConfigurationReference = D5740F6B77D5190FC8297200 /* Pods-RedPlayerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = B92R44VSX2;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = WA7K45T45A;
 				EXCLUDED_ARCHS = "armv7 armv7s";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Submodules/opensoundtouch/Sources",
+					"\"$(SRCROOT)/../Submodules/XYMediaFfmpeg/Sources\"",
+					"\"$(SRCROOT)/../Submodules/opensoundtouch/Sources\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RedPlayerDemo/RedPlayerDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources/XYMediaFfmpeg.framework/Headers\"",
-					"\"$(SRCROOT)/Submodules/RedStrategyCenter/Sources/RedStrategyCenter.framework/Headers\"",
+					"\"$(SRCROOT)/../Submodules/XYMediaFfmpeg/Sources/XYMediaFfmpeg.framework/Headers\"",
+					"\"$(SRCROOT)/../Submodules/opensoundtouch/Sources/opensoundtouch.framework/Headers\"",
 				);
 				INFOPLIST_FILE = RedPlayerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -431,10 +423,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"$(OTHER_CFLAGS)",
-					"-fcxx-modules",
-				);
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -462,24 +451,25 @@
 			baseConfigurationReference = 492BD2ACB44D06B848BBC53C /* Pods-RedPlayerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = B92R44VSX2;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = WA7K45T45A;
 				EXCLUDED_ARCHS = "armv7 armv7s";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Submodules/opensoundtouch/Sources",
+					"\"$(SRCROOT)/../Submodules/XYMediaFfmpeg/Sources\"",
+					"\"$(SRCROOT)/../Submodules/opensoundtouch/Sources\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RedPlayerDemo/RedPlayerDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources/XYMediaFfmpeg.framework/Headers\"",
-					"\"$(SRCROOT)/Submodules/RedStrategyCenter/Sources/RedStrategyCenter.framework/Headers\"",
+					"\"$(SRCROOT)/../Submodules/XYMediaFfmpeg/Sources/XYMediaFfmpeg.framework/Headers\"",
+					"\"$(SRCROOT)/../Submodules/opensoundtouch/Sources/opensoundtouch.framework/Headers\"",
 				);
 				INFOPLIST_FILE = RedPlayerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -487,10 +477,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"$(OTHER_CFLAGS)",
-					"-fcxx-modules",
-				);
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

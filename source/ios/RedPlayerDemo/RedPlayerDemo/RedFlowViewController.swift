@@ -58,6 +58,7 @@ public struct RedFlowItem {
 @objc
 @objcMembers
 open class RedFlowViewController: UIViewController, RedFlowLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+    private let sceneName = "flow_view"
     private var isDataAdded = false
     private var dataAddTimes = 0
     private var isDecelerating = false
@@ -149,6 +150,7 @@ open class RedFlowViewController: UIViewController, RedFlowLayoutDelegate, UICol
     }
     deinit {
         stopPlayingCell()
+        closePreloadVideos()
     }
     
     private func delayPlayingFirstCell() {
@@ -345,15 +347,17 @@ open class RedFlowViewController: UIViewController, RedFlowLayoutDelegate, UICol
             if let videoUrl = videoInfo["videoUrl"] as? String,
                let isJson = videoInfo["isJson"] as? Bool {
                 if isJson {
-                    RedPreloadManager.preloadVideoJson(videoUrl)
+                    RedPreloadManager.preloadVideoJson(videoUrl, forScene: sceneName)
                 } else {
                     if let videoURL = URL(string: videoUrl) {
-                        RedPreloadManager.preloadVideoURL(videoURL)
+                        RedPreloadManager.preloadVideoURL(videoURL, forScene: sceneName)
                     }
                 }
             }
         }
     }
     
-
+    private func closePreloadVideos() {
+        RedPreloadManager.closePreload(forScene: sceneName)
+    }
 }

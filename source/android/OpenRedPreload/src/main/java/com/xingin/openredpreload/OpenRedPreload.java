@@ -47,7 +47,6 @@ public class OpenRedPreload {
 
     static {
         System.loadLibrary("redbase");
-        System.loadLibrary("redlog");
         System.loadLibrary("reddownload");
         System.loadLibrary("redstrategycenter");
         System.loadLibrary("redpreload");
@@ -74,30 +73,19 @@ public class OpenRedPreload {
      * @param param: "downloadtype": int
      *               "capacity": long
      *               "use_https": int
-     *               "is_json": boolean
+     *               "is_json": int
      *               "referer": String
      *               "user_agent": String
      *               "header": String
      */
     public void open(String url, String cachePath, long downloadSize, @Nullable WeakReference<DownloadEventListener> weakListener, @Nullable Bundle param, @Nullable Object userData) {
-        if (param != null) {
-            boolean is_json = param.getBoolean("is_json", false);
-
-            if (is_json) {
-                mDataSourceJson = url;
-            } else {
-                mDataSource = url;
-            }
-        }
         Object obj = new PreloadObject(weakListener, userData);
-        _open(url, cachePath, downloadSize, obj, param);
+        mDataSource = _open(url, cachePath, downloadSize, obj, param);
     }
 
     public void release() {
         if (mDataSource != null && mDataSource != "")
             _release(mDataSource);
-        if (mDataSourceJson != null && mDataSourceJson != "")
-            _release_json(mDataSourceJson);
     }
 
     public void stop() {
@@ -120,13 +108,10 @@ public class OpenRedPreload {
         return _getCacheSize(path, uri, is_full_url ? 1 : 0);
     }
 
-    private native void _open(String url, String cachePath, long downloadSize, Object preloadObj, Bundle param);
+    private native String _open(String url, String cachePath, long downloadSize, Object preloadObj, Bundle param);
 
-    private native void _open_json(String jsonstr, String path, long size, Object obj, String referer, boolean use_https);
 
     private native void _release(String url);
-
-    private native void _release_json(String jsonstr);
 
     private native void _stop();
 

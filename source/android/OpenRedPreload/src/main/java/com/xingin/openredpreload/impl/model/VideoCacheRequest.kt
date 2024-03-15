@@ -27,7 +27,7 @@ data class VideoCacheRequest(
     fun getPreloadParams(): Bundle {
         return Bundle().apply {
             if (videoJson.isNotBlank()) {
-                this.putBoolean("is_json", true)
+                this.putInt("is_json", 1)
             }
             // network: same the http request param
             this.putInt("use_https", 1)

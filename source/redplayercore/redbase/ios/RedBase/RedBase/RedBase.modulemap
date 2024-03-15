@@ -1,0 +1,6 @@
+framework module RedBase {
+  umbrella header "RedBase-umbrella.h"
+
+  export *
+  module * { export * }
+}

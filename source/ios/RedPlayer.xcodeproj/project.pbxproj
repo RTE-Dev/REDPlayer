@@ -1,0 +1,803 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		351E24E529767721008266C5 /* RedPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E245C29767720008266C5 /* RedPlayer.cpp */; };
+		351E24E629767721008266C5 /* RedPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E245D29767720008266C5 /* RedPlayer.h */; };
+		351E24EE29767721008266C5 /* RedPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E246E29767720008266C5 /* RedPlayerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		351E24F029767721008266C5 /* RedMediaPlayBack.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247029767720008266C5 /* RedMediaPlayBack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		351E24F529767721008266C5 /* RedCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247729767720008266C5 /* RedCore.h */; };
+		351E24F729767721008266C5 /* RedRenderVideoHal.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247B29767720008266C5 /* RedRenderVideoHal.h */; };
+		351E24F829767721008266C5 /* RedRenderVideoHal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E247C29767720008266C5 /* RedRenderVideoHal.cpp */; };
+		351E24F929767721008266C5 /* RedRenderAudioHal.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247D29767721008266C5 /* RedRenderAudioHal.h */; };
+		351E24FA29767721008266C5 /* RedRenderAudioHal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E247E29767721008266C5 /* RedRenderAudioHal.cpp */; };
+		351E24FB29767721008266C5 /* RedSourceController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248029767721008266C5 /* RedSourceController.cpp */; };
+		351E24FC29767721008266C5 /* RedFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248229767721008266C5 /* RedFormat.h */; };
+		351E24FD29767721008266C5 /* RedFormat.c in Sources */ = {isa = PBXBuildFile; fileRef = 351E248329767721008266C5 /* RedFormat.c */; };
+		351E24FE29767721008266C5 /* reddownload_adapter.c in Sources */ = {isa = PBXBuildFile; fileRef = 351E248429767721008266C5 /* reddownload_adapter.c */; };
+		351E24FF29767721008266C5 /* RedSourceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248529767721008266C5 /* RedSourceController.h */; };
+		351E250029767721008266C5 /* VideoProcesser.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248729767721008266C5 /* VideoProcesser.h */; };
+		351E250129767721008266C5 /* AudioProcesser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248829767721008266C5 /* AudioProcesser.cpp */; };
+		351E250229767721008266C5 /* VideoProcesser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248929767721008266C5 /* VideoProcesser.cpp */; };
+		351E250329767721008266C5 /* AudioProcesser.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248A29767721008266C5 /* AudioProcesser.h */; };
+		351E250529767721008266C5 /* RedCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248E29767721008266C5 /* RedCore.cpp */; };
+		351E253F29767722008266C5 /* RedClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E24DB29767721008266C5 /* RedClock.cpp */; };
+		351E254029767722008266C5 /* RedQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E24DC29767721008266C5 /* RedQueue.h */; };
+		351E254329767722008266C5 /* RedClock.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E24DF29767721008266C5 /* RedClock.h */; };
+		351E254429767722008266C5 /* RedMsgQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E24E029767721008266C5 /* RedMsgQueue.h */; };
+		351E254629767722008266C5 /* RedQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E24E229767721008266C5 /* RedQueue.cpp */; };
+		351E254829767722008266C5 /* RedMsgQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E24E429767721008266C5 /* RedMsgQueue.cpp */; };
+		35950B1829B735AD00E6F901 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35950B1729B735AD00E6F901 /* Metal.framework */; };
+		35950B1A29B735B300E6F901 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35950B1929B735B200E6F901 /* MetalKit.framework */; };
+		35950B1C29B7367500E6F901 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35950B1B29B7367500E6F901 /* CoreGraphics.framework */; };
+		35AEFDD7298772C500EA98CA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDD6298772C400EA98CA /* AudioToolbox.framework */; };
+		35AEFDD92987735500EA98CA /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDD82987735400EA98CA /* VideoToolbox.framework */; };
+		35AEFDDB2987736800EA98CA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDDA2987736800EA98CA /* CoreMedia.framework */; };
+		35AEFDE5298775EF00EA98CA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDE3298775B700EA98CA /* CoreVideo.framework */; };
+		35AEFDE7298798C700EA98CA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDE12987756500EA98CA /* libz.tbd */; };
+		35AEFDE92987990100EA98CA /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDE8298798F600EA98CA /* libresolv.tbd */; };
+		35AEFDEC2987A33700EA98CA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDDE2987740C00EA98CA /* OpenGLES.framework */; };
+		35AEFDEE2987B92C00EA98CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDED2987B92C00EA98CA /* UIKit.framework */; };
+		35AEFDF42987B9A700EA98CA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDF32987B9A700EA98CA /* QuartzCore.framework */; };
+		35AEFE06298A139800EA98CA /* RedPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35AEFE02298A139800EA98CA /* RedPacket.cpp */; };
+		35AEFE07298A139800EA98CA /* RedBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35AEFE03298A139800EA98CA /* RedBuffer.cpp */; };
+		35AEFE08298A139800EA98CA /* RedPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 35AEFE04298A139800EA98CA /* RedPacket.h */; };
+		35AEFE09298A139800EA98CA /* RedBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 35AEFE05298A139800EA98CA /* RedBuffer.h */; };
+		35F7646929DE6ED400FD3ED7 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDDC298773AA00EA98CA /* CoreMotion.framework */; };
+		35F7646B29DE6ED900FD3ED7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F7646A29DE6ED900FD3ED7 /* AVFoundation.framework */; };
+		A004104E2AFE12760032169B /* RedPlayerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A004104D2AFE12760032169B /* RedPlayerController.mm */; };
+		A05D69932BA08DFD00B62E0F /* RedBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E97C252BA02E01009CB4B4 /* RedBase.framework */; };
+		A05D69C12BA1824000B62E0F /* RedRender in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D69C02BA1824000B62E0F /* RedRender */; };
+		A0B01CBF2A3C4D490018CBDB /* RedPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E234F2976478C008266C5 /* RedPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0DF4EED2B4D375100A38074 /* SoundTouchHal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0DF4EEB2B4D375100A38074 /* SoundTouchHal.cpp */; };
+		A0DF4EEE2B4D375100A38074 /* SoundTouchHal.h in Headers */ = {isa = PBXBuildFile; fileRef = A0DF4EEC2B4D375100A38074 /* SoundTouchHal.h */; };
+		A0DF4EFC2B4E95A000A38074 /* RedPreLoad.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0DF4EFA2B4E95A000A38074 /* RedPreLoad.mm */; };
+		A0DF4EFD2B4E95A000A38074 /* RedPreLoad.h in Headers */ = {isa = PBXBuildFile; fileRef = A0DF4EFB2B4E95A000A38074 /* RedPreLoad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0DF4F012B4ECB2300A38074 /* RedMediaPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DF4F002B4ECB2300A38074 /* RedMediaPlayback.m */; };
+		A0E97C172BA02DA3009CB4B4 /* reddecoder in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E97C162BA02DA3009CB4B4 /* reddecoder */; };
+		A0E97C192BA02DAD009CB4B4 /* RedDownload in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E97C182BA02DAD009CB4B4 /* RedDownload */; };
+		A0E97C1D2BA02DBC009CB4B4 /* redsource in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E97C1C2BA02DBC009CB4B4 /* redsource */; };
+		A0E97C1F2BA02DC4009CB4B4 /* RedStrategyCenter in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E97C1E2BA02DC4009CB4B4 /* RedStrategyCenter */; };
+		B3D4D8D6298D057200395AAD /* RedSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3D4D8D4298D057200395AAD /* RedSampler.cpp */; };
+		B3D4D8D7298D057200395AAD /* RedSampler.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D4D8D5298D057200395AAD /* RedSampler.h */; };
+		FA47B9F429C9973000234C7B /* redioapplication.h in Headers */ = {isa = PBXBuildFile; fileRef = FA47B9F329C9973000234C7B /* redioapplication.h */; };
+		FA943CC6299E06BB0048D720 /* RedConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = FA943CC5299E06BB0048D720 /* RedConfig.h */; };
+		FA943CC8299E06D10048D720 /* RedConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA943CC7299E06D10048D720 /* RedConfig.cpp */; };
+		FA9D943D2A2728F8000309C4 /* NSString+REDMedia.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA9D943C2A2728F8000309C4 /* NSString+REDMedia.mm */; };
+		FA9D94412A273A5C000309C4 /* RedNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9D94402A273A5C000309C4 /* RedNotificationManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A05D69912BA08DEF00B62E0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0E97C202BA02E01009CB4B4 /* RedBase.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A0D762C22A4C576F00C94264;
+			remoteInfo = RedBase;
+		};
+		A0E97C242BA02E01009CB4B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0E97C202BA02E01009CB4B4 /* RedBase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A0D762C32A4C576F00C94264;
+			remoteInfo = RedBase;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		351E234C2976478C008266C5 /* RedPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RedPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		351E234F2976478C008266C5 /* RedPlayer-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedPlayer-umbrella.h"; sourceTree = "<group>"; };
+		351E245C29767720008266C5 /* RedPlayer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = RedPlayer.cpp; sourceTree = "<group>"; };
+		351E245D29767720008266C5 /* RedPlayer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = RedPlayer.h; sourceTree = "<group>"; };
+		351E246E29767720008266C5 /* RedPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPlayerController.h; sourceTree = "<group>"; };
+		351E247029767720008266C5 /* RedMediaPlayBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedMediaPlayBack.h; sourceTree = "<group>"; };
+		351E247729767720008266C5 /* RedCore.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; path = RedCore.h; sourceTree = "<group>"; };
+		351E247B29767720008266C5 /* RedRenderVideoHal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedRenderVideoHal.h; sourceTree = "<group>"; };
+		351E247C29767720008266C5 /* RedRenderVideoHal.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = RedRenderVideoHal.cpp; sourceTree = "<group>"; };
+		351E247D29767721008266C5 /* RedRenderAudioHal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedRenderAudioHal.h; sourceTree = "<group>"; };
+		351E247E29767721008266C5 /* RedRenderAudioHal.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = RedRenderAudioHal.cpp; sourceTree = "<group>"; };
+		351E248029767721008266C5 /* RedSourceController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedSourceController.cpp; sourceTree = "<group>"; };
+		351E248229767721008266C5 /* RedFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedFormat.h; sourceTree = "<group>"; };
+		351E248329767721008266C5 /* RedFormat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RedFormat.c; sourceTree = "<group>"; };
+		351E248429767721008266C5 /* reddownload_adapter.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = reddownload_adapter.c; sourceTree = "<group>"; };
+		351E248529767721008266C5 /* RedSourceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedSourceController.h; sourceTree = "<group>"; };
+		351E248729767721008266C5 /* VideoProcesser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoProcesser.h; sourceTree = "<group>"; };
+		351E248829767721008266C5 /* AudioProcesser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioProcesser.cpp; sourceTree = "<group>"; };
+		351E248929767721008266C5 /* VideoProcesser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoProcesser.cpp; sourceTree = "<group>"; };
+		351E248A29767721008266C5 /* AudioProcesser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioProcesser.h; sourceTree = "<group>"; };
+		351E248E29767721008266C5 /* RedCore.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = RedCore.cpp; sourceTree = "<group>"; };
+		351E24DB29767721008266C5 /* RedClock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedClock.cpp; sourceTree = "<group>"; };
+		351E24DC29767721008266C5 /* RedQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedQueue.h; sourceTree = "<group>"; };
+		351E24DF29767721008266C5 /* RedClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedClock.h; sourceTree = "<group>"; };
+		351E24E029767721008266C5 /* RedMsgQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedMsgQueue.h; sourceTree = "<group>"; };
+		351E24E229767721008266C5 /* RedQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedQueue.cpp; sourceTree = "<group>"; };
+		351E24E429767721008266C5 /* RedMsgQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedMsgQueue.cpp; sourceTree = "<group>"; };
+		35950B1729B735AD00E6F901 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		35950B1929B735B200E6F901 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		35950B1B29B7367500E6F901 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		35AEFDD6298772C400EA98CA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		35AEFDD82987735400EA98CA /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		35AEFDDA2987736800EA98CA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		35AEFDDC298773AA00EA98CA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		35AEFDDE2987740C00EA98CA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		35AEFDE12987756500EA98CA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		35AEFDE3298775B700EA98CA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		35AEFDE8298798F600EA98CA /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		35AEFDEA2987A1D700EA98CA /* libz.1.2.11.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.11.tbd; path = usr/lib/libz.1.2.11.tbd; sourceTree = SDKROOT; };
+		35AEFDED2987B92C00EA98CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		35AEFDEF2987B94C00EA98CA /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		35AEFDF12987B96F00EA98CA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		35AEFDF32987B9A700EA98CA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		35AEFE02298A139800EA98CA /* RedPacket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedPacket.cpp; sourceTree = "<group>"; };
+		35AEFE03298A139800EA98CA /* RedBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedBuffer.cpp; sourceTree = "<group>"; };
+		35AEFE04298A139800EA98CA /* RedPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPacket.h; sourceTree = "<group>"; };
+		35AEFE05298A139800EA98CA /* RedBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBuffer.h; sourceTree = "<group>"; };
+		35F7646A29DE6ED900FD3ED7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A004104D2AFE12760032169B /* RedPlayerController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RedPlayerController.mm; sourceTree = "<group>"; };
+		A05D69C02BA1824000B62E0F /* RedRender */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = RedRender; path = ../redplayercore/extra/redrender/ios/RedRender.framework/RedRender; sourceTree = "<group>"; };
+		A0DF4EEB2B4D375100A38074 /* SoundTouchHal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundTouchHal.cpp; sourceTree = "<group>"; };
+		A0DF4EEC2B4D375100A38074 /* SoundTouchHal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundTouchHal.h; sourceTree = "<group>"; };
+		A0DF4EFA2B4E95A000A38074 /* RedPreLoad.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RedPreLoad.mm; sourceTree = "<group>"; };
+		A0DF4EFB2B4E95A000A38074 /* RedPreLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPreLoad.h; sourceTree = "<group>"; };
+		A0DF4F002B4ECB2300A38074 /* RedMediaPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedMediaPlayback.m; sourceTree = "<group>"; };
+		A0E97C162BA02DA3009CB4B4 /* reddecoder */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = reddecoder; path = ../redplayercore/extra/reddecoder/ios/reddecoder.framework/reddecoder; sourceTree = "<group>"; };
+		A0E97C182BA02DAD009CB4B4 /* RedDownload */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = RedDownload; path = ../redplayercore/extra/reddownload/ios/RedDownload.framework/RedDownload; sourceTree = "<group>"; };
+		A0E97C1C2BA02DBC009CB4B4 /* redsource */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = redsource; path = ../redplayercore/extra/redsource/ios/redsource.framework/redsource; sourceTree = "<group>"; };
+		A0E97C1E2BA02DC4009CB4B4 /* RedStrategyCenter */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = RedStrategyCenter; path = ../redplayercore/extra/redstrategycenter/ios/RedStrategyCenter.framework/RedStrategyCenter; sourceTree = "<group>"; };
+		A0E97C202BA02E01009CB4B4 /* RedBase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RedBase.xcodeproj; path = ../redplayercore/redbase/ios/RedBase/RedBase.xcodeproj; sourceTree = "<group>"; };
+		B3D4D8D4298D057200395AAD /* RedSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedSampler.cpp; sourceTree = "<group>"; };
+		B3D4D8D5298D057200395AAD /* RedSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedSampler.h; sourceTree = "<group>"; };
+		FA47B9F329C9973000234C7B /* redioapplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redioapplication.h; sourceTree = "<group>"; };
+		FA943CC5299E06BB0048D720 /* RedConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedConfig.h; sourceTree = "<group>"; };
+		FA943CC7299E06D10048D720 /* RedConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RedConfig.cpp; sourceTree = "<group>"; };
+		FA9D943C2A2728F8000309C4 /* NSString+REDMedia.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = "NSString+REDMedia.mm"; sourceTree = "<group>"; };
+		FA9D943E2A272947000309C4 /* NSString+REDMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+REDMedia.h"; sourceTree = "<group>"; };
+		FA9D943F2A273A1C000309C4 /* RedNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedNotificationManager.h; sourceTree = "<group>"; };
+		FA9D94402A273A5C000309C4 /* RedNotificationManager.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; path = RedNotificationManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		351E23492976478C008266C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A05D69932BA08DFD00B62E0F /* RedBase.framework in Frameworks */,
+				35AEFDD92987735500EA98CA /* VideoToolbox.framework in Frameworks */,
+				35AEFDE7298798C700EA98CA /* libz.tbd in Frameworks */,
+				35F7646929DE6ED400FD3ED7 /* CoreMotion.framework in Frameworks */,
+				A05D69C12BA1824000B62E0F /* RedRender in Frameworks */,
+				35F7646B29DE6ED900FD3ED7 /* AVFoundation.framework in Frameworks */,
+				A0E97C1F2BA02DC4009CB4B4 /* RedStrategyCenter in Frameworks */,
+				35AEFDEC2987A33700EA98CA /* OpenGLES.framework in Frameworks */,
+				35AEFDF42987B9A700EA98CA /* QuartzCore.framework in Frameworks */,
+				35950B1C29B7367500E6F901 /* CoreGraphics.framework in Frameworks */,
+				A0E97C1D2BA02DBC009CB4B4 /* redsource in Frameworks */,
+				35AEFDEE2987B92C00EA98CA /* UIKit.framework in Frameworks */,
+				A0E97C192BA02DAD009CB4B4 /* RedDownload in Frameworks */,
+				35AEFDDB2987736800EA98CA /* CoreMedia.framework in Frameworks */,
+				35950B1A29B735B300E6F901 /* MetalKit.framework in Frameworks */,
+				35AEFDE92987990100EA98CA /* libresolv.tbd in Frameworks */,
+				A0E97C172BA02DA3009CB4B4 /* reddecoder in Frameworks */,
+				35950B1829B735AD00E6F901 /* Metal.framework in Frameworks */,
+				35AEFDD7298772C500EA98CA /* AudioToolbox.framework in Frameworks */,
+				35AEFDE5298775EF00EA98CA /* CoreVideo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		351E23422976478C008266C5 = {
+			isa = PBXGroup;
+			children = (
+				A0E97C202BA02E01009CB4B4 /* RedBase.xcodeproj */,
+				351E245A29767720008266C5 /* redplayer */,
+				351E234E2976478C008266C5 /* RedPlayer */,
+				351E234D2976478C008266C5 /* Products */,
+				351E244529765015008266C5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		351E234D2976478C008266C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				351E234C2976478C008266C5 /* RedPlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		351E234E2976478C008266C5 /* RedPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				351E234F2976478C008266C5 /* RedPlayer-umbrella.h */,
+			);
+			path = RedPlayer;
+			sourceTree = "<group>";
+		};
+		351E244529765015008266C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0E97C162BA02DA3009CB4B4 /* reddecoder */,
+				A0E97C182BA02DAD009CB4B4 /* RedDownload */,
+				A0E97C1C2BA02DBC009CB4B4 /* redsource */,
+				A0E97C1E2BA02DC4009CB4B4 /* RedStrategyCenter */,
+				A05D69C02BA1824000B62E0F /* RedRender */,
+				35F7646A29DE6ED900FD3ED7 /* AVFoundation.framework */,
+				35950B1B29B7367500E6F901 /* CoreGraphics.framework */,
+				35950B1929B735B200E6F901 /* MetalKit.framework */,
+				35950B1729B735AD00E6F901 /* Metal.framework */,
+				35AEFDF32987B9A700EA98CA /* QuartzCore.framework */,
+				35AEFDF12987B96F00EA98CA /* MediaPlayer.framework */,
+				35AEFDEF2987B94C00EA98CA /* libc++.tbd */,
+				35AEFDED2987B92C00EA98CA /* UIKit.framework */,
+				35AEFDEA2987A1D700EA98CA /* libz.1.2.11.tbd */,
+				35AEFDE8298798F600EA98CA /* libresolv.tbd */,
+				35AEFDE3298775B700EA98CA /* CoreVideo.framework */,
+				35AEFDE12987756500EA98CA /* libz.tbd */,
+				35AEFDDE2987740C00EA98CA /* OpenGLES.framework */,
+				35AEFDDC298773AA00EA98CA /* CoreMotion.framework */,
+				35AEFDDA2987736800EA98CA /* CoreMedia.framework */,
+				35AEFDD82987735400EA98CA /* VideoToolbox.framework */,
+				35AEFDD6298772C400EA98CA /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		351E245A29767720008266C5 /* redplayer */ = {
+			isa = PBXGroup;
+			children = (
+				351E245B29767720008266C5 /* Interface */,
+				351E246B29767720008266C5 /* ios */,
+				351E247629767720008266C5 /* RedCore */,
+				351E24DA29767721008266C5 /* base */,
+			);
+			name = redplayer;
+			path = ../redplayercore/redplayer;
+			sourceTree = "<group>";
+		};
+		351E245B29767720008266C5 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				351E245C29767720008266C5 /* RedPlayer.cpp */,
+				351E245D29767720008266C5 /* RedPlayer.h */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		351E246B29767720008266C5 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A0DF4EFB2B4E95A000A38074 /* RedPreLoad.h */,
+				A0DF4EFA2B4E95A000A38074 /* RedPreLoad.mm */,
+				351E247029767720008266C5 /* RedMediaPlayBack.h */,
+				A0DF4F002B4ECB2300A38074 /* RedMediaPlayback.m */,
+				351E246E29767720008266C5 /* RedPlayerController.h */,
+				A004104D2AFE12760032169B /* RedPlayerController.mm */,
+				FA9D943C2A2728F8000309C4 /* NSString+REDMedia.mm */,
+				FA9D943E2A272947000309C4 /* NSString+REDMedia.h */,
+				FA9D943F2A273A1C000309C4 /* RedNotificationManager.h */,
+				FA9D94402A273A5C000309C4 /* RedNotificationManager.m */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		351E247629767720008266C5 /* RedCore */ = {
+			isa = PBXGroup;
+			children = (
+				351E248E29767721008266C5 /* RedCore.cpp */,
+				351E247729767720008266C5 /* RedCore.h */,
+				351E247929767720008266C5 /* module */,
+			);
+			path = RedCore;
+			sourceTree = "<group>";
+		};
+		351E247929767720008266C5 /* module */ = {
+			isa = PBXGroup;
+			children = (
+				351E247A29767720008266C5 /* renderHal */,
+				351E247F29767721008266C5 /* sourcer */,
+				351E248629767721008266C5 /* processer */,
+			);
+			path = module;
+			sourceTree = "<group>";
+		};
+		351E247A29767720008266C5 /* renderHal */ = {
+			isa = PBXGroup;
+			children = (
+				A0DF4EEB2B4D375100A38074 /* SoundTouchHal.cpp */,
+				A0DF4EEC2B4D375100A38074 /* SoundTouchHal.h */,
+				351E247C29767720008266C5 /* RedRenderVideoHal.cpp */,
+				351E247B29767720008266C5 /* RedRenderVideoHal.h */,
+				351E247E29767721008266C5 /* RedRenderAudioHal.cpp */,
+				351E247D29767721008266C5 /* RedRenderAudioHal.h */,
+			);
+			path = renderHal;
+			sourceTree = "<group>";
+		};
+		351E247F29767721008266C5 /* sourcer */ = {
+			isa = PBXGroup;
+			children = (
+				351E248029767721008266C5 /* RedSourceController.cpp */,
+				351E248529767721008266C5 /* RedSourceController.h */,
+				351E248129767721008266C5 /* format */,
+			);
+			path = sourcer;
+			sourceTree = "<group>";
+		};
+		351E248129767721008266C5 /* format */ = {
+			isa = PBXGroup;
+			children = (
+				FA47B9F329C9973000234C7B /* redioapplication.h */,
+				351E248329767721008266C5 /* RedFormat.c */,
+				351E248229767721008266C5 /* RedFormat.h */,
+				351E248429767721008266C5 /* reddownload_adapter.c */,
+			);
+			path = format;
+			sourceTree = "<group>";
+		};
+		351E248629767721008266C5 /* processer */ = {
+			isa = PBXGroup;
+			children = (
+				351E248929767721008266C5 /* VideoProcesser.cpp */,
+				351E248729767721008266C5 /* VideoProcesser.h */,
+				351E248829767721008266C5 /* AudioProcesser.cpp */,
+				351E248A29767721008266C5 /* AudioProcesser.h */,
+			);
+			path = processer;
+			sourceTree = "<group>";
+		};
+		351E24DA29767721008266C5 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				FA943CC7299E06D10048D720 /* RedConfig.cpp */,
+				FA943CC5299E06BB0048D720 /* RedConfig.h */,
+				B3D4D8D4298D057200395AAD /* RedSampler.cpp */,
+				B3D4D8D5298D057200395AAD /* RedSampler.h */,
+				35AEFE03298A139800EA98CA /* RedBuffer.cpp */,
+				35AEFE05298A139800EA98CA /* RedBuffer.h */,
+				35AEFE02298A139800EA98CA /* RedPacket.cpp */,
+				35AEFE04298A139800EA98CA /* RedPacket.h */,
+				351E24DB29767721008266C5 /* RedClock.cpp */,
+				351E24DF29767721008266C5 /* RedClock.h */,
+				351E24E229767721008266C5 /* RedQueue.cpp */,
+				351E24DC29767721008266C5 /* RedQueue.h */,
+				351E24E429767721008266C5 /* RedMsgQueue.cpp */,
+				351E24E029767721008266C5 /* RedMsgQueue.h */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		A0E97C212BA02E01009CB4B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0E97C252BA02E01009CB4B4 /* RedBase.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		351E23472976478C008266C5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0B01CBF2A3C4D490018CBDB /* RedPlayer-umbrella.h in Headers */,
+				351E24F029767721008266C5 /* RedMediaPlayBack.h in Headers */,
+				351E24EE29767721008266C5 /* RedPlayerController.h in Headers */,
+				A0DF4EFD2B4E95A000A38074 /* RedPreLoad.h in Headers */,
+				B3D4D8D7298D057200395AAD /* RedSampler.h in Headers */,
+				35AEFE09298A139800EA98CA /* RedBuffer.h in Headers */,
+				35AEFE08298A139800EA98CA /* RedPacket.h in Headers */,
+				FA943CC6299E06BB0048D720 /* RedConfig.h in Headers */,
+				351E250029767721008266C5 /* VideoProcesser.h in Headers */,
+				351E254029767722008266C5 /* RedQueue.h in Headers */,
+				351E24FF29767721008266C5 /* RedSourceController.h in Headers */,
+				351E24F729767721008266C5 /* RedRenderVideoHal.h in Headers */,
+				351E24FC29767721008266C5 /* RedFormat.h in Headers */,
+				351E24E629767721008266C5 /* RedPlayer.h in Headers */,
+				351E254329767722008266C5 /* RedClock.h in Headers */,
+				351E254429767722008266C5 /* RedMsgQueue.h in Headers */,
+				351E250329767721008266C5 /* AudioProcesser.h in Headers */,
+				351E24F529767721008266C5 /* RedCore.h in Headers */,
+				351E24F929767721008266C5 /* RedRenderAudioHal.h in Headers */,
+				A0DF4EEE2B4D375100A38074 /* SoundTouchHal.h in Headers */,
+				FA47B9F429C9973000234C7B /* redioapplication.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		351E234B2976478C008266C5 /* RedPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 351E23532976478C008266C5 /* Build configuration list for PBXNativeTarget "RedPlayer" */;
+			buildPhases = (
+				351E23472976478C008266C5 /* Headers */,
+				351E23482976478C008266C5 /* Sources */,
+				351E23492976478C008266C5 /* Frameworks */,
+				351E234A2976478C008266C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A05D69922BA08DEF00B62E0F /* PBXTargetDependency */,
+			);
+			name = RedPlayer;
+			productName = RedPlayer;
+			productReference = 351E234C2976478C008266C5 /* RedPlayer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		351E23432976478C008266C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					351E234B2976478C008266C5 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 351E23462976478C008266C5 /* Build configuration list for PBXProject "RedPlayer" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 351E23422976478C008266C5;
+			productRefGroup = 351E234D2976478C008266C5 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A0E97C212BA02E01009CB4B4 /* Products */;
+					ProjectRef = A0E97C202BA02E01009CB4B4 /* RedBase.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				351E234B2976478C008266C5 /* RedPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A0E97C252BA02E01009CB4B4 /* RedBase.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RedBase.framework;
+			remoteRef = A0E97C242BA02E01009CB4B4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		351E234A2976478C008266C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		351E23482976478C008266C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA943CC8299E06D10048D720 /* RedConfig.cpp in Sources */,
+				A0DF4EFC2B4E95A000A38074 /* RedPreLoad.mm in Sources */,
+				B3D4D8D6298D057200395AAD /* RedSampler.cpp in Sources */,
+				351E24FB29767721008266C5 /* RedSourceController.cpp in Sources */,
+				FA9D943D2A2728F8000309C4 /* NSString+REDMedia.mm in Sources */,
+				A0DF4EED2B4D375100A38074 /* SoundTouchHal.cpp in Sources */,
+				35AEFE06298A139800EA98CA /* RedPacket.cpp in Sources */,
+				A0DF4F012B4ECB2300A38074 /* RedMediaPlayback.m in Sources */,
+				351E24FA29767721008266C5 /* RedRenderAudioHal.cpp in Sources */,
+				351E254829767722008266C5 /* RedMsgQueue.cpp in Sources */,
+				FA9D94412A273A5C000309C4 /* RedNotificationManager.m in Sources */,
+				35AEFE07298A139800EA98CA /* RedBuffer.cpp in Sources */,
+				351E253F29767722008266C5 /* RedClock.cpp in Sources */,
+				351E250129767721008266C5 /* AudioProcesser.cpp in Sources */,
+				351E254629767722008266C5 /* RedQueue.cpp in Sources */,
+				351E24FE29767721008266C5 /* reddownload_adapter.c in Sources */,
+				351E24FD29767721008266C5 /* RedFormat.c in Sources */,
+				351E24E529767721008266C5 /* RedPlayer.cpp in Sources */,
+				A004104E2AFE12760032169B /* RedPlayerController.mm in Sources */,
+				351E24F829767721008266C5 /* RedRenderVideoHal.cpp in Sources */,
+				351E250229767721008266C5 /* VideoProcesser.cpp in Sources */,
+				351E250529767721008266C5 /* RedCore.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A05D69922BA08DEF00B62E0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RedBase;
+			targetProxy = A05D69912BA08DEF00B62E0F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		351E23512976478C008266C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		351E23522976478C008266C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		351E23542976478C008266C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "armv7s armv7 arm64";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/Submodules/opensoundtouch/Sources\"",
+					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources\"",
+					"\"$(SRCROOT)/../redplayercore/extra/reddownload/ios\"",
+					"\"$(SRCROOT)/../redplayercore/extra/redrender/ios\"",
+					"\"$(SRCROOT)/../redplayercore/extra/redsource/ios\"",
+					"\"$(SRCROOT)/../redplayercore/extra/redstrategycenter/ios\"",
+					"\"$(SRCROOT)/../redplayercore/extra/reddecoder/ios\"",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../redplayercore/redplayer\"",
+					"\"$(SRCROOT)/../redplayercore/extra/reddecoder/ios/reddecoder.framework/Headers\"",
+					"\"$(SRCROOT)/../redplayercore/extra/redsource/ios/redsource.framework/Headers/redsource\"",
+					"\"$(SRCROOT)/../redplayercore/extra/RedStrategyCenter/ios/RedStrategyCenter.framework/Headers\"",
+					"\"$(SRCROOT)/../redplayercore/extra/RedRender/ios/RedRender.framework/Headers\"",
+					"\"$(SRCROOT)/../redplayercore/extra/RedDownload/ios/RedDownload.framework/Headers\"",
+					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources/XYMediaFfmpeg.framework/Headers\"",
+					"\"$(SRCROOT)/Submodules/opensoundtouch/Sources/opensoundtouch.framework/Headers\"",
+					"\"$(SRCROOT)/../redplayercore/redbase/include\"",
+				);
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "";
+				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = RedPlayer/RedPlayer.modulemap;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xingin.redplayercore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = YES;
+				STRIP_STYLE = all;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		351E23552976478C008266C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "armv7s armv7 arm64";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/Submodules/opensoundtouch/Sources\"",
+					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources\"",
+					"\"$(SRCROOT)/../redplayercore/extra/reddownload/ios\"",
+					"\"$(SRCROOT)/../redplayercore/extra/redrender/ios\"",
+					"\"$(SRCROOT)/../redplayercore/extra/redsource/ios\"",
+					"\"$(SRCROOT)/../redplayercore/extra/redstrategycenter/ios\"",
+					"\"$(SRCROOT)/../redplayercore/extra/reddecoder/ios\"",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../redplayercore/redplayer\"",
+					"\"$(SRCROOT)/../redplayercore/extra/reddecoder/ios/reddecoder.framework/Headers\"",
+					"\"$(SRCROOT)/../redplayercore/extra/redsource/ios/redsource.framework/Headers/redsource\"",
+					"\"$(SRCROOT)/../redplayercore/extra/RedStrategyCenter/ios/RedStrategyCenter.framework/Headers\"",
+					"\"$(SRCROOT)/../redplayercore/extra/RedRender/ios/RedRender.framework/Headers\"",
+					"\"$(SRCROOT)/../redplayercore/extra/RedDownload/ios/RedDownload.framework/Headers\"",
+					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources/XYMediaFfmpeg.framework/Headers\"",
+					"\"$(SRCROOT)/Submodules/opensoundtouch/Sources/opensoundtouch.framework/Headers\"",
+					"\"$(SRCROOT)/../redplayercore/redbase/include\"",
+				);
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "";
+				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = RedPlayer/RedPlayer.modulemap;
+				OTHER_CFLAGS = "-DNDEBUG=1";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xingin.redplayercore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = YES;
+				STRIP_STYLE = all;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		351E23462976478C008266C5 /* Build configuration list for PBXProject "RedPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				351E23512976478C008266C5 /* Debug */,
+				351E23522976478C008266C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		351E23532976478C008266C5 /* Build configuration list for PBXNativeTarget "RedPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				351E23542976478C008266C5 /* Debug */,
+				351E23552976478C008266C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 351E23432976478C008266C5 /* Project object */;
+}

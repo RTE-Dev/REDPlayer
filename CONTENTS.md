@@ -3,10 +3,10 @@
 # Contents of first open source
 
 - Open source code for playing intermediate layer (including: instance management, interface calls, etc.)
-- RedPlayer is open source in the form of SDK this time
+- In RedPlayer, RedCore and RedBase are open-sourced in the form of source code, while other parts are open-sourced in the form of SDK this time
 
 
 # Next open source plan
 - Estimated time for next open source: In coming...
-- Estimated content for next open source: OpenCore module code and Harmony version
+- Estimated content for next open source: RedDecoder module code and Harmony version
 

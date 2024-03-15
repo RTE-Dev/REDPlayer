@@ -6,9 +6,9 @@ use_frameworks!
 workspace 'RedPlayerDemo'
 
 def pods_dependency
-  pod "XYMediaFfmpeg", :path => "./Submodules/XYMediaFfmpeg"
-  pod "opensoundtouch", :path => "./Submodules/opensoundtouch"
-  pod "RedPlayer", :path => "../"
+  pod "XYMediaFfmpeg", :path => "../Submodules/XYMediaFfmpeg"
+  pod "opensoundtouch", :path => "../Submodules/opensoundtouch"
+  #pod "RedPlayer", :path => "../../redplayercore"
   
 end
 

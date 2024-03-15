@@ -1,0 +1,6 @@
+framework module RedDownload {
+  umbrella header "RedDownload.h"
+
+  export *
+  module * { export * }
+}

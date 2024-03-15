@@ -223,10 +223,10 @@ public class RedMediaPlayer extends AbstractMediaPlayer {
     @Override
     public void setDataSource(String path) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
         mDataSource = path;
-        _setDataSource(path, null, null);
+        _setDataSource(path);
     }
 
-    private native void _setDataSource(String path, String[] keys, String[] values)
+    private native void _setDataSource(String path)
             throws IOException, IllegalArgumentException, SecurityException, IllegalStateException;
 
     private native void _setDataSourceJson(String path)

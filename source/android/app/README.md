@@ -14,7 +14,8 @@ Before building the SDK, please make sure you have the following dependencies in
 	```bash
 	# add this line to your ~/.bash_profile or ~/.profile, the android sdk will work
 	export ANDROID_SDK=<your sdk path>
-    
+    export ANDROID_NDK=<your ndk path>
+
     # My build environment:
 	# macOS 14.0
 	# Android Studio Flamingo | 2022.2.1 Patch 2

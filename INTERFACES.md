@@ -6,3 +6,6 @@
 # IOS Interfaces
 * Quck start for Player SDK: [RedPlayer-SDK](source/ios/README.md)
 * Quck start for Preload SDK: [RedPreload-SDK](source/ios/RedPreload_SDK.md)
+
+# Note
+* For the convenience of developers' understanding and integration, we have referred to the interface names of excellent players such as MediaPlayer and IJKPlayer in our interface design.
