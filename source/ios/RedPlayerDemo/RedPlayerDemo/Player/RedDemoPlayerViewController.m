@@ -81,7 +81,7 @@ typedef NS_ENUM(NSUInteger, RedTipsPosition) {
 + (void)setupLogCallback {
     [RedPlayerController setLogCallbackLevel:k_RED_LOG_DEBUG];
     [RedPlayerController setLogCallback:^(RedLogLevel loglevel, NSString *tagInfo, NSString *logContent) {
-        NSLog(@"[%d]=[%@]-%@", loglevel, tagInfo, logContent);
+        NSLog(@"%@", logContent);
     }];
 }
 

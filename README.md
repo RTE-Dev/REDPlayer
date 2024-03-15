@@ -24,7 +24,7 @@
  ### Open Content
 
 ```bash
-# REDPlayer uses distributed open source methods like most open source projects in the industry. The content of each phase of open source can be found in the following documents.
+REDPlayer uses distributed open source methods like most open source projects in the industry. The content of each phase of open source can be found in the following documents.
 ```
 
 - [CONTENTS.md](CONTENTS.md)
@@ -99,7 +99,8 @@
 	```bash
 	# add this line to your ~/.bash_profile or ~/.profile, the android sdk will work
 	export ANDROID_SDK=<your sdk path>
-    
+    export ANDROID_NDK=<your ndk path>
+
     # My build environment:
 	# macOS 14.0
 	# Android Studio Flamingo | 2022.2.1 Patch 2

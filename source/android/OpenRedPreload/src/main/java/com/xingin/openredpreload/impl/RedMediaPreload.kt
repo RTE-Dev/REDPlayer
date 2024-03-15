@@ -50,7 +50,7 @@ class RedMediaPreload : IMediaPreload {
                     if (userData !is VideoCacheRequest) {
                         return@DownloadEventListener
                     }
-                    val speed = bundle.getLong("speed")
+                    val speed = bundle.getInt("speed")
                     Log.d(
                         TAG,
                         "[DownloadEventListener]: speed:${speed}, $userData"

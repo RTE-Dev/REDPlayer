@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../RedPlayer.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RedPlayerDemo.xcodeproj">
    </FileRef>
    <FileRef

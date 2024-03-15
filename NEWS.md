@@ -8,3 +8,7 @@ tag v0.0.1:
 - preload: provided a preload SDK with preloading capabilities
 - demo: provided playback demos for both Android and iOS platforms
 
+tag v0.0.2:
+--------------------------------
+- RedCore: added the source code implementation of RedCore
+- RedBase: added the source code implementation of RedBase

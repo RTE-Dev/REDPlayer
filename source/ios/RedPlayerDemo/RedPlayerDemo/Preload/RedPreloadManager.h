@@ -11,8 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RedPreloadManager : NSObject
-+ (void)preloadVideoURL:(NSURL *)URL;
-+ (void)preloadVideoJson:(NSString *)json;
++ (void)preloadVideoURL:(NSURL *)URL forScene:(NSString *)scene;
++ (void)preloadVideoJson:(NSString *)json forScene:(NSString *)scene;
++ (void)closePreloadForScene:(NSString *)scene;
 @end
 
 NS_ASSUME_NONNULL_END

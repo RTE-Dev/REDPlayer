@@ -44,7 +44,6 @@ public class RedPlayerSoLoader {
                     libLoader = sLocalLibLoader;
                 libLoader.loadLibrary(context, "c++_shared");
                 libLoader.loadLibrary(context, "ffmpeg");
-                libLoader.loadLibrary(context, "redlog");
                 libLoader.loadLibrary(context, "redbase");
                 libLoader.loadLibrary(context, "reddownload");
                 libLoader.loadLibrary(context, "redstrategycenter");
