@@ -16,9 +16,9 @@ This guide provides step-by-step instructions on how to initialize and configure
 
 ## Header Files References:
 
-* [RedMediaPlayback.h](RedPlayer/Sources/RedPlayer.framework/Headers/RedMediaPlayBack.h)
+* [RedMediaPlayback.h](../redplayercore/redplayer/ios/RedMediaPlayBack.h)
 
-* [RedPlayerController.h](RedPlayer/Sources/RedPlayer.framework/Headers/RedPlayerController.h) 
+* [RedPlayerController.h](../redplayercore/redplayer/ios/RedPlayerController.h) 
 
 
 
@@ -127,6 +127,12 @@ self.player.notPauseGlviewBackground = NO;
 - (void)setMute:(BOOL)muted;
 /// Shuts down the media playback. This will release the kernal player object(On an asynchronous thread)
 - (void)shutdown;
+
+/// The playback rate.
+@property(nonatomic) float playbackRate;
+/// Indicates whether autoplay is enabled.
+@property(nonatomic) BOOL shouldAutoplay;
+
 ```
 
 ## Step 4: Player status retrieval
