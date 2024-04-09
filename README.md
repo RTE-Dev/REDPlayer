@@ -147,3 +147,7 @@ Licensed under LGPLv2.1 or later
 
 ### Law And Rule
 All rights and explanations belong to Xiaohongshu，you should always ask your lawyer for these stuffs before use it in your product.
+
+###  Join US
+Apply to join REDPlayer by scanning the Wechat code. （Please note ‘REDPlayer when applying friends）
+![Wechat QR Code](./WeChatQRCode.png)
