@@ -1,0 +1,10 @@
+{
+  "module": {
+    "name": "redplayerproxy",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ]
+  }
+}

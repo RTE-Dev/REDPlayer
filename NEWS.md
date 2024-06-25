@@ -12,3 +12,8 @@ tag v0.0.2:
 --------------------------------
 - RedCore: added the source code implementation of RedCore
 - RedBase: added the source code implementation of RedBase
+
+tag v1.0.0:
+--------------------------------
+- added the source code of the remaining player module
+- added the source code of the player for the HarmonyOS platform

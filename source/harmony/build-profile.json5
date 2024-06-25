@@ -1,0 +1,33 @@
+{
+  "app": {
+    "signingConfigs": [
+      // config your own signing info
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS",
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "redplayerproxy",
+      "srcPath": "./redplayerproxy"
+    }
+  ]
+}

@@ -46,6 +46,10 @@ android {
         }
     }
 
+    packagingOptions{
+        pickFirst 'lib/*/libredstrategycenter.so'
+    }
+
     composeOptions {
         kotlinCompilerExtensionVersion '1.3.2'
     }

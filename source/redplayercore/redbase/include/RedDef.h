@@ -26,6 +26,7 @@
 #define AVCODEC_MODULE_NAME "avcodec"
 #define VTB_MODULE_NAME "videotoolbox"
 #define MEDIACODEC_MODULE_NAME "MediaCodec"
+#define HARMONY_VIDEO_DECODER_MODULE_NAME "HarmonyVideoDecoder"
 
 using NotifyCallback =
     std::function<void(int, int, int, void *, void *, int, int)>;

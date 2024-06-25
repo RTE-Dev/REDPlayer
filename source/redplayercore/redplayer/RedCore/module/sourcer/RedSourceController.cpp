@@ -10,7 +10,7 @@
 #include "RedMsg.h"
 #include "RedProp.h"
 #include "base/RedConfig.h"
-#include "reddownload_datasource_wrapper.h"
+#include "wrapper/reddownload_datasource_wrapper.h"
 
 #define TAG "RedSourceController"
 
@@ -488,7 +488,6 @@ void CRedSourceController::ThreadFunc() {
   redsource::FFMpegOpt opt{0};
   int64_t prev_buffer_check_time = 0;
   int64_t buffer_check_time = 0;
-  int64_t pkt_ts = 0;
   int connect_retry_count = kMaxRetryCount;
   int read_retry_count = kMaxRetryCount;
   int ret = 0;
@@ -496,7 +495,7 @@ void CRedSourceController::ThreadFunc() {
   bool completed = false;
 #if defined(__APPLE__)
   pthread_setname_np("readthread");
-#elif __ANDROID__
+#elif defined(__ANDROID__) || defined(__HARMONY__)
   pthread_setname_np(pthread_self(), "readthread");
 #endif
   AV_LOGI_ID(TAG, mID, "RedSource thread Start.");
@@ -673,7 +672,6 @@ void CRedSourceController::ThreadFunc() {
       mVideoState->error = 0;
       mEOF = false;
     }
-    pkt_ts = pkt->pts == AV_NOPTS_VALUE ? pkt->dts : pkt->pts;
     if (pkt->stream_index == mAudioIndex) {
       std::unique_ptr<RedAvPacket> avpkt(new RedAvPacket(pkt, mSerial));
       putPacket(avpkt, TYPE_AUDIO);

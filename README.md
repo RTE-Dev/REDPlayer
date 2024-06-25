@@ -19,7 +19,7 @@
  -------- | ------------
  Android | Done
  iOS | Done
- others | In Coming
+ Harmony | Done
 
  ### Open Content
 
@@ -35,7 +35,7 @@ REDPlayer uses distributed open source methods like most open source projects in
 
 - IOS [Quickstart](source/ios/README.md)/ [Demo](source/ios/RedPlayerDemo)
 
-- In coming...
+- Harmony [Quickstart](source/harmony/README.md)/ [Demo](source/harmony)
 
 ### Features
 
@@ -121,6 +121,17 @@ REDPlayer uses distributed open source methods like most open source projects in
 	# Cocoapods version: 1.10.2
 	# Ruby 3.0.6p216
 	```
+ 
+- **Build Harmony**
+
+    **Using DevEco Studio**  
+    [DevEco Studio(above NEXT version)](https://developer.huawei.com/consumer/cn/deveco-studio/)
+    ```bash
+    # My build environment
+    # MacOS 13.3.1
+    # M1 Pro CPU
+    # DevEco Studio NEXT Developer Beta1(5.0.3.300SP2)
+    ```
 
 ### Latest Changes
 - [NEWS.md](NEWS.md)
@@ -147,7 +158,3 @@ Licensed under LGPLv2.1 or later
 
 ### Law And Rule
 All rights and explanations belong to Xiaohongshu，you should always ask your lawyer for these stuffs before use it in your product.
-
-###  Join US
-Apply to join REDPlayer by scanning the Wechat code. （Please note ‘REDPlayer when applying friends）
-![Wechat QR Code](./WeChatQRCode.png)

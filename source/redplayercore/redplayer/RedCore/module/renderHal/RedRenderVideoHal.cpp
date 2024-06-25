@@ -9,6 +9,7 @@
 #include "RedMsg.h"
 #include "RedProp.h"
 #include "base/RedConfig.h"
+#include <cfloat>
 
 #define TAG "RedRenderVideoHal"
 
@@ -53,7 +54,7 @@ RED_ERR CRedRenderVideoHal::Prepare(sp<MetaData> &metadata) {
   return ret;
 }
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
 RED_ERR
 CRedRenderVideoHal::setVideoSurface(const sp<RedNativeWindow> &surface) {
   std::unique_lock<std::mutex> lck(mSurfaceLock);
@@ -86,8 +87,7 @@ UIView *CRedRenderVideoHal::initWithFrame(int type, CGRect cgrect) {
   std::unique_ptr<RedRender::VideoRendererFactory> videoRendererFactory =
       std::make_unique<RedRender::VideoRendererFactory>();
   if (!videoRendererFactory) {
-    AV_LOGE_ID(TAG, mID,
-               "func:%s, line:%d VideoRendererFactory construct error .\n",
+    AV_LOGE_ID(TAG, mID, "[%s:%d] VideoRendererFactory construct error .\n",
                __FUNCTION__, __LINE__);
     return nullptr;
   }
@@ -96,36 +96,30 @@ UIView *CRedRenderVideoHal::initWithFrame(int type, CGRect cgrect) {
   case RENDER_TYPE_OPENGL: {
     RedRender::VideoRendererInfo videRendererInfo(
         RedRender::VRClusterTypeOpenGL);
-    RedRender::VideoFilterInfo videoFilterInfo(
-        RedRender::VideoFilterClusterTypeOpenGL);
     mClusterType = RedRender::VRClusterTypeOpenGL;
-    mVideoRender = videoRendererFactory->createVideoRenderer(
-        videRendererInfo, videoFilterInfo, mID);
+    mVideoRender =
+        videoRendererFactory->createVideoRenderer(videRendererInfo, mID);
     break;
   }
   case RENDER_TYPE_METAL: {
     RedRender::VideoRendererInfo videRendererInfo(
         RedRender::VRClusterTypeMetal);
-    RedRender::VideoFilterInfo videoFilterInfo(
-        RedRender::VideoFilterClusterTypeMetal);
     mClusterType = RedRender::VRClusterTypeMetal;
-    mVideoRender = videoRendererFactory->createVideoRenderer(
-        videRendererInfo, videoFilterInfo, mID);
+    mVideoRender =
+        videoRendererFactory->createVideoRenderer(videRendererInfo, mID);
     break;
   }
   case RENDER_TYPE_AVSBDL: {
     RedRender::VideoRendererInfo videRendererInfo(
         RedRender::VRClusterTypeAVSBDL);
-    RedRender::VideoFilterInfo videoFilterInfo(
-        RedRender::VideoFilterClusterTypeUnknown);
     mClusterType = RedRender::VRClusterTypeAVSBDL;
-    mVideoRender = videoRendererFactory->createVideoRenderer(
-        videRendererInfo, videoFilterInfo, mID);
+    mVideoRender =
+        videoRendererFactory->createVideoRenderer(videRendererInfo, mID);
     break;
   }
   default:
-    AV_LOGE_ID(TAG, mID, "func:%s, line:%d unknown render type %d .\n",
-               __FUNCTION__, __LINE__, type);
+    AV_LOGE_ID(TAG, mID, "[%s:%d] unknown render type %d .\n", __FUNCTION__,
+               __LINE__, type);
     break;
   }
 
@@ -141,7 +135,8 @@ UIView *CRedRenderVideoHal::initWithFrame(int type, CGRect cgrect) {
     lck.unlock();
     notifyListener(RED_MSG_ERROR, ERROR_VIDEO_DISPLAY,
                    static_cast<int32_t>(ret));
-    AV_LOGE_ID(TAG, mID, "%s mVideoRender init error %d\n", __func__, (int)ret);
+    AV_LOGE_ID(TAG, mID, "%s mVideoRender init error %d\n", __func__,
+               static_cast<int>(ret));
     return nullptr;
   }
 
@@ -151,7 +146,7 @@ UIView *CRedRenderVideoHal::initWithFrame(int type, CGRect cgrect) {
     notifyListener(RED_MSG_ERROR, ERROR_VIDEO_DISPLAY,
                    static_cast<int32_t>(ret));
     AV_LOGE_ID(TAG, mID, "%s mVideoRender initWithFrame error %d\n", __func__,
-               (int)ret);
+               static_cast<int>(ret));
     return nullptr;
   }
   mRenderSetuped = true;
@@ -220,6 +215,9 @@ RED_ERR CRedRenderVideoHal::Init() {
   case RED_PROPV_DECODER_VIDEOTOOLBOX:
     mClusterType = RedRender::VRClusterTypeMetal;
     break;
+  case RED_PROPV_DECODER_HARMONY_VIDEO_DECODER:
+    mClusterType = RedRender::VRClusterTypeHarmonyVideoDecoder;
+    break;
   default:
     AV_LOGE_ID(TAG, mID, "unknown vdec type %" PRId64 ".\n",
                mVideoState->stat.vdec_type);
@@ -229,8 +227,7 @@ RED_ERR CRedRenderVideoHal::Init() {
   std::unique_ptr<RedRender::VideoRendererFactory> videoRendererFactory =
       std::make_unique<RedRender::VideoRendererFactory>();
   if (!videoRendererFactory) {
-    AV_LOGE_ID(TAG, mID,
-               "func:%s, line:%d VideoRendererFactory construct error .\n",
+    AV_LOGE_ID(TAG, mID, "[%s:%d] VideoRendererFactory construct error .\n",
                __FUNCTION__, __LINE__);
     return NO_INIT;
   }
@@ -239,31 +236,30 @@ RED_ERR CRedRenderVideoHal::Init() {
   case RedRender::VRClusterTypeOpenGL: {
     RedRender::VideoRendererInfo videRendererInfo(
         RedRender::VRClusterTypeOpenGL);
-    RedRender::VideoFilterInfo videoFilterInfo(
-        RedRender::VideoFilterClusterTypeOpenGL);
-    mVideoRender = videoRendererFactory->createVideoRenderer(
-        videRendererInfo, videoFilterInfo, mID);
+    mVideoRender =
+        videoRendererFactory->createVideoRenderer(videRendererInfo, mID);
   } break;
   case RedRender::VRClusterTypeMetal: {
     RedRender::VideoRendererInfo videRendererInfo(
         RedRender::VRClusterTypeMetal);
-    RedRender::VideoFilterInfo videoFilterInfo(
-        RedRender::VideoFilterClusterTypeMetal);
-    mVideoRender = videoRendererFactory->createVideoRenderer(
-        videRendererInfo, videoFilterInfo, mID);
+    mVideoRender =
+        videoRendererFactory->createVideoRenderer(videRendererInfo, mID);
   } break;
   case RedRender::VRClusterTypeMediaCodec: {
     RedRender::VideoRendererInfo videRendererInfo(
         RedRender::VRClusterTypeMediaCodec);
-    RedRender::VideoFilterInfo videoFilterInfo(
-        RedRender::VideoFilterClusterTypeUnknown);
-    mVideoRender = videoRendererFactory->createVideoRenderer(
-        videRendererInfo, videoFilterInfo, mID);
+    mVideoRender =
+        videoRendererFactory->createVideoRenderer(videRendererInfo, mID);
+  } break;
+  case RedRender::VRClusterTypeHarmonyVideoDecoder: {
+    RedRender::VideoRendererInfo videRendererInfo(
+        RedRender::VRClusterTypeHarmonyVideoDecoder);
+    mVideoRender =
+        videoRendererFactory->createVideoRenderer(videRendererInfo, mID);
   } break;
   case RedRender::VRClusterTypeUnknown:
   default:
-    AV_LOGE_ID(TAG, mID,
-               "func:%s, line:%d VideoRendererClusterTypeUnknownWrapper_ .\n",
+    AV_LOGE_ID(TAG, mID, "[%s:%d] VideoRendererClusterTypeUnknownWrapper_ .\n",
                __FUNCTION__, __LINE__);
     break;
   }
@@ -284,7 +280,8 @@ RED_ERR CRedRenderVideoHal::Init() {
   videoRendererFactory.reset();
   UpdateVideoFrameMetaData();
   mRenderSetuped = true;
-  AV_LOGD_ID(TAG, mID, "Video Render init OK, type %d", (int)mClusterType);
+  AV_LOGD_ID(TAG, mID, "Video Render init OK, type %d",
+             static_cast<int>(mClusterType));
   return OK;
 }
 
@@ -337,9 +334,11 @@ RED_ERR CRedRenderVideoHal::UpdateVideoFrameMetaData() {
   }
   case RedRender::VRClusterTypeMediaCodec:
     break;
+  case RedRender::VRClusterTypeHarmonyVideoDecoder:
+    break;
   default:
-    AV_LOGE_ID(TAG, mID, "func:%s, line:%d VideoRendererTypeUnknown.\n",
-               __FUNCTION__, __LINE__);
+    AV_LOGE_ID(TAG, mID, "[%s:%d] VideoRendererTypeUnknown.\n", __FUNCTION__,
+               __LINE__);
     break;
   }
 
@@ -352,6 +351,10 @@ RED_ERR CRedRenderVideoHal::UpdateVideoFrameMetaData() {
     break;
   case RED_PROPV_DECODER_VIDEOTOOLBOX:
     mVideoFrameMetaData.pixel_format = RedRender::VRPixelFormatYUV420sp_vtb;
+    break;
+  case RED_PROPV_DECODER_HARMONY_VIDEO_DECODER:
+    mVideoFrameMetaData.pixel_format =
+        RedRender::VRPixelFormatHarmonyVideoDecoder;
     break;
   default:
     mVideoFrameMetaData.pixel_format = RedRender::VRPixelFormatUnknown;
@@ -367,7 +370,8 @@ RED_ERR CRedRenderVideoHal::UpdateVideoFrameMetaData() {
 
   mRenderSetuped = true;
   mMetaDataSetuped = true;
-  AV_LOGI_ID(TAG, mID, "Video frame meta OK, type %d", (int)mClusterType);
+  AV_LOGI_ID(TAG, mID, "Video frame meta OK, type %d",
+             static_cast<int>(mClusterType));
   return OK;
 }
 
@@ -409,6 +413,7 @@ CRedRenderVideoHal::RenderFrame(std::unique_ptr<CGlobalBuffer> &buffer) {
   }
 
   switch (mClusterType) {
+#if defined(__ANDROID__)
   case RedRender::VRClusterTypeMediaCodec: {
     mVideoMediaCodecBufferContext.buffer_index =
         ((CGlobalBuffer::MediaCodecBufferContext *)(buffer->opaque))
@@ -439,17 +444,11 @@ CRedRenderVideoHal::RenderFrame(std::unique_ptr<CGlobalBuffer> &buffer) {
       release_output_buffer(&media_codec_ctx, render);
     };
     RedRender::VRError VRRet =
-        mVideoRender->setBufferProxy(&mVideoMediaCodecBufferContext);
+        mVideoRender->onRender(&mVideoMediaCodecBufferContext, true);
     if (VRRet != RedRender::VRErrorNone) {
       notifyListener(RED_MSG_ERROR, ERROR_VIDEO_DISPLAY,
                      static_cast<int32_t>(VRRet));
       AV_LOGE_ID(TAG, mID, "setBufferProxy error\n");
-    }
-    VRRet = mVideoRender->releaseBufferProxy(true);
-    if (VRRet != RedRender::VRErrorNone) {
-      notifyListener(RED_MSG_ERROR, ERROR_VIDEO_DISPLAY,
-                     static_cast<int32_t>(VRRet));
-      AV_LOGE_ID(TAG, mID, "releaseBufferProxy error\n");
     }
     if (buffer->opaque) {
       delete (CGlobalBuffer::MediaCodecBufferContext *)buffer->opaque;
@@ -457,6 +456,50 @@ CRedRenderVideoHal::RenderFrame(std::unique_ptr<CGlobalBuffer> &buffer) {
     }
     break;
   }
+#endif
+#if defined(__HARMONY__)
+  case RedRender::VRClusterTypeHarmonyVideoDecoder: {
+    mVideoHarmonyDecoderBufferContext.buffer_index =
+        ((CGlobalBuffer::HarmonyMediaBufferContext *)(buffer->opaque))
+            ->buffer_index;
+    mVideoHarmonyDecoderBufferContext.video_decoder =
+        ((CGlobalBuffer::HarmonyMediaBufferContext *)(buffer->opaque))
+            ->video_decoder;
+    mVideoHarmonyDecoderBufferContext.decoder_serial =
+        ((CGlobalBuffer::HarmonyMediaBufferContext *)(buffer->opaque))
+            ->decoder_serial;
+    mVideoHarmonyDecoderBufferContext.decoder =
+        ((CGlobalBuffer::HarmonyMediaBufferContext *)(buffer->opaque))->decoder;
+    mVideoHarmonyDecoderBufferContext.opaque =
+        ((CGlobalBuffer::HarmonyMediaBufferContext *)(buffer->opaque))->opaque;
+    mVideoHarmonyDecoderBufferContext.release_output_buffer =
+        [](RedRender::VideoHarmonyDecoderBufferContext *context,
+           bool render) -> void {
+      reddecoder::HarmonyVideoDecoderBufferContext video_decoder_ctx;
+      video_decoder_ctx.buffer_index = context->buffer_index;
+      video_decoder_ctx.decoder = context->decoder;
+      video_decoder_ctx.video_decoder = context->video_decoder;
+      video_decoder_ctx.decoder_serial = context->decoder_serial;
+      void (*release_output_buffer)(
+          reddecoder::HarmonyVideoDecoderBufferContext *context, bool render) =
+          (void (*)(reddecoder::HarmonyVideoDecoderBufferContext *context,
+                    bool render))context->opaque;
+      release_output_buffer(&video_decoder_ctx, render);
+    };
+
+    RedRender::VRError VRRet =
+        mVideoRender->onRender(&mVideoHarmonyDecoderBufferContext, true);
+    if (VRRet != RedRender::VRErrorNone) {
+      notifyListener(RED_MSG_ERROR, ERROR_VIDEO_DISPLAY, (int32_t)VRRet);
+      AV_LOGE_ID(TAG, mID, "[RedPlayer_KLog][%s][%d] releaseBufferProxy error ",
+                 __FUNCTION__, __LINE__);
+    }
+    if (buffer->opaque) {
+      delete (CGlobalBuffer::HarmonyMediaBufferContext *)buffer->opaque;
+      buffer->opaque = nullptr;
+    }
+  } break;
+#endif
   case RedRender::VRClusterTypeOpenGL:
   case RedRender::VRClusterTypeMetal:
   case RedRender::VRClusterTypeAVSBDL: {
@@ -518,14 +561,14 @@ CRedRenderVideoHal::RenderFrame(std::unique_ptr<CGlobalBuffer> &buffer) {
   }
   case RedRender::VRClusterTypeUnknown:
   default:
-    AV_LOGE_ID(TAG, mID, "func:%s, line:%d VideoRendererTypeUnknown.\n",
-               __FUNCTION__, __LINE__);
+    AV_LOGE_ID(TAG, mID, "[%s:%d] VideoRendererTypeUnknown.\n", __FUNCTION__,
+               __LINE__);
     break;
   }
   if (mVideoState->latest_video_seek_load_serial == buffer->serial) {
     int latest_video_seek_load_serial =
-        __atomic_exchange_n(&(mVideoState->latest_video_seek_load_serial), -1,
-                            std::memory_order_seq_cst);
+        mVideoState->latest_video_seek_load_serial.exchange(
+            -1, std::memory_order_seq_cst);
     if (latest_video_seek_load_serial == buffer->serial) {
       mVideoState->stat.latest_seek_load_duration =
           (CurrentTimeUs() - mVideoState->latest_seek_load_start_at) / 1000;
@@ -650,8 +693,7 @@ void CRedRenderVideoHal::ThreadFunc() {
   if (Init() != OK || !mVideoRender) {
     notifyListener(RED_MSG_ERROR, ERROR_VIDEO_DISPLAY);
     mMetaData.reset();
-    AV_LOGE_ID(TAG, mID, "func:%s, line:%d  Init error .\n", __FUNCTION__,
-               __LINE__);
+    AV_LOGE_ID(TAG, mID, "[%s:%d]  Init error .\n", __FUNCTION__, __LINE__);
     return;
   }
   UpdateVideoFrameMetaData();
@@ -677,16 +719,16 @@ void CRedRenderVideoHal::ThreadFunc() {
 
 #if defined(__APPLE__)
   pthread_setname_np("videorender");
-#elif __ANDROID__
+#elif defined(__ANDROID__) || defined(__HARMONY__)
   pthread_setname_np(pthread_self(), "videorender");
 #endif
 
   while (!mAbort) {
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
     if (mVideoRender && mClusterType == RedRender::VRClusterTypeOpenGL) {
       std::unique_lock<std::mutex> lck(mSurfaceLock);
       if (mSurfaceUpdate) {
-        ANativeWindow *window = mNativeWindow ? mNativeWindow->get() : nullptr;
+        auto window = mNativeWindow ? mNativeWindow->get() : nullptr;
         RedRender::VRError ret = mVideoRender->setSurface(window);
         mSurfaceUpdate = false;
         if (ret != RedRender::VRErrorNone) {
@@ -711,13 +753,14 @@ void CRedRenderVideoHal::ThreadFunc() {
       }
       continue;
     } else if (ret != OK || !in_buffer_) {
+      usleep(20 * 1000);
       continue;
     }
     if (in_buffer_->serial != mVideoProcesser->getSerial()) {
       continue;
     }
     while (!mAbort) {
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
       {
         std::unique_lock<std::mutex> lck(mSurfaceLock);
         if (mSurfaceUpdate && mVideoRender && mNativeWindow &&
@@ -801,6 +844,7 @@ void CRedRenderVideoHal::ThreadFunc() {
   }
   if (mVideoRender && (mClusterType == RedRender::VRClusterTypeOpenGL ||
                        mClusterType == RedRender::VRClusterTypeMetal)) {
+    mVideoRender->close();
     mVideoRender->detachAllFilter();
     mVideoRender->releaseContext();
   }

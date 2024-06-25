@@ -1,10 +1,3 @@
-/*
- * RedMsg.h
- *
- *  Created on: 2022年9月9日
- *      Author: liuhongda
- */
-
 #pragma once
 
 enum PlayerReq {
@@ -40,19 +33,19 @@ enum PlayerMsg {
   RED_MSG_AUDIO_SEEK_RENDERING_START = 411,
   RED_MSG_VIDEO_FIRST_PACKET_IN_DECODER = 412,
   RED_MSG_VIDEO_START_ON_PLAYING =
-      413, /* 视频启播，计算节点为视频第二帧开始渲染 */
+      413,
 
   RED_MSG_BUFFERING_START = 500,
   RED_MSG_BUFFERING_END = 501,
-  RED_MSG_BUFFERING_UPDATE = 502, /* arg1 = buffering head position in time,
-                                     arg2 = minimum percent in time or bytes */
-  RED_MSG_BUFFERING_BYTES_UPDATE =
-      503, /* arg1 = cached data in bytes,            arg2 = high water mark */
-  RED_MSG_BUFFERING_TIME_UPDATE =
-      504, /* arg1 = cached duration in milliseconds, arg2 = high water mark */
+  RED_MSG_BUFFERING_UPDATE = 502, // arg1 = buffering head position in time,
+                                  // arg2 = minimum percent in time or bytes
+  RED_MSG_BUFFERING_BYTES_UPDATE = 503, // arg1 = cached data in bytes,
+                                        // arg2 = high water mark
+  RED_MSG_BUFFERING_TIME_UPDATE = 504, // arg1 = cached duration in milliseconds
+                                       // arg2 = high water mark
 
-  RED_MSG_SEEK_COMPLETE =
-      600, /* arg1 = seek position,                   arg2 = error */
+  RED_MSG_SEEK_COMPLETE = 600, // arg1 = seek position
+                               // arg2 = error
 
   RED_MSG_PLAYBACK_STATE_CHANGED = 700,
 

@@ -50,7 +50,6 @@ public class RedPlayerSoLoader {
                 libLoader.loadLibrary(context, "redsource");
                 libLoader.loadLibrary(context, "redrender");
                 libLoader.loadLibrary(context, "reddecoder");
-                libLoader.loadLibrary(context, "soundtouch");
                 libLoader.loadLibrary(context, "redplayer");
                 sIsNativeLibsLoaded = true;
                 if (sSoLoadCallback != null) {

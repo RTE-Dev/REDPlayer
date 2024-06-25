@@ -11,7 +11,7 @@ The RedPreload SDK is a powerful tool for preloading videos and improving the us
 
 ## Header Files References:
 
-* [RedPreLoad.h](../redplayercore/redplayer/ios/RedPreLoad.h)
+* [RedPreLoad.h](RedPlayer/Sources/RedPlayer.framework/Headers/RedPreLoad.h)
 
 ## ▶️ Getting Started
 

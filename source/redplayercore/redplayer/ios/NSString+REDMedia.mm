@@ -9,10 +9,10 @@
 
 @implementation NSString (REDMedia)
 + (NSString *)red_stringBeEmptyIfNil:(NSString *)src {
-    if (src == nil)
-        return @"";
+  if (src == nil)
+    return @"";
 
-    return src;
+  return src;
 }
 
 @end

@@ -7,49 +7,48 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-deprecated")
 set(CMAKE_CXX_FLAGS_DEBUG "-O0")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG ")
 
-message("CMAKE_SYSTEM NAME: ${CMAKE_SYSTEM_NAME}")
-message("CMAKE_OSX_ARCHITECTURES: ${CMAKE_OSX_ARCHITECTURES}")
-
 set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(EXTRA_DIR "${ROOT_DIR}/../extra")
 set(REDBASE_DIR "${ROOT_DIR}/../redbase")
+set(REDDOWNLOAD_DIR "${ROOT_DIR}/../reddownload")
+set(REDSTRATEGYCENTER_DIR "${ROOT_DIR}/../redstrategycenter")
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Android")
-    set(TARGET_PLATFORM android)
+  set(TARGET_PLATFORM android)
+  set(CMAKE_SYSTEM_VERSION 21)
+  set(CMAKE_ANDROID_NDK $ENV{ANDROID_NDK})
 else()
-    message(FATAL_ERROR "This CMake script currently only supports Android!")
+  message(
+    FATAL_ERROR "This CMake script does not support ${CMAKE_SYSTEM_NAME}!"
+  )
 endif()
 
 set(EXTRA_REDBASE_DIR "${REDBASE_DIR}")
-set(EXTRA_REDDOWNLOAD_DIR "${EXTRA_DIR}/reddownload/${TARGET_PLATFORM}/${CMAKE_ANDROID_ARCH_ABI}")
-set(EXTRA_REDSTRATEGYCENTER_DIR "${EXTRA_DIR}/redstrategycenter/${TARGET_PLATFORM}/${CMAKE_ANDROID_ARCH_ABI}")
 
 include_directories(
-    "${EXTRA_REDBASE_DIR}/include"
-    "${EXTRA_REDDOWNLOAD_DIR}/include"
-    "${EXTRA_REDSTRATEGYCENTER_DIR}/include"
-    ${CMAKE_CURRENT_SOURCE_DIR}
+  "${REDBASE_DIR}/include"
+  "${REDDOWNLOAD_DIR}"
+  "${REDSTRATEGYCENTER_DIR}"
+  ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-link_directories(
-    "${EXTRA_REDDOWNLOAD_DIR}/lib"
-    "${EXTRA_REDSTRATEGYCENTER_DIR}/lib"
-)
-
-set(SRC_LIST redpreload_jni.cpp)
-
-message(STATUS "SRC_LIST= ${SRC_LIST}")
-message(STATUS "EXTRA_REDBASE_DIR= ${EXTRA_REDBASE_DIR}")
-message(STATUS "LIB_INSTALL_DIR= ${LIB_INSTALL_DIR}")
+if(CMAKE_SYSTEM_NAME STREQUAL "Android")
+  set(SRC_LIST android/redpreload_jni.cpp)
+else()
+  message(
+    FATAL_ERROR "This CMake script does not support ${CMAKE_SYSTEM_NAME}!"
+  )
+endif()
 
 add_library(redpreload SHARED ${SRC_LIST})
 
-set(CMAKE_SYSTEM_VERSION 21)
-set(CMAKE_ANDROID_NDK $ENV{ANDROID_NDK})
-
-target_link_libraries(
+if(CMAKE_SYSTEM_NAME STREQUAL "Android")
+  find_library(log-lib log)
+  target_link_libraries(
     redpreload
+    ${log-lib}
     redbase
     reddownload
     redstrategycenter
-)
+  )
+endif()

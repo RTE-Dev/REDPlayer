@@ -41,6 +41,10 @@ android {
             withJavadocJar()
         }
     }
+
+    packagingOptions{
+        pickFirst 'lib/*/libredstrategycenter.so'
+    }
 }
 
 dependencies {

@@ -27,6 +27,16 @@ public:
                                   bool render);
   };
 
+  struct HarmonyMediaBufferContext {
+    int buffer_index;
+    void *video_decoder;
+    int decoder_serial;
+    void *decoder;
+    void *opaque;
+    void (*release_output_buffer)(HarmonyMediaBufferContext *context,
+                                  bool render);
+  };
+
   struct FFmpegBufferContext {
     void *av_frame;
     void (*release_av_frame)(FFmpegBufferContext *context);
@@ -45,6 +55,7 @@ public:
     kYUVJ420P = 4,
     kYUV420P10LE = 5,
     kAudio = 7,
+    kHarmonyVideoDecoderBuffer = 8
   };
 
 public:

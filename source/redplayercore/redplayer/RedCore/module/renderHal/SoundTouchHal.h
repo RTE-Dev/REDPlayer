@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SoundTouch.h"
+#include "soundTouch/SoundTouch.h"
 #include <stdint.h>
 
 soundtouch::SoundTouch *soundtouchCreate();

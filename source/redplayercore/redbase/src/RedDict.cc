@@ -56,20 +56,18 @@ BASIC_TYPE(Boolean, boolean_value, bool);
 void RedDict::SetString(const char *name, const char *s, ssize_t len) {
   if (!s)
     return;
-  auto str = new std::string(s, len <= 0 ? strlen(s) : len);
   Item *item = AllocateItem(name);
   if (item) {
     item->type_ = kTypeString;
-    item->u_.string_value = str;
+    item->u_.string_value = new std::string(s, len <= 0 ? strlen(s) : len);
   }
 }
 
 void RedDict::SetString(const char *name, const std::string &s) {
-  auto str = new std::string(s);
   Item *item = AllocateItem(name);
   if (item) {
     item->type_ = kTypeString;
-    item->u_.string_value = str;
+    item->u_.string_value = new std::string(s);
   }
 }
 

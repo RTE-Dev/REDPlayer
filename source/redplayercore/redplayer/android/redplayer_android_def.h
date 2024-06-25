@@ -37,7 +37,6 @@ enum media_error_type {
   MEDIA_ERROR_MALFORMED = -1007,
   MEDIA_ERROR_UNSUPPORTED = -1010,
   MEDIA_ERROR_TIMED_OUT = -110,
-
 };
 
 enum media_info_type {

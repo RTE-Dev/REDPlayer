@@ -7,31 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		351E24E529767721008266C5 /* RedPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E245C29767720008266C5 /* RedPlayer.cpp */; };
-		351E24E629767721008266C5 /* RedPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E245D29767720008266C5 /* RedPlayer.h */; };
-		351E24EE29767721008266C5 /* RedPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E246E29767720008266C5 /* RedPlayerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		351E24F029767721008266C5 /* RedMediaPlayBack.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247029767720008266C5 /* RedMediaPlayBack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		351E24F529767721008266C5 /* RedCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247729767720008266C5 /* RedCore.h */; };
-		351E24F729767721008266C5 /* RedRenderVideoHal.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247B29767720008266C5 /* RedRenderVideoHal.h */; };
-		351E24F829767721008266C5 /* RedRenderVideoHal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E247C29767720008266C5 /* RedRenderVideoHal.cpp */; };
-		351E24F929767721008266C5 /* RedRenderAudioHal.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247D29767721008266C5 /* RedRenderAudioHal.h */; };
-		351E24FA29767721008266C5 /* RedRenderAudioHal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E247E29767721008266C5 /* RedRenderAudioHal.cpp */; };
-		351E24FB29767721008266C5 /* RedSourceController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248029767721008266C5 /* RedSourceController.cpp */; };
-		351E24FC29767721008266C5 /* RedFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248229767721008266C5 /* RedFormat.h */; };
-		351E24FD29767721008266C5 /* RedFormat.c in Sources */ = {isa = PBXBuildFile; fileRef = 351E248329767721008266C5 /* RedFormat.c */; };
-		351E24FE29767721008266C5 /* reddownload_adapter.c in Sources */ = {isa = PBXBuildFile; fileRef = 351E248429767721008266C5 /* reddownload_adapter.c */; };
-		351E24FF29767721008266C5 /* RedSourceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248529767721008266C5 /* RedSourceController.h */; };
-		351E250029767721008266C5 /* VideoProcesser.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248729767721008266C5 /* VideoProcesser.h */; };
-		351E250129767721008266C5 /* AudioProcesser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248829767721008266C5 /* AudioProcesser.cpp */; };
-		351E250229767721008266C5 /* VideoProcesser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248929767721008266C5 /* VideoProcesser.cpp */; };
-		351E250329767721008266C5 /* AudioProcesser.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248A29767721008266C5 /* AudioProcesser.h */; };
-		351E250529767721008266C5 /* RedCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248E29767721008266C5 /* RedCore.cpp */; };
-		351E253F29767722008266C5 /* RedClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E24DB29767721008266C5 /* RedClock.cpp */; };
-		351E254029767722008266C5 /* RedQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E24DC29767721008266C5 /* RedQueue.h */; };
-		351E254329767722008266C5 /* RedClock.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E24DF29767721008266C5 /* RedClock.h */; };
-		351E254429767722008266C5 /* RedMsgQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E24E029767721008266C5 /* RedMsgQueue.h */; };
-		351E254629767722008266C5 /* RedQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E24E229767721008266C5 /* RedQueue.cpp */; };
-		351E254829767722008266C5 /* RedMsgQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E24E429767721008266C5 /* RedMsgQueue.cpp */; };
 		35950B1829B735AD00E6F901 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35950B1729B735AD00E6F901 /* Metal.framework */; };
 		35950B1A29B735B300E6F901 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35950B1929B735B200E6F901 /* MetalKit.framework */; };
 		35950B1C29B7367500E6F901 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35950B1B29B7367500E6F901 /* CoreGraphics.framework */; };
@@ -44,48 +19,287 @@
 		35AEFDEC2987A33700EA98CA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDDE2987740C00EA98CA /* OpenGLES.framework */; };
 		35AEFDEE2987B92C00EA98CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDED2987B92C00EA98CA /* UIKit.framework */; };
 		35AEFDF42987B9A700EA98CA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDF32987B9A700EA98CA /* QuartzCore.framework */; };
-		35AEFE06298A139800EA98CA /* RedPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35AEFE02298A139800EA98CA /* RedPacket.cpp */; };
-		35AEFE07298A139800EA98CA /* RedBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35AEFE03298A139800EA98CA /* RedBuffer.cpp */; };
-		35AEFE08298A139800EA98CA /* RedPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 35AEFE04298A139800EA98CA /* RedPacket.h */; };
-		35AEFE09298A139800EA98CA /* RedBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 35AEFE05298A139800EA98CA /* RedBuffer.h */; };
 		35F7646929DE6ED400FD3ED7 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35AEFDDC298773AA00EA98CA /* CoreMotion.framework */; };
 		35F7646B29DE6ED900FD3ED7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35F7646A29DE6ED900FD3ED7 /* AVFoundation.framework */; };
-		A004104E2AFE12760032169B /* RedPlayerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A004104D2AFE12760032169B /* RedPlayerController.mm */; };
-		A05D69932BA08DFD00B62E0F /* RedBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E97C252BA02E01009CB4B4 /* RedBase.framework */; };
-		A05D69C12BA1824000B62E0F /* RedRender in Frameworks */ = {isa = PBXBuildFile; fileRef = A05D69C02BA1824000B62E0F /* RedRender */; };
-		A0B01CBF2A3C4D490018CBDB /* RedPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E234F2976478C008266C5 /* RedPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0DF4EED2B4D375100A38074 /* SoundTouchHal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0DF4EEB2B4D375100A38074 /* SoundTouchHal.cpp */; };
-		A0DF4EEE2B4D375100A38074 /* SoundTouchHal.h in Headers */ = {isa = PBXBuildFile; fileRef = A0DF4EEC2B4D375100A38074 /* SoundTouchHal.h */; };
-		A0DF4EFC2B4E95A000A38074 /* RedPreLoad.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0DF4EFA2B4E95A000A38074 /* RedPreLoad.mm */; };
-		A0DF4EFD2B4E95A000A38074 /* RedPreLoad.h in Headers */ = {isa = PBXBuildFile; fileRef = A0DF4EFB2B4E95A000A38074 /* RedPreLoad.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0DF4F012B4ECB2300A38074 /* RedMediaPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DF4F002B4ECB2300A38074 /* RedMediaPlayback.m */; };
-		A0E97C172BA02DA3009CB4B4 /* reddecoder in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E97C162BA02DA3009CB4B4 /* reddecoder */; };
-		A0E97C192BA02DAD009CB4B4 /* RedDownload in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E97C182BA02DAD009CB4B4 /* RedDownload */; };
-		A0E97C1D2BA02DBC009CB4B4 /* redsource in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E97C1C2BA02DBC009CB4B4 /* redsource */; };
-		A0E97C1F2BA02DC4009CB4B4 /* RedStrategyCenter in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E97C1E2BA02DC4009CB4B4 /* RedStrategyCenter */; };
-		B3D4D8D6298D057200395AAD /* RedSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3D4D8D4298D057200395AAD /* RedSampler.cpp */; };
-		B3D4D8D7298D057200395AAD /* RedSampler.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D4D8D5298D057200395AAD /* RedSampler.h */; };
-		FA47B9F429C9973000234C7B /* redioapplication.h in Headers */ = {isa = PBXBuildFile; fileRef = FA47B9F329C9973000234C7B /* redioapplication.h */; };
-		FA943CC6299E06BB0048D720 /* RedConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = FA943CC5299E06BB0048D720 /* RedConfig.h */; };
-		FA943CC8299E06D10048D720 /* RedConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA943CC7299E06D10048D720 /* RedConfig.cpp */; };
-		FA9D943D2A2728F8000309C4 /* NSString+REDMedia.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA9D943C2A2728F8000309C4 /* NSString+REDMedia.mm */; };
-		FA9D94412A273A5C000309C4 /* RedNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9D94402A273A5C000309C4 /* RedNotificationManager.m */; };
+		A08914712C0DED7300BAF73C /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A08914702C0DED7300BAF73C /* libcurl.a */; };
+		A08914732C0DED7C00BAF73C /* libcares.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A08914722C0DED7C00BAF73C /* libcares.a */; };
+		A089148F2C0DFC9A00BAF73C /* metal_device_filter.metal in Sources */ = {isa = PBXBuildFile; fileRef = A08913492C0DE6F200BAF73C /* metal_device_filter.metal */; };
+		A08914A52C0DFD6600BAF73C /* RedDict.cc in Sources */ = {isa = PBXBuildFile; fileRef = A089127E2C0DE64F00BAF73C /* RedDict.cc */; };
+		A08914A62C0DFD6600BAF73C /* RedLog.cc in Sources */ = {isa = PBXBuildFile; fileRef = A089127F2C0DE64F00BAF73C /* RedLog.cc */; };
+		A08914A72C0DFD6600BAF73C /* ByteBuffer.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912812C0DE64F00BAF73C /* ByteBuffer.cc */; };
+		A08914A82C0DFD6600BAF73C /* Util.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912822C0DE64F00BAF73C /* Util.cc */; };
+		A08914A92C0DFD6600BAF73C /* ArrayList.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912832C0DE64F00BAF73C /* ArrayList.cc */; };
+		A08914AA2C0DFD6600BAF73C /* Bundle.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912842C0DE64F00BAF73C /* Bundle.cc */; };
+		A08914AB2C0DFD6600BAF73C /* Env.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912852C0DE64F00BAF73C /* Env.cc */; };
+		A08914AD2C0DFD6600BAF73C /* RedExtractorFactory.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912A32C0DE69100BAF73C /* RedExtractorFactory.cc */; };
+		A08914AF2C0DFD6600BAF73C /* RedFFExtractor.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912A12C0DE69100BAF73C /* RedFFExtractor.cc */; };
+		A08914B12C0DFD6600BAF73C /* RedFFUtil.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912A42C0DE69100BAF73C /* RedFFUtil.cc */; };
+		A08914B32C0DFD6600BAF73C /* RedSource.cc in Sources */ = {isa = PBXBuildFile; fileRef = A089129C2C0DE69100BAF73C /* RedSource.cc */; };
+		A08914B92C0DFD6600BAF73C /* RedPlaylistJsonParser.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912B62C0DE6B600BAF73C /* RedPlaylistJsonParser.cc */; };
+		A08914BA2C0DFD6600BAF73C /* RedAdaptiveConfig.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912B82C0DE6B600BAF73C /* RedAdaptiveConfig.cc */; };
+		A08914BF2C0DFD6600BAF73C /* AlwaysBestAdaptationLogic.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912BE2C0DE6B600BAF73C /* AlwaysBestAdaptationLogic.cc */; };
+		A08914C02C0DFD6600BAF73C /* AdaptiveAdaptationLogic.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912BF2C0DE6B600BAF73C /* AdaptiveAdaptationLogic.cc */; };
+		A08914C22C0DFD6600BAF73C /* AlwaysLowestAdaptationLogic.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912C12C0DE6B600BAF73C /* AlwaysLowestAdaptationLogic.cc */; };
+		A08914C42C0DFD6600BAF73C /* NetworkEvaluate.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912C52C0DE6B600BAF73C /* NetworkEvaluate.cc */; };
+		A08914C72C0DFD6600BAF73C /* RedStrategyCenter.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912B02C0DE6B600BAF73C /* RedStrategyCenter.cc */; };
+		A08914CA2C0DFD6600BAF73C /* RedAdaptiveStrategy.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08912C92C0DE6B600BAF73C /* RedAdaptiveStrategy.cc */; };
+		A08914CD2C0DFD6600BAF73C /* audio_codec_info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08912E52C0DE6CF00BAF73C /* audio_codec_info.cpp */; };
+		A08914D02C0DFD6600BAF73C /* audio_decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08912E92C0DE6CF00BAF73C /* audio_decoder.cpp */; };
+		A08914D32C0DFD6600BAF73C /* audio_decoder_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08912EC2C0DE6CF00BAF73C /* audio_decoder_factory.cpp */; };
+		A08914D42C0DFD6600BAF73C /* ffmpeg_audio_decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08912ED2C0DE6CF00BAF73C /* ffmpeg_audio_decoder.cpp */; };
+		A08914D52C0DFD6600BAF73C /* buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08912EF2C0DE6CF00BAF73C /* buffer.cpp */; };
+		A08914D92C0DFD6600BAF73C /* video_decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08912F52C0DE6CF00BAF73C /* video_decoder.cpp */; };
+		A08914DB2C0DFD6600BAF73C /* video_decoder_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08912FA2C0DE6CF00BAF73C /* video_decoder_factory.cpp */; };
+		A08914DE2C0DFD6600BAF73C /* vtb_video_decoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08912FE2C0DE6CF00BAF73C /* vtb_video_decoder.mm */; };
+		A08914DF2C0DFD6600BAF73C /* ffmpeg_video_decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08912FF2C0DE6CF00BAF73C /* ffmpeg_video_decoder.cpp */; };
+		A08914E12C0DFD6600BAF73C /* h264_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08913052C0DE6CF00BAF73C /* h264_parser.cpp */; };
+		A08914E42C0DFD6600BAF73C /* format_convert_helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08913082C0DE6CF00BAF73C /* format_convert_helper.cpp */; };
+		A08914E62C0DFD6600BAF73C /* video_codec_info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089130A2C0DE6CF00BAF73C /* video_codec_info.cpp */; };
+		A08914E92C0DFD6600BAF73C /* audio_queue_render.cc in Sources */ = {isa = PBXBuildFile; fileRef = A089139F2C0DE6F200BAF73C /* audio_queue_render.cc */; };
+		A08914ED2C0DFD6600BAF73C /* audio_render_factory.cc in Sources */ = {isa = PBXBuildFile; fileRef = A08913AA2C0DE6F200BAF73C /* audio_render_factory.cc */; };
+		A08914F32C0DFD6600BAF73C /* video_renderer_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089132D2C0DE6F200BAF73C /* video_renderer_factory.cpp */; };
+		A08914F82C0DFD6600BAF73C /* video_filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08913322C0DE6F200BAF73C /* video_filter.cpp */; };
+		A08914F92C0DFD6600BAF73C /* metal_video_renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08913342C0DE6F200BAF73C /* metal_video_renderer.mm */; };
+		A08914FD2C0DFD6600BAF73C /* metal_video_output.mm in Sources */ = {isa = PBXBuildFile; fileRef = A089133A2C0DE6F200BAF73C /* metal_video_output.mm */; };
+		A08915022C0DFD6600BAF73C /* metal_common.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08913402C0DE6F200BAF73C /* metal_common.mm */; };
+		A08915032C0DFD6600BAF73C /* metal_video_texture.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08913412C0DE6F200BAF73C /* metal_video_texture.mm */; };
+		A08915052C0DFD6600BAF73C /* metal_video_cmd_queue.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08913432C0DE6F200BAF73C /* metal_video_cmd_queue.mm */; };
+		A089150B2C0DFD6600BAF73C /* redrender_metal_view.mm in Sources */ = {isa = PBXBuildFile; fileRef = A089134A2C0DE6F200BAF73C /* redrender_metal_view.mm */; };
+		A089150E2C0DFD6600BAF73C /* metal_filter_base.mm in Sources */ = {isa = PBXBuildFile; fileRef = A089134E2C0DE6F200BAF73C /* metal_filter_base.mm */; };
+		A08915102C0DFD6600BAF73C /* metal_filter_device.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08913502C0DE6F200BAF73C /* metal_filter_device.mm */; };
+		A08915152C0DFD6600BAF73C /* video_renderer_info.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08913582C0DE6F200BAF73C /* video_renderer_info.cpp */; };
+		A08915192C0DFD6600BAF73C /* video_renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08913602C0DE6F200BAF73C /* video_renderer.cpp */; };
+		A089151B2C0DFD6600BAF73C /* avsbdl_video_renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08913632C0DE6F200BAF73C /* avsbdl_video_renderer.mm */; };
+		A089151C2C0DFD6600BAF73C /* redrender_avsbdl_view.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08913642C0DE6F200BAF73C /* redrender_avsbdl_view.mm */; };
+		A08915202C0DFD6600BAF73C /* redrender_avsbdl_layer.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08913682C0DE6F200BAF73C /* redrender_avsbdl_layer.mm */; };
+		A08915212C0DFD6600BAF73C /* opengl_video_renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089136A2C0DE6F200BAF73C /* opengl_video_renderer.cpp */; };
+		A08915222C0DFD6600BAF73C /* opengl_video_input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089136C2C0DE6F200BAF73C /* opengl_video_input.cpp */; };
+		A08915252C0DFD6600BAF73C /* opengl_video_output.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08913732C0DE6F200BAF73C /* opengl_video_output.cpp */; };
+		A08915282C0DFD6600BAF73C /* redrender_gl_texture.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08913772C0DE6F200BAF73C /* redrender_gl_texture.mm */; };
+		A08915292C0DFD6600BAF73C /* eagl_context.mm in Sources */ = {isa = PBXBuildFile; fileRef = A08913782C0DE6F200BAF73C /* eagl_context.mm */; };
+		A089152B2C0DFD6600BAF73C /* redrender_gl_view.mm in Sources */ = {isa = PBXBuildFile; fileRef = A089137A2C0DE6F200BAF73C /* redrender_gl_view.mm */; };
+		A089152D2C0DFD6600BAF73C /* gl_program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089137D2C0DE6F200BAF73C /* gl_program.cpp */; };
+		A089152F2C0DFD6600BAF73C /* context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089137F2C0DE6F200BAF73C /* context.cpp */; };
+		A08915302C0DFD6600BAF73C /* framebuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08913802C0DE6F200BAF73C /* framebuffer.cpp */; };
+		A08915312C0DFD6600BAF73C /* gl_util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08913812C0DE6F200BAF73C /* gl_util.cpp */; };
+		A08915392C0DFD6600BAF73C /* filter_shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089138D2C0DE6F200BAF73C /* filter_shader.cpp */; };
+		A089153E2C0DFD6600BAF73C /* opengl_filter_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08913922C0DE6F200BAF73C /* opengl_filter_base.cpp */; };
+		A08915422C0DFD6600BAF73C /* opengl_device_filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08913962C0DE6F200BAF73C /* opengl_device_filter.cpp */; };
+		A08915462C0DFD6600BAF73C /* REDDnsCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914452C0DE71B00BAF73C /* REDDnsCache.cpp */; };
+		A08915482C0DFD6600BAF73C /* REDPing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914472C0DE71B00BAF73C /* REDPing.cpp */; };
+		A08915492C0DFD6600BAF73C /* NetworkQuality.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914312C0DE71B00BAF73C /* NetworkQuality.cpp */; };
+		A089154B2C0DFD6600BAF73C /* REDCurl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089141D2C0DE71A00BAF73C /* REDCurl.cpp */; };
+		A089154D2C0DFD6600BAF73C /* REDDownloadCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089142B2C0DE71B00BAF73C /* REDDownloadCache.cpp */; };
+		A08915502C0DFD6600BAF73C /* REDDownloadCacheManagerImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089142A2C0DE71A00BAF73C /* REDDownloadCacheManagerImpl.cpp */; };
+		A08915522C0DFD6600BAF73C /* RedDownloadConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089143E2C0DE71B00BAF73C /* RedDownloadConfig.cpp */; };
+		A08915552C0DFD6600BAF73C /* REDDownloaderBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089142E2C0DE71B00BAF73C /* REDDownloaderBase.cpp */; };
+		A08915572C0DFD6600BAF73C /* REDDownloaderFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914202C0DE71A00BAF73C /* REDDownloaderFactory.cpp */; };
+		A089155A2C0DFD6600BAF73C /* REDDownloadTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089142F2C0DE71B00BAF73C /* REDDownloadTask.cpp */; };
+		A089155C2C0DFD6600BAF73C /* REDFileCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914302C0DE71B00BAF73C /* REDFileCache.cpp */; };
+		A089155E2C0DFD6600BAF73C /* REDFileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A089143D2C0DE71B00BAF73C /* REDFileManager.cpp */; };
+		A08915612C0DFD6600BAF73C /* REDRingBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914282C0DE71A00BAF73C /* REDRingBuffer.cpp */; };
+		A08915632C0DFD6600BAF73C /* REDThreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914402C0DE71B00BAF73C /* REDThreadPool.cpp */; };
+		A08915652C0DFD6600BAF73C /* REDURLParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914322C0DE71B00BAF73C /* REDURLParser.cpp */; };
+		A08915682C0DFD6600BAF73C /* Cipher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914242C0DE71A00BAF73C /* Cipher.cpp */; };
+		A089156A2C0DFD6600BAF73C /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914262C0DE71A00BAF73C /* Utility.cpp */; };
+		A089156B2C0DFD6600BAF73C /* reddownload_datasource_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A08914342C0DE71B00BAF73C /* reddownload_datasource_wrapper.cpp */; };
+		A089156D2C0DFD6600BAF73C /* RedPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E245C29767720008266C5 /* RedPlayer.cpp */; };
+		A08915702C0DFD6600BAF73C /* RedPreLoad.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0DF4EFA2B4E95A000A38074 /* RedPreLoad.mm */; };
+		A08915722C0DFD6600BAF73C /* RedMediaPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DF4F002B4ECB2300A38074 /* RedMediaPlayback.m */; };
+		A08915742C0DFD6600BAF73C /* RedPlayerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A004104D2AFE12760032169B /* RedPlayerController.mm */; };
+		A08915752C0DFD6600BAF73C /* NSString+REDMedia.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA9D943C2A2728F8000309C4 /* NSString+REDMedia.mm */; };
+		A08915782C0DFD6600BAF73C /* RedNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9D94402A273A5C000309C4 /* RedNotificationManager.m */; };
+		A08915792C0DFD6600BAF73C /* RedCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248E29767721008266C5 /* RedCore.cpp */; };
+		A089157B2C0DFD6600BAF73C /* AAFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA93480E2C0710ED00BF252C /* AAFilter.cpp */; };
+		A089157D2C0DFD6600BAF73C /* BPMDetect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA93480D2C0710ED00BF252C /* BPMDetect.cpp */; };
+		A089157F2C0DFD6600BAF73C /* cpu_detect_x86.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA9348192C0710ED00BF252C /* cpu_detect_x86.cpp */; };
+		A08915812C0DFD6600BAF73C /* FIFOSampleBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA9348182C0710ED00BF252C /* FIFOSampleBuffer.cpp */; };
+		A08915842C0DFD6600BAF73C /* FIRFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA9348212C0710ED00BF252C /* FIRFilter.cpp */; };
+		A08915862C0DFD6600BAF73C /* InterpolateCubic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA9348202C0710ED00BF252C /* InterpolateCubic.cpp */; };
+		A08915882C0DFD6600BAF73C /* InterpolateLinear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA93481B2C0710ED00BF252C /* InterpolateLinear.cpp */; };
+		A089158A2C0DFD6600BAF73C /* InterpolateShannon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA9348152C0710ED00BF252C /* InterpolateShannon.cpp */; };
+		A089158C2C0DFD6600BAF73C /* mmx_optimized.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA93480B2C0710ED00BF252C /* mmx_optimized.cpp */; };
+		A089158D2C0DFD6600BAF73C /* PeakFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA93481F2C0710ED00BF252C /* PeakFinder.cpp */; };
+		A089158F2C0DFD6600BAF73C /* RateTransposer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA9348222C0710ED00BF252C /* RateTransposer.cpp */; };
+		A08915922C0DFD6600BAF73C /* SoundTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA93481A2C0710ED00BF252C /* SoundTouch.cpp */; };
+		A08915942C0DFD6600BAF73C /* sse_optimized.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA9348172C0710ED00BF252C /* sse_optimized.cpp */; };
+		A08915962C0DFD6600BAF73C /* TDStretch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA93480C2C0710ED00BF252C /* TDStretch.cpp */; };
+		A08915982C0DFD6600BAF73C /* SoundTouchHal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0DF4EEB2B4D375100A38074 /* SoundTouchHal.cpp */; };
+		A089159A2C0DFD6600BAF73C /* RedRenderVideoHal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E247C29767720008266C5 /* RedRenderVideoHal.cpp */; };
+		A089159C2C0DFD6600BAF73C /* RedRenderAudioHal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E247E29767721008266C5 /* RedRenderAudioHal.cpp */; };
+		A089159E2C0DFD6700BAF73C /* RedSourceController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248029767721008266C5 /* RedSourceController.cpp */; };
+		A08915A12C0DFD6700BAF73C /* RedFormat.c in Sources */ = {isa = PBXBuildFile; fileRef = 351E248329767721008266C5 /* RedFormat.c */; };
+		A08915A32C0DFD6700BAF73C /* reddownload_adapter.c in Sources */ = {isa = PBXBuildFile; fileRef = 351E248429767721008266C5 /* reddownload_adapter.c */; };
+		A08915A42C0DFD6700BAF73C /* VideoProcesser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248929767721008266C5 /* VideoProcesser.cpp */; };
+		A08915A62C0DFD6700BAF73C /* AudioProcesser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E248829767721008266C5 /* AudioProcesser.cpp */; };
+		A08915A82C0DFD6700BAF73C /* RedConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA943CC7299E06D10048D720 /* RedConfig.cpp */; };
+		A08915AA2C0DFD6700BAF73C /* RedSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3D4D8D4298D057200395AAD /* RedSampler.cpp */; };
+		A08915AC2C0DFD6700BAF73C /* RedBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35AEFE03298A139800EA98CA /* RedBuffer.cpp */; };
+		A08915AE2C0DFD6700BAF73C /* RedPacket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 35AEFE02298A139800EA98CA /* RedPacket.cpp */; };
+		A08915B02C0DFD6700BAF73C /* RedClock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E24DB29767721008266C5 /* RedClock.cpp */; };
+		A08915B22C0DFD6700BAF73C /* RedQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E24E229767721008266C5 /* RedQueue.cpp */; };
+		A08915B42C0DFD6700BAF73C /* RedMsgQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351E24E429767721008266C5 /* RedMsgQueue.cpp */; };
+		A08915B72C0DFD9E00BAF73C /* RedDef.h in Headers */ = {isa = PBXBuildFile; fileRef = A089126D2C0DE64F00BAF73C /* RedDef.h */; };
+		A08915B82C0DFD9E00BAF73C /* RedLog.h in Headers */ = {isa = PBXBuildFile; fileRef = A089126E2C0DE64F00BAF73C /* RedLog.h */; };
+		A08915B92C0DFD9E00BAF73C /* RedMsg.h in Headers */ = {isa = PBXBuildFile; fileRef = A089126F2C0DE64F00BAF73C /* RedMsg.h */; };
+		A08915BA2C0DFD9E00BAF73C /* RedDict.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912702C0DE64F00BAF73C /* RedDict.h */; };
+		A08915BB2C0DFD9E00BAF73C /* RedBase.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912712C0DE64F00BAF73C /* RedBase.h */; };
+		A08915BC2C0DFD9E00BAF73C /* RedDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912722C0DE64F00BAF73C /* RedDebug.h */; };
+		A08915BD2C0DFD9E00BAF73C /* RedError.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912732C0DE64F00BAF73C /* RedError.h */; };
+		A08915BE2C0DFD9E00BAF73C /* Env.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912752C0DE64F00BAF73C /* Env.h */; };
+		A08915BF2C0DFD9E00BAF73C /* Debug.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912762C0DE64F00BAF73C /* Debug.h */; };
+		A08915C02C0DFD9E00BAF73C /* Bundle.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912772C0DE64F00BAF73C /* Bundle.h */; };
+		A08915C12C0DFD9E00BAF73C /* ByteBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912782C0DE64F00BAF73C /* ByteBuffer.h */; };
+		A08915C22C0DFD9E00BAF73C /* Util.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912792C0DE64F00BAF73C /* Util.h */; };
+		A08915C32C0DFD9E00BAF73C /* ArrayList.h in Headers */ = {isa = PBXBuildFile; fileRef = A089127A2C0DE64F00BAF73C /* ArrayList.h */; };
+		A08915C42C0DFD9E00BAF73C /* RedMeta.h in Headers */ = {isa = PBXBuildFile; fileRef = A089127B2C0DE64F00BAF73C /* RedMeta.h */; };
+		A08915C52C0DFD9E00BAF73C /* RedProp.h in Headers */ = {isa = PBXBuildFile; fileRef = A089127C2C0DE64F00BAF73C /* RedProp.h */; };
+		A08915C62C0DFD9E00BAF73C /* IRedExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = A089129E2C0DE69100BAF73C /* IRedExtractor.h */; };
+		A08915C72C0DFD9E00BAF73C /* RedExtractorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = A089129F2C0DE69100BAF73C /* RedExtractorFactory.h */; };
+		A08915C82C0DFD9E00BAF73C /* RedFFExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912A02C0DE69100BAF73C /* RedFFExtractor.h */; };
+		A08915C92C0DFD9E00BAF73C /* RedFFUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912A52C0DE69100BAF73C /* RedFFUtil.h */; };
+		A08915CA2C0DFD9E00BAF73C /* RedSource.h in Headers */ = {isa = PBXBuildFile; fileRef = A089129D2C0DE69100BAF73C /* RedSource.h */; };
+		A08915CB2C0DFD9E00BAF73C /* RedSourceCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912A22C0DE69100BAF73C /* RedSourceCommon.h */; };
+		A08915CC2C0DFD9E00BAF73C /* RedPlaylistJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912B32C0DE6B600BAF73C /* RedPlaylistJsonParser.h */; };
+		A08915CD2C0DFD9E00BAF73C /* RedPlaylist.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912B42C0DE6B600BAF73C /* RedPlaylist.h */; };
+		A08915CE2C0DFD9E00BAF73C /* RedPlaylistParser.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912B52C0DE6B600BAF73C /* RedPlaylistParser.h */; };
+		A08915CF2C0DFD9E00BAF73C /* RedAdaptiveConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912B92C0DE6B600BAF73C /* RedAdaptiveConfig.h */; };
+		A08915D02C0DFD9E00BAF73C /* AbstractAdaptationLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912BB2C0DE6B600BAF73C /* AbstractAdaptationLogic.h */; };
+		A08915D12C0DFD9E00BAF73C /* AlwaysBestAdaptationLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912BC2C0DE6B600BAF73C /* AlwaysBestAdaptationLogic.h */; };
+		A08915D22C0DFD9E00BAF73C /* AdaptiveAdaptationLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912BD2C0DE6B600BAF73C /* AdaptiveAdaptationLogic.h */; };
+		A08915D32C0DFD9E00BAF73C /* AlwaysLowestAdaptationLogic.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912C02C0DE6B600BAF73C /* AlwaysLowestAdaptationLogic.h */; };
+		A08915D42C0DFD9E00BAF73C /* NetworkEvaluate.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912C42C0DE6B600BAF73C /* NetworkEvaluate.h */; };
+		A08915D52C0DFD9E00BAF73C /* NetworkEvaluateV1.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912C62C0DE6B600BAF73C /* NetworkEvaluateV1.h */; };
+		A08915D62C0DFD9E00BAF73C /* IDownloadObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912CC2C0DE6B600BAF73C /* IDownloadObserver.h */; };
+		A08915D72C0DFD9E00BAF73C /* RedStrategyCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912C72C0DE6B600BAF73C /* RedStrategyCenter.h */; };
+		A08915D82C0DFD9E00BAF73C /* RedStrategyCenterCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912C22C0DE6B600BAF73C /* RedStrategyCenterCommon.h */; };
+		A08915D92C0DFD9E00BAF73C /* RedAdaptiveStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912CA2C0DE6B600BAF73C /* RedAdaptiveStrategy.h */; };
+		A08915DA2C0DFD9E00BAF73C /* audio_common_definition.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912E42C0DE6CF00BAF73C /* audio_common_definition.h */; };
+		A08915DB2C0DFD9E00BAF73C /* audio_codec_info.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912E62C0DE6CF00BAF73C /* audio_codec_info.h */; };
+		A08915DC2C0DFD9E00BAF73C /* audio_decoder_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912E82C0DE6CF00BAF73C /* audio_decoder_factory.h */; };
+		A08915DD2C0DFD9E00BAF73C /* audio_decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912EA2C0DE6CF00BAF73C /* audio_decoder.h */; };
+		A08915DE2C0DFD9E00BAF73C /* ffmpeg_audio_decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912EB2C0DE6CF00BAF73C /* ffmpeg_audio_decoder.h */; };
+		A08915DF2C0DFD9E00BAF73C /* buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912F02C0DE6CF00BAF73C /* buffer.h */; };
+		A08915E02C0DFD9E00BAF73C /* logger.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912F12C0DE6CF00BAF73C /* logger.h */; };
+		A08915E12C0DFD9E00BAF73C /* ffmpeg_video_decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912F42C0DE6CF00BAF73C /* ffmpeg_video_decoder.h */; };
+		A08915E22C0DFD9E00BAF73C /* video_decoder_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912F62C0DE6CF00BAF73C /* video_decoder_factory.h */; };
+		A08915E32C0DFD9E00BAF73C /* vtb_video_decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912FC2C0DE6CF00BAF73C /* vtb_video_decoder.h */; };
+		A08915E42C0DFD9E00BAF73C /* cf_obj_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = A08912FD2C0DE6CF00BAF73C /* cf_obj_helper.h */; };
+		A08915E52C0DFD9E00BAF73C /* video_decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913032C0DE6CF00BAF73C /* video_decoder.h */; };
+		A08915E62C0DFD9E00BAF73C /* h264_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913062C0DE6CF00BAF73C /* h264_parser.h */; };
+		A08915E72C0DFD9E00BAF73C /* format_convert_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913072C0DE6CF00BAF73C /* format_convert_helper.h */; };
+		A08915E82C0DFD9E00BAF73C /* video_common_definition.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913092C0DE6CF00BAF73C /* video_common_definition.h */; };
+		A08915E92C0DFD9E00BAF73C /* video_codec_info.h in Headers */ = {isa = PBXBuildFile; fileRef = A089130B2C0DE6CF00BAF73C /* video_codec_info.h */; };
+		A08915EA2C0DFD9E00BAF73C /* audio_render_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = A089139A2C0DE6F200BAF73C /* audio_render_factory.h */; };
+		A08915EB2C0DFD9E00BAF73C /* audio_queue_render.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913A02C0DE6F200BAF73C /* audio_queue_render.h */; };
+		A08915EC2C0DFD9E00BAF73C /* audio_common.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913A12C0DE6F200BAF73C /* audio_common.h */; };
+		A08915ED2C0DFD9E00BAF73C /* audio_info.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913A92C0DE6F200BAF73C /* audio_info.h */; };
+		A08915EE2C0DFD9E00BAF73C /* audio_render_interface.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913AB2C0DE6F200BAF73C /* audio_render_interface.h */; };
+		A08915EF2C0DFD9E00BAF73C /* redrender_buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913AD2C0DE6F200BAF73C /* redrender_buffer.h */; };
+		A08915F02C0DFD9E00BAF73C /* logger.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913AF2C0DE6F200BAF73C /* logger.h */; };
+		A08915F12C0DFD9E00BAF73C /* redrender_macro_definition.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913B02C0DE6F200BAF73C /* redrender_macro_definition.h */; };
+		A08915F22C0DFD9E00BAF73C /* video_inc_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = A089132E2C0DE6F200BAF73C /* video_inc_internal.h */; };
+		A08915F32C0DFD9E00BAF73C /* video_renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = A089132F2C0DE6F200BAF73C /* video_renderer.h */; };
+		A08915F42C0DFD9E00BAF73C /* video_renderer_info.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913312C0DE6F200BAF73C /* video_renderer_info.h */; };
+		A08915F52C0DFD9E00BAF73C /* metal_video_input.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913372C0DE6F200BAF73C /* metal_video_input.h */; };
+		A08915F62C0DFD9E00BAF73C /* redrender_metal_view.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913382C0DE6F200BAF73C /* redrender_metal_view.h */; };
+		A08915F72C0DFD9E00BAF73C /* metal_video_output.h in Headers */ = {isa = PBXBuildFile; fileRef = A089133B2C0DE6F200BAF73C /* metal_video_output.h */; };
+		A08915F82C0DFD9E00BAF73C /* metal_common.h in Headers */ = {isa = PBXBuildFile; fileRef = A089133D2C0DE6F200BAF73C /* metal_common.h */; };
+		A08915F92C0DFD9E00BAF73C /* metal_video_cmd_queue.h in Headers */ = {isa = PBXBuildFile; fileRef = A089133E2C0DE6F200BAF73C /* metal_video_cmd_queue.h */; };
+		A08915FA2C0DFD9E00BAF73C /* metal_video_texture.h in Headers */ = {isa = PBXBuildFile; fileRef = A089133F2C0DE6F200BAF73C /* metal_video_texture.h */; };
+		A08915FC2C0DFD9E00BAF73C /* metal_video_renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913442C0DE6F200BAF73C /* metal_video_renderer.h */; };
+		A08915FD2C0DFD9E00BAF73C /* metal_filter_base.h in Headers */ = {isa = PBXBuildFile; fileRef = A089134C2C0DE6F200BAF73C /* metal_filter_base.h */; };
+		A08915FE2C0DFD9E00BAF73C /* metal_filter_device.h in Headers */ = {isa = PBXBuildFile; fileRef = A089134D2C0DE6F200BAF73C /* metal_filter_device.h */; };
+		A08916022C0DFD9E00BAF73C /* video_filter.h in Headers */ = {isa = PBXBuildFile; fileRef = A089135C2C0DE6F200BAF73C /* video_filter.h */; };
+		A08916032C0DFD9E00BAF73C /* video_renderer_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = A089135D2C0DE6F200BAF73C /* video_renderer_factory.h */; };
+		A08916042C0DFD9E00BAF73C /* redrender_view_protocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A089135F2C0DE6F200BAF73C /* redrender_view_protocol.h */; };
+		A08916052C0DFD9E00BAF73C /* video_macro_definition.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913612C0DE6F200BAF73C /* video_macro_definition.h */; };
+		A08916062C0DFD9E00BAF73C /* redrender_avsbdl_view.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913652C0DE6F200BAF73C /* redrender_avsbdl_view.h */; };
+		A08916072C0DFD9E00BAF73C /* redrender_avsbdl_layer.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913662C0DE6F200BAF73C /* redrender_avsbdl_layer.h */; };
+		A08916082C0DFD9E00BAF73C /* avsbdl_video_renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913672C0DE6F200BAF73C /* avsbdl_video_renderer.h */; };
+		A08916092C0DFD9E00BAF73C /* opengl_video_input.h in Headers */ = {isa = PBXBuildFile; fileRef = A089136D2C0DE6F200BAF73C /* opengl_video_input.h */; };
+		A089160A2C0DFD9E00BAF73C /* opengl_video_output.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913722C0DE6F200BAF73C /* opengl_video_output.h */; };
+		A089160B2C0DFD9E00BAF73C /* redrender_gl_texture.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913752C0DE6F200BAF73C /* redrender_gl_texture.h */; };
+		A089160C2C0DFD9E00BAF73C /* eagl_context.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913762C0DE6F200BAF73C /* eagl_context.h */; };
+		A089160D2C0DFD9E00BAF73C /* redrender_gl_view.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913792C0DE6F200BAF73C /* redrender_gl_view.h */; };
+		A089160E2C0DFD9E00BAF73C /* opengl_video_renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = A089137B2C0DE6F200BAF73C /* opengl_video_renderer.h */; };
+		A08916102C0DFD9E00BAF73C /* context.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913822C0DE6F200BAF73C /* context.h */; };
+		A08916112C0DFD9E00BAF73C /* framebuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913832C0DE6F200BAF73C /* framebuffer.h */; };
+		A08916122C0DFD9E00BAF73C /* gl_util.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913842C0DE6F200BAF73C /* gl_util.h */; };
+		A08916132C0DFD9E00BAF73C /* gl_program.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913852C0DE6F200BAF73C /* gl_program.h */; };
+		A08916142C0DFD9E00BAF73C /* opengl_filter_base.h in Headers */ = {isa = PBXBuildFile; fileRef = A089138B2C0DE6F200BAF73C /* opengl_filter_base.h */; };
+		A08916162C0DFD9E00BAF73C /* filter_shader.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913932C0DE6F200BAF73C /* filter_shader.h */; };
+		A089161A2C0DFD9E00BAF73C /* opengl_device_filter.h in Headers */ = {isa = PBXBuildFile; fileRef = A08913982C0DE6F200BAF73C /* opengl_device_filter.h */; };
+		A089161B2C0DFD9E00BAF73C /* REDDnsCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914442C0DE71B00BAF73C /* REDDnsCache.h */; };
+		A089161C2C0DFD9E00BAF73C /* REDPing.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914462C0DE71B00BAF73C /* REDPing.h */; };
+		A089161D2C0DFD9E00BAF73C /* NetworkQuality.h in Headers */ = {isa = PBXBuildFile; fileRef = A089141E2C0DE71A00BAF73C /* NetworkQuality.h */; };
+		A089161E2C0DFD9E00BAF73C /* REDCurl.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914362C0DE71B00BAF73C /* REDCurl.h */; };
+		A089161F2C0DFD9E00BAF73C /* REDDownloadCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A089143C2C0DE71B00BAF73C /* REDDownloadCache.h */; };
+		A08916202C0DFD9E00BAF73C /* REDDownloadCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A089142D2C0DE71B00BAF73C /* REDDownloadCacheManager.h */; };
+		A08916212C0DFD9F00BAF73C /* REDDownloadCacheManagerImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = A089142C2C0DE71B00BAF73C /* REDDownloadCacheManagerImpl.h */; };
+		A08916222C0DFD9F00BAF73C /* RedDownloadConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A089143F2C0DE71B00BAF73C /* RedDownloadConfig.h */; };
+		A08916232C0DFD9F00BAF73C /* REDDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914412C0DE71B00BAF73C /* REDDownloader.h */; };
+		A08916242C0DFD9F00BAF73C /* REDDownloaderBase.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914272C0DE71A00BAF73C /* REDDownloaderBase.h */; };
+		A08916252C0DFD9F00BAF73C /* REDDownloaderFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = A089141F2C0DE71A00BAF73C /* REDDownloaderFactory.h */; };
+		A08916262C0DFD9F00BAF73C /* REDDownloadListen.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914422C0DE71B00BAF73C /* REDDownloadListen.h */; };
+		A08916272C0DFD9F00BAF73C /* REDDownloadTask.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914392C0DE71B00BAF73C /* REDDownloadTask.h */; };
+		A08916282C0DFD9F00BAF73C /* REDFileCache.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914292C0DE71A00BAF73C /* REDFileCache.h */; };
+		A08916292C0DFD9F00BAF73C /* REDFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A089143B2C0DE71B00BAF73C /* REDFileManager.h */; };
+		A089162A2C0DFD9F00BAF73C /* REDnocopyable.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914372C0DE71B00BAF73C /* REDnocopyable.h */; };
+		A089162B2C0DFD9F00BAF73C /* REDRingBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914382C0DE71B00BAF73C /* REDRingBuffer.h */; };
+		A089162C2C0DFD9F00BAF73C /* REDThreadPool.h in Headers */ = {isa = PBXBuildFile; fileRef = A089143A2C0DE71B00BAF73C /* REDThreadPool.h */; };
+		A089162D2C0DFD9F00BAF73C /* REDURLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914212C0DE71A00BAF73C /* REDURLParser.h */; };
+		A089162E2C0DFD9F00BAF73C /* Cipher.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914232C0DE71A00BAF73C /* Cipher.h */; };
+		A089162F2C0DFD9F00BAF73C /* Utility.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914252C0DE71A00BAF73C /* Utility.h */; };
+		A08916302C0DFD9F00BAF73C /* reddownload_datasource_wrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A08914352C0DE71B00BAF73C /* reddownload_datasource_wrapper.h */; };
+		A08916312C0DFD9F00BAF73C /* RedPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E245D29767720008266C5 /* RedPlayer.h */; };
+		A08916322C0DFD9F00BAF73C /* RedPreLoad.h in Headers */ = {isa = PBXBuildFile; fileRef = A0DF4EFB2B4E95A000A38074 /* RedPreLoad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A08916332C0DFD9F00BAF73C /* RedMediaPlayBack.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247029767720008266C5 /* RedMediaPlayBack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A08916342C0DFD9F00BAF73C /* RedPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E246E29767720008266C5 /* RedPlayerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A08916352C0DFD9F00BAF73C /* NSString+REDMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9D943E2A272947000309C4 /* NSString+REDMedia.h */; };
+		A08916362C0DFD9F00BAF73C /* RedNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9D943F2A273A1C000309C4 /* RedNotificationManager.h */; };
+		A08916372C0DFD9F00BAF73C /* RedCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247729767720008266C5 /* RedCore.h */; };
+		A08916382C0DFD9F00BAF73C /* AAFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = FA93481C2C0710ED00BF252C /* AAFilter.h */; };
+		A08916392C0DFD9F00BAF73C /* BPMDetect.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9348082C0710ED00BF252C /* BPMDetect.h */; };
+		A089163A2C0DFD9F00BAF73C /* cpu_detect.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9348072C0710ED00BF252C /* cpu_detect.h */; };
+		A089163B2C0DFD9F00BAF73C /* FIFOSampleBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA93481D2C0710ED00BF252C /* FIFOSampleBuffer.h */; };
+		A089163C2C0DFD9F00BAF73C /* FIFOSamplePipe.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9348232C0710ED00BF252C /* FIFOSamplePipe.h */; };
+		A089163D2C0DFD9F00BAF73C /* FIRFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = FA93480F2C0710ED00BF252C /* FIRFilter.h */; };
+		A089163E2C0DFD9F00BAF73C /* InterpolateCubic.h in Headers */ = {isa = PBXBuildFile; fileRef = FA93480A2C0710ED00BF252C /* InterpolateCubic.h */; };
+		A089163F2C0DFD9F00BAF73C /* InterpolateLinear.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9348122C0710ED00BF252C /* InterpolateLinear.h */; };
+		A08916402C0DFD9F00BAF73C /* InterpolateShannon.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9348112C0710ED00BF252C /* InterpolateShannon.h */; };
+		A08916412C0DFD9F00BAF73C /* PeakFinder.h in Headers */ = {isa = PBXBuildFile; fileRef = FA93481E2C0710ED00BF252C /* PeakFinder.h */; };
+		A08916422C0DFD9F00BAF73C /* RateTransposer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9348162C0710ED00BF252C /* RateTransposer.h */; };
+		A08916432C0DFD9F00BAF73C /* soundtouch_config.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9348102C0710ED00BF252C /* soundtouch_config.h */; };
+		A08916442C0DFD9F00BAF73C /* SoundTouch.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9348092C0710ED00BF252C /* SoundTouch.h */; };
+		A08916452C0DFD9F00BAF73C /* STTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9348132C0710ED00BF252C /* STTypes.h */; };
+		A08916462C0DFD9F00BAF73C /* TDStretch.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9348142C0710ED00BF252C /* TDStretch.h */; };
+		A08916472C0DFD9F00BAF73C /* SoundTouchHal.h in Headers */ = {isa = PBXBuildFile; fileRef = A0DF4EEC2B4D375100A38074 /* SoundTouchHal.h */; };
+		A08916482C0DFD9F00BAF73C /* RedRenderVideoHal.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247B29767720008266C5 /* RedRenderVideoHal.h */; };
+		A08916492C0DFD9F00BAF73C /* RedRenderAudioHal.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E247D29767721008266C5 /* RedRenderAudioHal.h */; };
+		A089164A2C0DFD9F00BAF73C /* RedSourceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248529767721008266C5 /* RedSourceController.h */; };
+		A089164B2C0DFD9F00BAF73C /* redioapplication.h in Headers */ = {isa = PBXBuildFile; fileRef = FA47B9F329C9973000234C7B /* redioapplication.h */; };
+		A089164C2C0DFD9F00BAF73C /* RedFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248229767721008266C5 /* RedFormat.h */; };
+		A089164D2C0DFD9F00BAF73C /* VideoProcesser.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248729767721008266C5 /* VideoProcesser.h */; };
+		A089164E2C0DFD9F00BAF73C /* AudioProcesser.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E248A29767721008266C5 /* AudioProcesser.h */; };
+		A089164F2C0DFD9F00BAF73C /* RedConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = FA943CC5299E06BB0048D720 /* RedConfig.h */; };
+		A08916502C0DFD9F00BAF73C /* RedSampler.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D4D8D5298D057200395AAD /* RedSampler.h */; };
+		A08916512C0DFD9F00BAF73C /* RedBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 35AEFE05298A139800EA98CA /* RedBuffer.h */; };
+		A08916522C0DFD9F00BAF73C /* RedPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = 35AEFE04298A139800EA98CA /* RedPacket.h */; };
+		A08916532C0DFD9F00BAF73C /* RedClock.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E24DF29767721008266C5 /* RedClock.h */; };
+		A08916542C0DFD9F00BAF73C /* RedQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E24DC29767721008266C5 /* RedQueue.h */; };
+		A08916552C0DFD9F00BAF73C /* RedMsgQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E24E029767721008266C5 /* RedMsgQueue.h */; };
+		A08916562C0DFD9F00BAF73C /* RedPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 351E234F2976478C008266C5 /* RedPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A089166A2C0EB92A00BAF73C /* RedRenderShaders.metallib in Resources */ = {isa = PBXBuildFile; fileRef = A08914852C0DFC8E00BAF73C /* RedRenderShaders.metallib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A05D69912BA08DEF00B62E0F /* PBXContainerItemProxy */ = {
+		A08914922C0DFCCB00BAF73C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A0E97C202BA02E01009CB4B4 /* RedBase.xcodeproj */;
+			containerPortal = 351E23432976478C008266C5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A0D762C22A4C576F00C94264;
-			remoteInfo = RedBase;
-		};
-		A0E97C242BA02E01009CB4B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0E97C202BA02E01009CB4B4 /* RedBase.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A0D762C32A4C576F00C94264;
-			remoteInfo = RedBase;
+			remoteGlobalIDString = A08914842C0DFC8E00BAF73C;
+			remoteInfo = RedRenderShaders;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -104,7 +318,7 @@
 		351E248029767721008266C5 /* RedSourceController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedSourceController.cpp; sourceTree = "<group>"; };
 		351E248229767721008266C5 /* RedFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedFormat.h; sourceTree = "<group>"; };
 		351E248329767721008266C5 /* RedFormat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RedFormat.c; sourceTree = "<group>"; };
-		351E248429767721008266C5 /* reddownload_adapter.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = reddownload_adapter.c; sourceTree = "<group>"; };
+		351E248429767721008266C5 /* reddownload_adapter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = reddownload_adapter.c; sourceTree = "<group>"; };
 		351E248529767721008266C5 /* RedSourceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedSourceController.h; sourceTree = "<group>"; };
 		351E248729767721008266C5 /* VideoProcesser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoProcesser.h; sourceTree = "<group>"; };
 		351E248829767721008266C5 /* AudioProcesser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioProcesser.cpp; sourceTree = "<group>"; };
@@ -139,20 +353,239 @@
 		35AEFE05298A139800EA98CA /* RedBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBuffer.h; sourceTree = "<group>"; };
 		35F7646A29DE6ED900FD3ED7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A004104D2AFE12760032169B /* RedPlayerController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RedPlayerController.mm; sourceTree = "<group>"; };
-		A05D69C02BA1824000B62E0F /* RedRender */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = RedRender; path = ../redplayercore/extra/redrender/ios/RedRender.framework/RedRender; sourceTree = "<group>"; };
+		A089126D2C0DE64F00BAF73C /* RedDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedDef.h; sourceTree = "<group>"; };
+		A089126E2C0DE64F00BAF73C /* RedLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedLog.h; sourceTree = "<group>"; };
+		A089126F2C0DE64F00BAF73C /* RedMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedMsg.h; sourceTree = "<group>"; };
+		A08912702C0DE64F00BAF73C /* RedDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedDict.h; sourceTree = "<group>"; };
+		A08912712C0DE64F00BAF73C /* RedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedBase.h; sourceTree = "<group>"; };
+		A08912722C0DE64F00BAF73C /* RedDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedDebug.h; sourceTree = "<group>"; };
+		A08912732C0DE64F00BAF73C /* RedError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedError.h; sourceTree = "<group>"; };
+		A08912752C0DE64F00BAF73C /* Env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Env.h; sourceTree = "<group>"; };
+		A08912762C0DE64F00BAF73C /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
+		A08912772C0DE64F00BAF73C /* Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bundle.h; sourceTree = "<group>"; };
+		A08912782C0DE64F00BAF73C /* ByteBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteBuffer.h; sourceTree = "<group>"; };
+		A08912792C0DE64F00BAF73C /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		A089127A2C0DE64F00BAF73C /* ArrayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayList.h; sourceTree = "<group>"; };
+		A089127B2C0DE64F00BAF73C /* RedMeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedMeta.h; sourceTree = "<group>"; };
+		A089127C2C0DE64F00BAF73C /* RedProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedProp.h; sourceTree = "<group>"; };
+		A089127E2C0DE64F00BAF73C /* RedDict.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedDict.cc; sourceTree = "<group>"; };
+		A089127F2C0DE64F00BAF73C /* RedLog.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedLog.cc; sourceTree = "<group>"; };
+		A08912812C0DE64F00BAF73C /* ByteBuffer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ByteBuffer.cc; sourceTree = "<group>"; };
+		A08912822C0DE64F00BAF73C /* Util.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cc; sourceTree = "<group>"; };
+		A08912832C0DE64F00BAF73C /* ArrayList.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayList.cc; sourceTree = "<group>"; };
+		A08912842C0DE64F00BAF73C /* Bundle.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bundle.cc; sourceTree = "<group>"; };
+		A08912852C0DE64F00BAF73C /* Env.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Env.cc; sourceTree = "<group>"; };
+		A089129C2C0DE69100BAF73C /* RedSource.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RedSource.cc; path = ../redplayercore/redsource/RedSource.cc; sourceTree = "<group>"; };
+		A089129D2C0DE69100BAF73C /* RedSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedSource.h; path = ../redplayercore/redsource/RedSource.h; sourceTree = "<group>"; };
+		A089129E2C0DE69100BAF73C /* IRedExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IRedExtractor.h; path = ../redplayercore/redsource/IRedExtractor.h; sourceTree = "<group>"; };
+		A089129F2C0DE69100BAF73C /* RedExtractorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedExtractorFactory.h; path = ../redplayercore/redsource/RedExtractorFactory.h; sourceTree = "<group>"; };
+		A08912A02C0DE69100BAF73C /* RedFFExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedFFExtractor.h; path = ../redplayercore/redsource/RedFFExtractor.h; sourceTree = "<group>"; };
+		A08912A12C0DE69100BAF73C /* RedFFExtractor.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RedFFExtractor.cc; path = ../redplayercore/redsource/RedFFExtractor.cc; sourceTree = "<group>"; };
+		A08912A22C0DE69100BAF73C /* RedSourceCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedSourceCommon.h; path = ../redplayercore/redsource/RedSourceCommon.h; sourceTree = "<group>"; };
+		A08912A32C0DE69100BAF73C /* RedExtractorFactory.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RedExtractorFactory.cc; path = ../redplayercore/redsource/RedExtractorFactory.cc; sourceTree = "<group>"; };
+		A08912A42C0DE69100BAF73C /* RedFFUtil.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RedFFUtil.cc; path = ../redplayercore/redsource/RedFFUtil.cc; sourceTree = "<group>"; };
+		A08912A52C0DE69100BAF73C /* RedFFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedFFUtil.h; path = ../redplayercore/redsource/RedFFUtil.h; sourceTree = "<group>"; };
+		A08912B02C0DE6B600BAF73C /* RedStrategyCenter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RedStrategyCenter.cc; path = ../redplayercore/redstrategycenter/RedStrategyCenter.cc; sourceTree = "<group>"; };
+		A08912B32C0DE6B600BAF73C /* RedPlaylistJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPlaylistJsonParser.h; sourceTree = "<group>"; };
+		A08912B42C0DE6B600BAF73C /* RedPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPlaylist.h; sourceTree = "<group>"; };
+		A08912B52C0DE6B600BAF73C /* RedPlaylistParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPlaylistParser.h; sourceTree = "<group>"; };
+		A08912B62C0DE6B600BAF73C /* RedPlaylistJsonParser.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedPlaylistJsonParser.cc; sourceTree = "<group>"; };
+		A08912B82C0DE6B600BAF73C /* RedAdaptiveConfig.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedAdaptiveConfig.cc; sourceTree = "<group>"; };
+		A08912B92C0DE6B600BAF73C /* RedAdaptiveConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedAdaptiveConfig.h; sourceTree = "<group>"; };
+		A08912BB2C0DE6B600BAF73C /* AbstractAdaptationLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractAdaptationLogic.h; sourceTree = "<group>"; };
+		A08912BC2C0DE6B600BAF73C /* AlwaysBestAdaptationLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlwaysBestAdaptationLogic.h; sourceTree = "<group>"; };
+		A08912BD2C0DE6B600BAF73C /* AdaptiveAdaptationLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaptiveAdaptationLogic.h; sourceTree = "<group>"; };
+		A08912BE2C0DE6B600BAF73C /* AlwaysBestAdaptationLogic.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlwaysBestAdaptationLogic.cc; sourceTree = "<group>"; };
+		A08912BF2C0DE6B600BAF73C /* AdaptiveAdaptationLogic.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdaptiveAdaptationLogic.cc; sourceTree = "<group>"; };
+		A08912C02C0DE6B600BAF73C /* AlwaysLowestAdaptationLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlwaysLowestAdaptationLogic.h; sourceTree = "<group>"; };
+		A08912C12C0DE6B600BAF73C /* AlwaysLowestAdaptationLogic.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlwaysLowestAdaptationLogic.cc; sourceTree = "<group>"; };
+		A08912C22C0DE6B600BAF73C /* RedStrategyCenterCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedStrategyCenterCommon.h; path = ../redplayercore/redstrategycenter/RedStrategyCenterCommon.h; sourceTree = "<group>"; };
+		A08912C42C0DE6B600BAF73C /* NetworkEvaluate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkEvaluate.h; sourceTree = "<group>"; };
+		A08912C52C0DE6B600BAF73C /* NetworkEvaluate.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkEvaluate.cc; sourceTree = "<group>"; };
+		A08912C62C0DE6B600BAF73C /* NetworkEvaluateV1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkEvaluateV1.h; sourceTree = "<group>"; };
+		A08912C72C0DE6B600BAF73C /* RedStrategyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedStrategyCenter.h; path = ../redplayercore/redstrategycenter/RedStrategyCenter.h; sourceTree = "<group>"; };
+		A08912C92C0DE6B600BAF73C /* RedAdaptiveStrategy.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedAdaptiveStrategy.cc; sourceTree = "<group>"; };
+		A08912CA2C0DE6B600BAF73C /* RedAdaptiveStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedAdaptiveStrategy.h; sourceTree = "<group>"; };
+		A08912CC2C0DE6B600BAF73C /* IDownloadObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDownloadObserver.h; sourceTree = "<group>"; };
+		A08912E42C0DE6CF00BAF73C /* audio_common_definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_common_definition.h; sourceTree = "<group>"; };
+		A08912E52C0DE6CF00BAF73C /* audio_codec_info.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio_codec_info.cpp; sourceTree = "<group>"; };
+		A08912E62C0DE6CF00BAF73C /* audio_codec_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_codec_info.h; sourceTree = "<group>"; };
+		A08912E82C0DE6CF00BAF73C /* audio_decoder_factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_decoder_factory.h; sourceTree = "<group>"; };
+		A08912E92C0DE6CF00BAF73C /* audio_decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio_decoder.cpp; sourceTree = "<group>"; };
+		A08912EA2C0DE6CF00BAF73C /* audio_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_decoder.h; sourceTree = "<group>"; };
+		A08912EB2C0DE6CF00BAF73C /* ffmpeg_audio_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffmpeg_audio_decoder.h; sourceTree = "<group>"; };
+		A08912EC2C0DE6CF00BAF73C /* audio_decoder_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio_decoder_factory.cpp; sourceTree = "<group>"; };
+		A08912ED2C0DE6CF00BAF73C /* ffmpeg_audio_decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ffmpeg_audio_decoder.cpp; sourceTree = "<group>"; };
+		A08912EF2C0DE6CF00BAF73C /* buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = buffer.cpp; sourceTree = "<group>"; };
+		A08912F02C0DE6CF00BAF73C /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		A08912F12C0DE6CF00BAF73C /* logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logger.h; sourceTree = "<group>"; };
+		A08912F42C0DE6CF00BAF73C /* ffmpeg_video_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffmpeg_video_decoder.h; sourceTree = "<group>"; };
+		A08912F52C0DE6CF00BAF73C /* video_decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = video_decoder.cpp; sourceTree = "<group>"; };
+		A08912F62C0DE6CF00BAF73C /* video_decoder_factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_decoder_factory.h; sourceTree = "<group>"; };
+		A08912FA2C0DE6CF00BAF73C /* video_decoder_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = video_decoder_factory.cpp; sourceTree = "<group>"; };
+		A08912FC2C0DE6CF00BAF73C /* vtb_video_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vtb_video_decoder.h; sourceTree = "<group>"; };
+		A08912FD2C0DE6CF00BAF73C /* cf_obj_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cf_obj_helper.h; sourceTree = "<group>"; };
+		A08912FE2C0DE6CF00BAF73C /* vtb_video_decoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = vtb_video_decoder.mm; sourceTree = "<group>"; };
+		A08912FF2C0DE6CF00BAF73C /* ffmpeg_video_decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ffmpeg_video_decoder.cpp; sourceTree = "<group>"; };
+		A08913032C0DE6CF00BAF73C /* video_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_decoder.h; sourceTree = "<group>"; };
+		A08913052C0DE6CF00BAF73C /* h264_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = h264_parser.cpp; sourceTree = "<group>"; };
+		A08913062C0DE6CF00BAF73C /* h264_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = h264_parser.h; sourceTree = "<group>"; };
+		A08913072C0DE6CF00BAF73C /* format_convert_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = format_convert_helper.h; sourceTree = "<group>"; };
+		A08913082C0DE6CF00BAF73C /* format_convert_helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = format_convert_helper.cpp; sourceTree = "<group>"; };
+		A08913092C0DE6CF00BAF73C /* video_common_definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_common_definition.h; sourceTree = "<group>"; };
+		A089130A2C0DE6CF00BAF73C /* video_codec_info.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = video_codec_info.cpp; sourceTree = "<group>"; };
+		A089130B2C0DE6CF00BAF73C /* video_codec_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_codec_info.h; sourceTree = "<group>"; };
+		A089132D2C0DE6F200BAF73C /* video_renderer_factory.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = video_renderer_factory.cpp; sourceTree = "<group>"; };
+		A089132E2C0DE6F200BAF73C /* video_inc_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_inc_internal.h; sourceTree = "<group>"; };
+		A089132F2C0DE6F200BAF73C /* video_renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_renderer.h; sourceTree = "<group>"; };
+		A08913312C0DE6F200BAF73C /* video_renderer_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_renderer_info.h; sourceTree = "<group>"; };
+		A08913322C0DE6F200BAF73C /* video_filter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = video_filter.cpp; sourceTree = "<group>"; };
+		A08913342C0DE6F200BAF73C /* metal_video_renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = metal_video_renderer.mm; sourceTree = "<group>"; };
+		A08913372C0DE6F200BAF73C /* metal_video_input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metal_video_input.h; sourceTree = "<group>"; };
+		A08913382C0DE6F200BAF73C /* redrender_metal_view.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redrender_metal_view.h; sourceTree = "<group>"; };
+		A089133A2C0DE6F200BAF73C /* metal_video_output.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = metal_video_output.mm; sourceTree = "<group>"; };
+		A089133B2C0DE6F200BAF73C /* metal_video_output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metal_video_output.h; sourceTree = "<group>"; };
+		A089133D2C0DE6F200BAF73C /* metal_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metal_common.h; sourceTree = "<group>"; };
+		A089133E2C0DE6F200BAF73C /* metal_video_cmd_queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metal_video_cmd_queue.h; sourceTree = "<group>"; };
+		A089133F2C0DE6F200BAF73C /* metal_video_texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metal_video_texture.h; sourceTree = "<group>"; };
+		A08913402C0DE6F200BAF73C /* metal_common.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = metal_common.mm; sourceTree = "<group>"; };
+		A08913412C0DE6F200BAF73C /* metal_video_texture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = metal_video_texture.mm; sourceTree = "<group>"; };
+		A08913432C0DE6F200BAF73C /* metal_video_cmd_queue.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = metal_video_cmd_queue.mm; sourceTree = "<group>"; };
+		A08913442C0DE6F200BAF73C /* metal_video_renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metal_video_renderer.h; sourceTree = "<group>"; };
+		A08913492C0DE6F200BAF73C /* metal_device_filter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = metal_device_filter.metal; sourceTree = "<group>"; };
+		A089134A2C0DE6F200BAF73C /* redrender_metal_view.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = redrender_metal_view.mm; sourceTree = "<group>"; };
+		A089134C2C0DE6F200BAF73C /* metal_filter_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metal_filter_base.h; sourceTree = "<group>"; };
+		A089134D2C0DE6F200BAF73C /* metal_filter_device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metal_filter_device.h; sourceTree = "<group>"; };
+		A089134E2C0DE6F200BAF73C /* metal_filter_base.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = metal_filter_base.mm; sourceTree = "<group>"; };
+		A08913502C0DE6F200BAF73C /* metal_filter_device.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = metal_filter_device.mm; sourceTree = "<group>"; };
+		A08913582C0DE6F200BAF73C /* video_renderer_info.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = video_renderer_info.cpp; sourceTree = "<group>"; };
+		A089135C2C0DE6F200BAF73C /* video_filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_filter.h; sourceTree = "<group>"; };
+		A089135D2C0DE6F200BAF73C /* video_renderer_factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_renderer_factory.h; sourceTree = "<group>"; };
+		A089135F2C0DE6F200BAF73C /* redrender_view_protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redrender_view_protocol.h; sourceTree = "<group>"; };
+		A08913602C0DE6F200BAF73C /* video_renderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = video_renderer.cpp; sourceTree = "<group>"; };
+		A08913612C0DE6F200BAF73C /* video_macro_definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_macro_definition.h; sourceTree = "<group>"; };
+		A08913632C0DE6F200BAF73C /* avsbdl_video_renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = avsbdl_video_renderer.mm; sourceTree = "<group>"; };
+		A08913642C0DE6F200BAF73C /* redrender_avsbdl_view.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = redrender_avsbdl_view.mm; sourceTree = "<group>"; };
+		A08913652C0DE6F200BAF73C /* redrender_avsbdl_view.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redrender_avsbdl_view.h; sourceTree = "<group>"; };
+		A08913662C0DE6F200BAF73C /* redrender_avsbdl_layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redrender_avsbdl_layer.h; sourceTree = "<group>"; };
+		A08913672C0DE6F200BAF73C /* avsbdl_video_renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avsbdl_video_renderer.h; sourceTree = "<group>"; };
+		A08913682C0DE6F200BAF73C /* redrender_avsbdl_layer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = redrender_avsbdl_layer.mm; sourceTree = "<group>"; };
+		A089136A2C0DE6F200BAF73C /* opengl_video_renderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = opengl_video_renderer.cpp; sourceTree = "<group>"; };
+		A089136C2C0DE6F200BAF73C /* opengl_video_input.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = opengl_video_input.cpp; sourceTree = "<group>"; };
+		A089136D2C0DE6F200BAF73C /* opengl_video_input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opengl_video_input.h; sourceTree = "<group>"; };
+		A08913722C0DE6F200BAF73C /* opengl_video_output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opengl_video_output.h; sourceTree = "<group>"; };
+		A08913732C0DE6F200BAF73C /* opengl_video_output.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = opengl_video_output.cpp; sourceTree = "<group>"; };
+		A08913752C0DE6F200BAF73C /* redrender_gl_texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redrender_gl_texture.h; sourceTree = "<group>"; };
+		A08913762C0DE6F200BAF73C /* eagl_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eagl_context.h; sourceTree = "<group>"; };
+		A08913772C0DE6F200BAF73C /* redrender_gl_texture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = redrender_gl_texture.mm; sourceTree = "<group>"; };
+		A08913782C0DE6F200BAF73C /* eagl_context.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = eagl_context.mm; sourceTree = "<group>"; };
+		A08913792C0DE6F200BAF73C /* redrender_gl_view.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redrender_gl_view.h; sourceTree = "<group>"; };
+		A089137A2C0DE6F200BAF73C /* redrender_gl_view.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = redrender_gl_view.mm; sourceTree = "<group>"; };
+		A089137B2C0DE6F200BAF73C /* opengl_video_renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opengl_video_renderer.h; sourceTree = "<group>"; };
+		A089137D2C0DE6F200BAF73C /* gl_program.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = gl_program.cpp; sourceTree = "<group>"; };
+		A089137F2C0DE6F200BAF73C /* context.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = context.cpp; sourceTree = "<group>"; };
+		A08913802C0DE6F200BAF73C /* framebuffer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = framebuffer.cpp; sourceTree = "<group>"; };
+		A08913812C0DE6F200BAF73C /* gl_util.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = gl_util.cpp; sourceTree = "<group>"; };
+		A08913822C0DE6F200BAF73C /* context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = context.h; sourceTree = "<group>"; };
+		A08913832C0DE6F200BAF73C /* framebuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framebuffer.h; sourceTree = "<group>"; };
+		A08913842C0DE6F200BAF73C /* gl_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl_util.h; sourceTree = "<group>"; };
+		A08913852C0DE6F200BAF73C /* gl_program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl_program.h; sourceTree = "<group>"; };
+		A089138B2C0DE6F200BAF73C /* opengl_filter_base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opengl_filter_base.h; sourceTree = "<group>"; };
+		A089138D2C0DE6F200BAF73C /* filter_shader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = filter_shader.cpp; sourceTree = "<group>"; };
+		A08913922C0DE6F200BAF73C /* opengl_filter_base.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = opengl_filter_base.cpp; sourceTree = "<group>"; };
+		A08913932C0DE6F200BAF73C /* filter_shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filter_shader.h; sourceTree = "<group>"; };
+		A08913962C0DE6F200BAF73C /* opengl_device_filter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = opengl_device_filter.cpp; sourceTree = "<group>"; };
+		A08913982C0DE6F200BAF73C /* opengl_device_filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opengl_device_filter.h; sourceTree = "<group>"; };
+		A089139A2C0DE6F200BAF73C /* audio_render_factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_render_factory.h; sourceTree = "<group>"; };
+		A089139F2C0DE6F200BAF73C /* audio_queue_render.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio_queue_render.cc; sourceTree = "<group>"; };
+		A08913A02C0DE6F200BAF73C /* audio_queue_render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_queue_render.h; sourceTree = "<group>"; };
+		A08913A12C0DE6F200BAF73C /* audio_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_common.h; sourceTree = "<group>"; };
+		A08913A92C0DE6F200BAF73C /* audio_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_info.h; sourceTree = "<group>"; };
+		A08913AA2C0DE6F200BAF73C /* audio_render_factory.cc */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = audio_render_factory.cc; sourceTree = "<group>"; };
+		A08913AB2C0DE6F200BAF73C /* audio_render_interface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_render_interface.h; sourceTree = "<group>"; };
+		A08913AD2C0DE6F200BAF73C /* redrender_buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redrender_buffer.h; sourceTree = "<group>"; };
+		A08913AF2C0DE6F200BAF73C /* logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logger.h; sourceTree = "<group>"; };
+		A08913B02C0DE6F200BAF73C /* redrender_macro_definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = redrender_macro_definition.h; path = ../redplayercore/redrender/redrender_macro_definition.h; sourceTree = "<group>"; };
+		A089141D2C0DE71A00BAF73C /* REDCurl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDCurl.cpp; path = ../redplayercore/reddownload/REDCurl.cpp; sourceTree = "<group>"; };
+		A089141E2C0DE71A00BAF73C /* NetworkQuality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkQuality.h; path = ../redplayercore/reddownload/NetworkQuality.h; sourceTree = "<group>"; };
+		A089141F2C0DE71A00BAF73C /* REDDownloaderFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDDownloaderFactory.h; path = ../redplayercore/reddownload/REDDownloaderFactory.h; sourceTree = "<group>"; };
+		A08914202C0DE71A00BAF73C /* REDDownloaderFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDDownloaderFactory.cpp; path = ../redplayercore/reddownload/REDDownloaderFactory.cpp; sourceTree = "<group>"; };
+		A08914212C0DE71A00BAF73C /* REDURLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDURLParser.h; path = ../redplayercore/reddownload/REDURLParser.h; sourceTree = "<group>"; };
+		A08914232C0DE71A00BAF73C /* Cipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cipher.h; sourceTree = "<group>"; };
+		A08914242C0DE71A00BAF73C /* Cipher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cipher.cpp; sourceTree = "<group>"; };
+		A08914252C0DE71A00BAF73C /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		A08914262C0DE71A00BAF73C /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
+		A08914272C0DE71A00BAF73C /* REDDownloaderBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDDownloaderBase.h; path = ../redplayercore/reddownload/REDDownloaderBase.h; sourceTree = "<group>"; };
+		A08914282C0DE71A00BAF73C /* REDRingBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDRingBuffer.cpp; path = ../redplayercore/reddownload/REDRingBuffer.cpp; sourceTree = "<group>"; };
+		A08914292C0DE71A00BAF73C /* REDFileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDFileCache.h; path = ../redplayercore/reddownload/REDFileCache.h; sourceTree = "<group>"; };
+		A089142A2C0DE71A00BAF73C /* REDDownloadCacheManagerImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDDownloadCacheManagerImpl.cpp; path = ../redplayercore/reddownload/REDDownloadCacheManagerImpl.cpp; sourceTree = "<group>"; };
+		A089142B2C0DE71B00BAF73C /* REDDownloadCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDDownloadCache.cpp; path = ../redplayercore/reddownload/REDDownloadCache.cpp; sourceTree = "<group>"; };
+		A089142C2C0DE71B00BAF73C /* REDDownloadCacheManagerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDDownloadCacheManagerImpl.h; path = ../redplayercore/reddownload/REDDownloadCacheManagerImpl.h; sourceTree = "<group>"; };
+		A089142D2C0DE71B00BAF73C /* REDDownloadCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDDownloadCacheManager.h; path = ../redplayercore/reddownload/REDDownloadCacheManager.h; sourceTree = "<group>"; };
+		A089142E2C0DE71B00BAF73C /* REDDownloaderBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDDownloaderBase.cpp; path = ../redplayercore/reddownload/REDDownloaderBase.cpp; sourceTree = "<group>"; };
+		A089142F2C0DE71B00BAF73C /* REDDownloadTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDDownloadTask.cpp; path = ../redplayercore/reddownload/REDDownloadTask.cpp; sourceTree = "<group>"; };
+		A08914302C0DE71B00BAF73C /* REDFileCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDFileCache.cpp; path = ../redplayercore/reddownload/REDFileCache.cpp; sourceTree = "<group>"; };
+		A08914312C0DE71B00BAF73C /* NetworkQuality.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NetworkQuality.cpp; path = ../redplayercore/reddownload/NetworkQuality.cpp; sourceTree = "<group>"; };
+		A08914322C0DE71B00BAF73C /* REDURLParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDURLParser.cpp; path = ../redplayercore/reddownload/REDURLParser.cpp; sourceTree = "<group>"; };
+		A08914342C0DE71B00BAF73C /* reddownload_datasource_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = reddownload_datasource_wrapper.cpp; sourceTree = "<group>"; };
+		A08914352C0DE71B00BAF73C /* reddownload_datasource_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reddownload_datasource_wrapper.h; sourceTree = "<group>"; };
+		A08914362C0DE71B00BAF73C /* REDCurl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDCurl.h; path = ../redplayercore/reddownload/REDCurl.h; sourceTree = "<group>"; };
+		A08914372C0DE71B00BAF73C /* REDnocopyable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDnocopyable.h; path = ../redplayercore/reddownload/REDnocopyable.h; sourceTree = "<group>"; };
+		A08914382C0DE71B00BAF73C /* REDRingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDRingBuffer.h; path = ../redplayercore/reddownload/REDRingBuffer.h; sourceTree = "<group>"; };
+		A08914392C0DE71B00BAF73C /* REDDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDDownloadTask.h; path = ../redplayercore/reddownload/REDDownloadTask.h; sourceTree = "<group>"; };
+		A089143A2C0DE71B00BAF73C /* REDThreadPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDThreadPool.h; path = ../redplayercore/reddownload/REDThreadPool.h; sourceTree = "<group>"; };
+		A089143B2C0DE71B00BAF73C /* REDFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDFileManager.h; path = ../redplayercore/reddownload/REDFileManager.h; sourceTree = "<group>"; };
+		A089143C2C0DE71B00BAF73C /* REDDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDDownloadCache.h; path = ../redplayercore/reddownload/REDDownloadCache.h; sourceTree = "<group>"; };
+		A089143D2C0DE71B00BAF73C /* REDFileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDFileManager.cpp; path = ../redplayercore/reddownload/REDFileManager.cpp; sourceTree = "<group>"; };
+		A089143E2C0DE71B00BAF73C /* RedDownloadConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RedDownloadConfig.cpp; path = ../redplayercore/reddownload/RedDownloadConfig.cpp; sourceTree = "<group>"; };
+		A089143F2C0DE71B00BAF73C /* RedDownloadConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedDownloadConfig.h; path = ../redplayercore/reddownload/RedDownloadConfig.h; sourceTree = "<group>"; };
+		A08914402C0DE71B00BAF73C /* REDThreadPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = REDThreadPool.cpp; path = ../redplayercore/reddownload/REDThreadPool.cpp; sourceTree = "<group>"; };
+		A08914412C0DE71B00BAF73C /* REDDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDDownloader.h; path = ../redplayercore/reddownload/REDDownloader.h; sourceTree = "<group>"; };
+		A08914422C0DE71B00BAF73C /* REDDownloadListen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = REDDownloadListen.h; path = ../redplayercore/reddownload/REDDownloadListen.h; sourceTree = "<group>"; };
+		A08914442C0DE71B00BAF73C /* REDDnsCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDDnsCache.h; sourceTree = "<group>"; };
+		A08914452C0DE71B00BAF73C /* REDDnsCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = REDDnsCache.cpp; sourceTree = "<group>"; };
+		A08914462C0DE71B00BAF73C /* REDPing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REDPing.h; sourceTree = "<group>"; };
+		A08914472C0DE71B00BAF73C /* REDPing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = REDPing.cpp; sourceTree = "<group>"; };
+		A08914702C0DED7300BAF73C /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../redplayercore/extra/curl/ios/lib/libcurl.a; sourceTree = "<group>"; };
+		A08914722C0DED7C00BAF73C /* libcares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcares.a; path = ../redplayercore/extra/cares/ios/lib/libcares.a; sourceTree = "<group>"; };
+		A08914852C0DFC8E00BAF73C /* RedRenderShaders.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = RedRenderShaders.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0DF4EEB2B4D375100A38074 /* SoundTouchHal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundTouchHal.cpp; sourceTree = "<group>"; };
 		A0DF4EEC2B4D375100A38074 /* SoundTouchHal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundTouchHal.h; sourceTree = "<group>"; };
 		A0DF4EFA2B4E95A000A38074 /* RedPreLoad.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RedPreLoad.mm; sourceTree = "<group>"; };
 		A0DF4EFB2B4E95A000A38074 /* RedPreLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPreLoad.h; sourceTree = "<group>"; };
 		A0DF4F002B4ECB2300A38074 /* RedMediaPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedMediaPlayback.m; sourceTree = "<group>"; };
-		A0E97C162BA02DA3009CB4B4 /* reddecoder */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = reddecoder; path = ../redplayercore/extra/reddecoder/ios/reddecoder.framework/reddecoder; sourceTree = "<group>"; };
-		A0E97C182BA02DAD009CB4B4 /* RedDownload */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = RedDownload; path = ../redplayercore/extra/reddownload/ios/RedDownload.framework/RedDownload; sourceTree = "<group>"; };
-		A0E97C1C2BA02DBC009CB4B4 /* redsource */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = redsource; path = ../redplayercore/extra/redsource/ios/redsource.framework/redsource; sourceTree = "<group>"; };
-		A0E97C1E2BA02DC4009CB4B4 /* RedStrategyCenter */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = RedStrategyCenter; path = ../redplayercore/extra/redstrategycenter/ios/RedStrategyCenter.framework/RedStrategyCenter; sourceTree = "<group>"; };
-		A0E97C202BA02E01009CB4B4 /* RedBase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RedBase.xcodeproj; path = ../redplayercore/redbase/ios/RedBase/RedBase.xcodeproj; sourceTree = "<group>"; };
 		B3D4D8D4298D057200395AAD /* RedSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RedSampler.cpp; sourceTree = "<group>"; };
 		B3D4D8D5298D057200395AAD /* RedSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedSampler.h; sourceTree = "<group>"; };
 		FA47B9F329C9973000234C7B /* redioapplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redioapplication.h; sourceTree = "<group>"; };
+		FA9348072C0710ED00BF252C /* cpu_detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu_detect.h; sourceTree = "<group>"; };
+		FA9348082C0710ED00BF252C /* BPMDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMDetect.h; sourceTree = "<group>"; };
+		FA9348092C0710ED00BF252C /* SoundTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundTouch.h; sourceTree = "<group>"; };
+		FA93480A2C0710ED00BF252C /* InterpolateCubic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterpolateCubic.h; sourceTree = "<group>"; };
+		FA93480B2C0710ED00BF252C /* mmx_optimized.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mmx_optimized.cpp; sourceTree = "<group>"; };
+		FA93480C2C0710ED00BF252C /* TDStretch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TDStretch.cpp; sourceTree = "<group>"; };
+		FA93480D2C0710ED00BF252C /* BPMDetect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BPMDetect.cpp; sourceTree = "<group>"; };
+		FA93480E2C0710ED00BF252C /* AAFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAFilter.cpp; sourceTree = "<group>"; };
+		FA93480F2C0710ED00BF252C /* FIRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIRFilter.h; sourceTree = "<group>"; };
+		FA9348102C0710ED00BF252C /* soundtouch_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soundtouch_config.h; sourceTree = "<group>"; };
+		FA9348112C0710ED00BF252C /* InterpolateShannon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterpolateShannon.h; sourceTree = "<group>"; };
+		FA9348122C0710ED00BF252C /* InterpolateLinear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterpolateLinear.h; sourceTree = "<group>"; };
+		FA9348132C0710ED00BF252C /* STTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTypes.h; sourceTree = "<group>"; };
+		FA9348142C0710ED00BF252C /* TDStretch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDStretch.h; sourceTree = "<group>"; };
+		FA9348152C0710ED00BF252C /* InterpolateShannon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterpolateShannon.cpp; sourceTree = "<group>"; };
+		FA9348162C0710ED00BF252C /* RateTransposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateTransposer.h; sourceTree = "<group>"; };
+		FA9348172C0710ED00BF252C /* sse_optimized.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sse_optimized.cpp; sourceTree = "<group>"; };
+		FA9348182C0710ED00BF252C /* FIFOSampleBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FIFOSampleBuffer.cpp; sourceTree = "<group>"; };
+		FA9348192C0710ED00BF252C /* cpu_detect_x86.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpu_detect_x86.cpp; sourceTree = "<group>"; };
+		FA93481A2C0710ED00BF252C /* SoundTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundTouch.cpp; sourceTree = "<group>"; };
+		FA93481B2C0710ED00BF252C /* InterpolateLinear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterpolateLinear.cpp; sourceTree = "<group>"; };
+		FA93481C2C0710ED00BF252C /* AAFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAFilter.h; sourceTree = "<group>"; };
+		FA93481D2C0710ED00BF252C /* FIFOSampleBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIFOSampleBuffer.h; sourceTree = "<group>"; };
+		FA93481E2C0710ED00BF252C /* PeakFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeakFinder.h; sourceTree = "<group>"; };
+		FA93481F2C0710ED00BF252C /* PeakFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PeakFinder.cpp; sourceTree = "<group>"; };
+		FA9348202C0710ED00BF252C /* InterpolateCubic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InterpolateCubic.cpp; sourceTree = "<group>"; };
+		FA9348212C0710ED00BF252C /* FIRFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FIRFilter.cpp; sourceTree = "<group>"; };
+		FA9348222C0710ED00BF252C /* RateTransposer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RateTransposer.cpp; sourceTree = "<group>"; };
+		FA9348232C0710ED00BF252C /* FIFOSamplePipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIFOSamplePipe.h; sourceTree = "<group>"; };
 		FA943CC5299E06BB0048D720 /* RedConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedConfig.h; sourceTree = "<group>"; };
 		FA943CC7299E06D10048D720 /* RedConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RedConfig.cpp; sourceTree = "<group>"; };
 		FA9D943C2A2728F8000309C4 /* NSString+REDMedia.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = "NSString+REDMedia.mm"; sourceTree = "<group>"; };
@@ -166,23 +599,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A05D69932BA08DFD00B62E0F /* RedBase.framework in Frameworks */,
+				A08914732C0DED7C00BAF73C /* libcares.a in Frameworks */,
+				A08914712C0DED7300BAF73C /* libcurl.a in Frameworks */,
 				35AEFDD92987735500EA98CA /* VideoToolbox.framework in Frameworks */,
 				35AEFDE7298798C700EA98CA /* libz.tbd in Frameworks */,
 				35F7646929DE6ED400FD3ED7 /* CoreMotion.framework in Frameworks */,
-				A05D69C12BA1824000B62E0F /* RedRender in Frameworks */,
 				35F7646B29DE6ED900FD3ED7 /* AVFoundation.framework in Frameworks */,
-				A0E97C1F2BA02DC4009CB4B4 /* RedStrategyCenter in Frameworks */,
 				35AEFDEC2987A33700EA98CA /* OpenGLES.framework in Frameworks */,
 				35AEFDF42987B9A700EA98CA /* QuartzCore.framework in Frameworks */,
 				35950B1C29B7367500E6F901 /* CoreGraphics.framework in Frameworks */,
-				A0E97C1D2BA02DBC009CB4B4 /* redsource in Frameworks */,
 				35AEFDEE2987B92C00EA98CA /* UIKit.framework in Frameworks */,
-				A0E97C192BA02DAD009CB4B4 /* RedDownload in Frameworks */,
 				35AEFDDB2987736800EA98CA /* CoreMedia.framework in Frameworks */,
 				35950B1A29B735B300E6F901 /* MetalKit.framework in Frameworks */,
 				35AEFDE92987990100EA98CA /* libresolv.tbd in Frameworks */,
-				A0E97C172BA02DA3009CB4B4 /* reddecoder in Frameworks */,
 				35950B1829B735AD00E6F901 /* Metal.framework in Frameworks */,
 				35AEFDD7298772C500EA98CA /* AudioToolbox.framework in Frameworks */,
 				35AEFDE5298775EF00EA98CA /* CoreVideo.framework in Frameworks */,
@@ -195,7 +624,12 @@
 		351E23422976478C008266C5 = {
 			isa = PBXGroup;
 			children = (
-				A0E97C202BA02E01009CB4B4 /* RedBase.xcodeproj */,
+				A01DC4362C0DE4DF00137337 /* RedBase */,
+				A01DC4352C0DE4D800137337 /* RedSource */,
+				A01DC4342C0DE4C900137337 /* RedStrategyCenter */,
+				A0076B892C0DE48600A3C253 /* RedDecoder */,
+				A0D697842C0DCACD00F2D09B /* RedRender */,
+				A06981842C0DC9430063B442 /* RedDownload */,
 				351E245A29767720008266C5 /* redplayer */,
 				351E234E2976478C008266C5 /* RedPlayer */,
 				351E234D2976478C008266C5 /* Products */,
@@ -207,6 +641,7 @@
 			isa = PBXGroup;
 			children = (
 				351E234C2976478C008266C5 /* RedPlayer.framework */,
+				A08914852C0DFC8E00BAF73C /* RedRenderShaders.metallib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,11 +657,8 @@
 		351E244529765015008266C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A0E97C162BA02DA3009CB4B4 /* reddecoder */,
-				A0E97C182BA02DAD009CB4B4 /* RedDownload */,
-				A0E97C1C2BA02DBC009CB4B4 /* redsource */,
-				A0E97C1E2BA02DC4009CB4B4 /* RedStrategyCenter */,
-				A05D69C02BA1824000B62E0F /* RedRender */,
+				A08914722C0DED7C00BAF73C /* libcares.a */,
+				A08914702C0DED7300BAF73C /* libcurl.a */,
 				35F7646A29DE6ED900FD3ED7 /* AVFoundation.framework */,
 				35950B1B29B7367500E6F901 /* CoreGraphics.framework */,
 				35950B1929B735B200E6F901 /* MetalKit.framework */,
@@ -309,6 +741,7 @@
 		351E247A29767720008266C5 /* renderHal */ = {
 			isa = PBXGroup;
 			children = (
+				FA9348062C07109800BF252C /* soundTouch */,
 				A0DF4EEB2B4D375100A38074 /* SoundTouchHal.cpp */,
 				A0DF4EEC2B4D375100A38074 /* SoundTouchHal.h */,
 				351E247C29767720008266C5 /* RedRenderVideoHal.cpp */,
@@ -372,42 +805,762 @@
 			path = base;
 			sourceTree = "<group>";
 		};
-		A0E97C212BA02E01009CB4B4 /* Products */ = {
+		A0076B892C0DE48600A3C253 /* RedDecoder */ = {
 			isa = PBXGroup;
 			children = (
-				A0E97C252BA02E01009CB4B4 /* RedBase.framework */,
+				A08912E32C0DE6CF00BAF73C /* audio */,
+				A08912EE2C0DE6CF00BAF73C /* common */,
+				A08912F22C0DE6CF00BAF73C /* video */,
 			);
-			name = Products;
+			name = RedDecoder;
+			sourceTree = "<group>";
+		};
+		A01DC4342C0DE4C900137337 /* RedStrategyCenter */ = {
+			isa = PBXGroup;
+			children = (
+				A08912B12C0DE6B600BAF73C /* adaptive */,
+				A08912C32C0DE6B600BAF73C /* evaluate */,
+				A08912CB2C0DE6B600BAF73C /* observer */,
+				A08912B02C0DE6B600BAF73C /* RedStrategyCenter.cc */,
+				A08912C72C0DE6B600BAF73C /* RedStrategyCenter.h */,
+				A08912C22C0DE6B600BAF73C /* RedStrategyCenterCommon.h */,
+				A08912C82C0DE6B600BAF73C /* strategy */,
+			);
+			name = RedStrategyCenter;
+			sourceTree = "<group>";
+		};
+		A01DC4352C0DE4D800137337 /* RedSource */ = {
+			isa = PBXGroup;
+			children = (
+				A089129E2C0DE69100BAF73C /* IRedExtractor.h */,
+				A08912A32C0DE69100BAF73C /* RedExtractorFactory.cc */,
+				A089129F2C0DE69100BAF73C /* RedExtractorFactory.h */,
+				A08912A12C0DE69100BAF73C /* RedFFExtractor.cc */,
+				A08912A02C0DE69100BAF73C /* RedFFExtractor.h */,
+				A08912A42C0DE69100BAF73C /* RedFFUtil.cc */,
+				A08912A52C0DE69100BAF73C /* RedFFUtil.h */,
+				A089129C2C0DE69100BAF73C /* RedSource.cc */,
+				A089129D2C0DE69100BAF73C /* RedSource.h */,
+				A08912A22C0DE69100BAF73C /* RedSourceCommon.h */,
+			);
+			name = RedSource;
+			sourceTree = "<group>";
+		};
+		A01DC4362C0DE4DF00137337 /* RedBase */ = {
+			isa = PBXGroup;
+			children = (
+				A089126C2C0DE64F00BAF73C /* include */,
+				A089127D2C0DE64F00BAF73C /* src */,
+			);
+			name = RedBase;
+			sourceTree = "<group>";
+		};
+		A06981842C0DC9430063B442 /* RedDownload */ = {
+			isa = PBXGroup;
+			children = (
+				A08914432C0DE71B00BAF73C /* dnscache */,
+				A08914312C0DE71B00BAF73C /* NetworkQuality.cpp */,
+				A089141E2C0DE71A00BAF73C /* NetworkQuality.h */,
+				A089141D2C0DE71A00BAF73C /* REDCurl.cpp */,
+				A08914362C0DE71B00BAF73C /* REDCurl.h */,
+				A089142B2C0DE71B00BAF73C /* REDDownloadCache.cpp */,
+				A089143C2C0DE71B00BAF73C /* REDDownloadCache.h */,
+				A089142D2C0DE71B00BAF73C /* REDDownloadCacheManager.h */,
+				A089142A2C0DE71A00BAF73C /* REDDownloadCacheManagerImpl.cpp */,
+				A089142C2C0DE71B00BAF73C /* REDDownloadCacheManagerImpl.h */,
+				A089143E2C0DE71B00BAF73C /* RedDownloadConfig.cpp */,
+				A089143F2C0DE71B00BAF73C /* RedDownloadConfig.h */,
+				A08914412C0DE71B00BAF73C /* REDDownloader.h */,
+				A089142E2C0DE71B00BAF73C /* REDDownloaderBase.cpp */,
+				A08914272C0DE71A00BAF73C /* REDDownloaderBase.h */,
+				A08914202C0DE71A00BAF73C /* REDDownloaderFactory.cpp */,
+				A089141F2C0DE71A00BAF73C /* REDDownloaderFactory.h */,
+				A08914422C0DE71B00BAF73C /* REDDownloadListen.h */,
+				A089142F2C0DE71B00BAF73C /* REDDownloadTask.cpp */,
+				A08914392C0DE71B00BAF73C /* REDDownloadTask.h */,
+				A08914302C0DE71B00BAF73C /* REDFileCache.cpp */,
+				A08914292C0DE71A00BAF73C /* REDFileCache.h */,
+				A089143D2C0DE71B00BAF73C /* REDFileManager.cpp */,
+				A089143B2C0DE71B00BAF73C /* REDFileManager.h */,
+				A08914372C0DE71B00BAF73C /* REDnocopyable.h */,
+				A08914282C0DE71A00BAF73C /* REDRingBuffer.cpp */,
+				A08914382C0DE71B00BAF73C /* REDRingBuffer.h */,
+				A08914402C0DE71B00BAF73C /* REDThreadPool.cpp */,
+				A089143A2C0DE71B00BAF73C /* REDThreadPool.h */,
+				A08914322C0DE71B00BAF73C /* REDURLParser.cpp */,
+				A08914212C0DE71A00BAF73C /* REDURLParser.h */,
+				A08914222C0DE71A00BAF73C /* utility */,
+				A08914332C0DE71B00BAF73C /* wrapper */,
+			);
+			name = RedDownload;
+			sourceTree = "<group>";
+		};
+		A089126C2C0DE64F00BAF73C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A089126D2C0DE64F00BAF73C /* RedDef.h */,
+				A089126E2C0DE64F00BAF73C /* RedLog.h */,
+				A089126F2C0DE64F00BAF73C /* RedMsg.h */,
+				A08912702C0DE64F00BAF73C /* RedDict.h */,
+				A08912712C0DE64F00BAF73C /* RedBase.h */,
+				A08912722C0DE64F00BAF73C /* RedDebug.h */,
+				A08912732C0DE64F00BAF73C /* RedError.h */,
+				A08912742C0DE64F00BAF73C /* jni */,
+				A089127B2C0DE64F00BAF73C /* RedMeta.h */,
+				A089127C2C0DE64F00BAF73C /* RedProp.h */,
+			);
+			name = include;
+			path = ../redplayercore/redbase/include;
+			sourceTree = "<group>";
+		};
+		A08912742C0DE64F00BAF73C /* jni */ = {
+			isa = PBXGroup;
+			children = (
+				A08912752C0DE64F00BAF73C /* Env.h */,
+				A08912762C0DE64F00BAF73C /* Debug.h */,
+				A08912772C0DE64F00BAF73C /* Bundle.h */,
+				A08912782C0DE64F00BAF73C /* ByteBuffer.h */,
+				A08912792C0DE64F00BAF73C /* Util.h */,
+				A089127A2C0DE64F00BAF73C /* ArrayList.h */,
+			);
+			path = jni;
+			sourceTree = "<group>";
+		};
+		A089127D2C0DE64F00BAF73C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A089127E2C0DE64F00BAF73C /* RedDict.cc */,
+				A089127F2C0DE64F00BAF73C /* RedLog.cc */,
+				A08912802C0DE64F00BAF73C /* jni */,
+			);
+			name = src;
+			path = ../redplayercore/redbase/src;
+			sourceTree = "<group>";
+		};
+		A08912802C0DE64F00BAF73C /* jni */ = {
+			isa = PBXGroup;
+			children = (
+				A08912812C0DE64F00BAF73C /* ByteBuffer.cc */,
+				A08912822C0DE64F00BAF73C /* Util.cc */,
+				A08912832C0DE64F00BAF73C /* ArrayList.cc */,
+				A08912842C0DE64F00BAF73C /* Bundle.cc */,
+				A08912852C0DE64F00BAF73C /* Env.cc */,
+			);
+			path = jni;
+			sourceTree = "<group>";
+		};
+		A08912B12C0DE6B600BAF73C /* adaptive */ = {
+			isa = PBXGroup;
+			children = (
+				A08912B22C0DE6B600BAF73C /* playlist */,
+				A08912B72C0DE6B600BAF73C /* config */,
+				A08912BA2C0DE6B600BAF73C /* logic */,
+			);
+			name = adaptive;
+			path = ../redplayercore/redstrategycenter/adaptive;
+			sourceTree = "<group>";
+		};
+		A08912B22C0DE6B600BAF73C /* playlist */ = {
+			isa = PBXGroup;
+			children = (
+				A08912B32C0DE6B600BAF73C /* RedPlaylistJsonParser.h */,
+				A08912B42C0DE6B600BAF73C /* RedPlaylist.h */,
+				A08912B52C0DE6B600BAF73C /* RedPlaylistParser.h */,
+				A08912B62C0DE6B600BAF73C /* RedPlaylistJsonParser.cc */,
+			);
+			path = playlist;
+			sourceTree = "<group>";
+		};
+		A08912B72C0DE6B600BAF73C /* config */ = {
+			isa = PBXGroup;
+			children = (
+				A08912B82C0DE6B600BAF73C /* RedAdaptiveConfig.cc */,
+				A08912B92C0DE6B600BAF73C /* RedAdaptiveConfig.h */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		A08912BA2C0DE6B600BAF73C /* logic */ = {
+			isa = PBXGroup;
+			children = (
+				A08912BB2C0DE6B600BAF73C /* AbstractAdaptationLogic.h */,
+				A08912BC2C0DE6B600BAF73C /* AlwaysBestAdaptationLogic.h */,
+				A08912BD2C0DE6B600BAF73C /* AdaptiveAdaptationLogic.h */,
+				A08912BE2C0DE6B600BAF73C /* AlwaysBestAdaptationLogic.cc */,
+				A08912BF2C0DE6B600BAF73C /* AdaptiveAdaptationLogic.cc */,
+				A08912C02C0DE6B600BAF73C /* AlwaysLowestAdaptationLogic.h */,
+				A08912C12C0DE6B600BAF73C /* AlwaysLowestAdaptationLogic.cc */,
+			);
+			path = logic;
+			sourceTree = "<group>";
+		};
+		A08912C32C0DE6B600BAF73C /* evaluate */ = {
+			isa = PBXGroup;
+			children = (
+				A08912C42C0DE6B600BAF73C /* NetworkEvaluate.h */,
+				A08912C52C0DE6B600BAF73C /* NetworkEvaluate.cc */,
+				A08912C62C0DE6B600BAF73C /* NetworkEvaluateV1.h */,
+			);
+			name = evaluate;
+			path = ../redplayercore/redstrategycenter/evaluate;
+			sourceTree = "<group>";
+		};
+		A08912C82C0DE6B600BAF73C /* strategy */ = {
+			isa = PBXGroup;
+			children = (
+				A08912C92C0DE6B600BAF73C /* RedAdaptiveStrategy.cc */,
+				A08912CA2C0DE6B600BAF73C /* RedAdaptiveStrategy.h */,
+			);
+			name = strategy;
+			path = ../redplayercore/redstrategycenter/strategy;
+			sourceTree = "<group>";
+		};
+		A08912CB2C0DE6B600BAF73C /* observer */ = {
+			isa = PBXGroup;
+			children = (
+				A08912CC2C0DE6B600BAF73C /* IDownloadObserver.h */,
+			);
+			name = observer;
+			path = ../redplayercore/redstrategycenter/observer;
+			sourceTree = "<group>";
+		};
+		A08912E32C0DE6CF00BAF73C /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				A08912E42C0DE6CF00BAF73C /* audio_common_definition.h */,
+				A08912E52C0DE6CF00BAF73C /* audio_codec_info.cpp */,
+				A08912E62C0DE6CF00BAF73C /* audio_codec_info.h */,
+				A08912E72C0DE6CF00BAF73C /* audio_decoder */,
+			);
+			name = audio;
+			path = ../redplayercore/reddecoder/audio;
+			sourceTree = "<group>";
+		};
+		A08912E72C0DE6CF00BAF73C /* audio_decoder */ = {
+			isa = PBXGroup;
+			children = (
+				A08912E82C0DE6CF00BAF73C /* audio_decoder_factory.h */,
+				A08912E92C0DE6CF00BAF73C /* audio_decoder.cpp */,
+				A08912EA2C0DE6CF00BAF73C /* audio_decoder.h */,
+				A08912EB2C0DE6CF00BAF73C /* ffmpeg_audio_decoder.h */,
+				A08912EC2C0DE6CF00BAF73C /* audio_decoder_factory.cpp */,
+				A08912ED2C0DE6CF00BAF73C /* ffmpeg_audio_decoder.cpp */,
+			);
+			path = audio_decoder;
+			sourceTree = "<group>";
+		};
+		A08912EE2C0DE6CF00BAF73C /* common */ = {
+			isa = PBXGroup;
+			children = (
+				A08912EF2C0DE6CF00BAF73C /* buffer.cpp */,
+				A08912F02C0DE6CF00BAF73C /* buffer.h */,
+				A08912F12C0DE6CF00BAF73C /* logger.h */,
+			);
+			name = common;
+			path = ../redplayercore/reddecoder/common;
+			sourceTree = "<group>";
+		};
+		A08912F22C0DE6CF00BAF73C /* video */ = {
+			isa = PBXGroup;
+			children = (
+				A08912F32C0DE6CF00BAF73C /* video_decoder */,
+				A08913042C0DE6CF00BAF73C /* video_common */,
+				A08913092C0DE6CF00BAF73C /* video_common_definition.h */,
+				A089130A2C0DE6CF00BAF73C /* video_codec_info.cpp */,
+				A089130B2C0DE6CF00BAF73C /* video_codec_info.h */,
+			);
+			name = video;
+			path = ../redplayercore/reddecoder/video;
+			sourceTree = "<group>";
+		};
+		A08912F32C0DE6CF00BAF73C /* video_decoder */ = {
+			isa = PBXGroup;
+			children = (
+				A08912F42C0DE6CF00BAF73C /* ffmpeg_video_decoder.h */,
+				A08912F52C0DE6CF00BAF73C /* video_decoder.cpp */,
+				A08912F62C0DE6CF00BAF73C /* video_decoder_factory.h */,
+				A08912FA2C0DE6CF00BAF73C /* video_decoder_factory.cpp */,
+				A08912FB2C0DE6CF00BAF73C /* ios */,
+				A08912FF2C0DE6CF00BAF73C /* ffmpeg_video_decoder.cpp */,
+				A08913032C0DE6CF00BAF73C /* video_decoder.h */,
+			);
+			path = video_decoder;
+			sourceTree = "<group>";
+		};
+		A08912FB2C0DE6CF00BAF73C /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A08912FC2C0DE6CF00BAF73C /* vtb_video_decoder.h */,
+				A08912FD2C0DE6CF00BAF73C /* cf_obj_helper.h */,
+				A08912FE2C0DE6CF00BAF73C /* vtb_video_decoder.mm */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		A08913042C0DE6CF00BAF73C /* video_common */ = {
+			isa = PBXGroup;
+			children = (
+				A08913052C0DE6CF00BAF73C /* h264_parser.cpp */,
+				A08913062C0DE6CF00BAF73C /* h264_parser.h */,
+				A08913072C0DE6CF00BAF73C /* format_convert_helper.h */,
+				A08913082C0DE6CF00BAF73C /* format_convert_helper.cpp */,
+			);
+			path = video_common;
+			sourceTree = "<group>";
+		};
+		A089132C2C0DE6F200BAF73C /* video */ = {
+			isa = PBXGroup;
+			children = (
+				A089132D2C0DE6F200BAF73C /* video_renderer_factory.cpp */,
+				A089132E2C0DE6F200BAF73C /* video_inc_internal.h */,
+				A089132F2C0DE6F200BAF73C /* video_renderer.h */,
+				A08913312C0DE6F200BAF73C /* video_renderer_info.h */,
+				A08913322C0DE6F200BAF73C /* video_filter.cpp */,
+				A08913332C0DE6F200BAF73C /* metal */,
+				A08913582C0DE6F200BAF73C /* video_renderer_info.cpp */,
+				A089135C2C0DE6F200BAF73C /* video_filter.h */,
+				A089135D2C0DE6F200BAF73C /* video_renderer_factory.h */,
+				A089135E2C0DE6F200BAF73C /* ios */,
+				A08913602C0DE6F200BAF73C /* video_renderer.cpp */,
+				A08913612C0DE6F200BAF73C /* video_macro_definition.h */,
+				A08913622C0DE6F200BAF73C /* avsbdl */,
+				A08913692C0DE6F200BAF73C /* opengl */,
+			);
+			name = video;
+			path = ../redplayercore/redrender/video;
+			sourceTree = "<group>";
+		};
+		A08913332C0DE6F200BAF73C /* metal */ = {
+			isa = PBXGroup;
+			children = (
+				A08913342C0DE6F200BAF73C /* metal_video_renderer.mm */,
+				A08913352C0DE6F200BAF73C /* input */,
+				A08913382C0DE6F200BAF73C /* redrender_metal_view.h */,
+				A08913392C0DE6F200BAF73C /* output */,
+				A089133C2C0DE6F200BAF73C /* common */,
+				A08913442C0DE6F200BAF73C /* metal_video_renderer.h */,
+				A08913452C0DE6F200BAF73C /* shader */,
+				A089134A2C0DE6F200BAF73C /* redrender_metal_view.mm */,
+				A089134B2C0DE6F200BAF73C /* filter */,
+			);
+			path = metal;
+			sourceTree = "<group>";
+		};
+		A08913352C0DE6F200BAF73C /* input */ = {
+			isa = PBXGroup;
+			children = (
+				A08913372C0DE6F200BAF73C /* metal_video_input.h */,
+			);
+			path = input;
+			sourceTree = "<group>";
+		};
+		A08913392C0DE6F200BAF73C /* output */ = {
+			isa = PBXGroup;
+			children = (
+				A089133A2C0DE6F200BAF73C /* metal_video_output.mm */,
+				A089133B2C0DE6F200BAF73C /* metal_video_output.h */,
+			);
+			path = output;
+			sourceTree = "<group>";
+		};
+		A089133C2C0DE6F200BAF73C /* common */ = {
+			isa = PBXGroup;
+			children = (
+				A089133D2C0DE6F200BAF73C /* metal_common.h */,
+				A089133E2C0DE6F200BAF73C /* metal_video_cmd_queue.h */,
+				A089133F2C0DE6F200BAF73C /* metal_video_texture.h */,
+				A08913402C0DE6F200BAF73C /* metal_common.mm */,
+				A08913412C0DE6F200BAF73C /* metal_video_texture.mm */,
+				A08913432C0DE6F200BAF73C /* metal_video_cmd_queue.mm */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		A08913452C0DE6F200BAF73C /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				A08913492C0DE6F200BAF73C /* metal_device_filter.metal */,
+			);
+			path = shader;
+			sourceTree = "<group>";
+		};
+		A089134B2C0DE6F200BAF73C /* filter */ = {
+			isa = PBXGroup;
+			children = (
+				A089134C2C0DE6F200BAF73C /* metal_filter_base.h */,
+				A089134D2C0DE6F200BAF73C /* metal_filter_device.h */,
+				A089134E2C0DE6F200BAF73C /* metal_filter_base.mm */,
+				A08913502C0DE6F200BAF73C /* metal_filter_device.mm */,
+			);
+			path = filter;
+			sourceTree = "<group>";
+		};
+		A089135E2C0DE6F200BAF73C /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A089135F2C0DE6F200BAF73C /* redrender_view_protocol.h */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		A08913622C0DE6F200BAF73C /* avsbdl */ = {
+			isa = PBXGroup;
+			children = (
+				A08913632C0DE6F200BAF73C /* avsbdl_video_renderer.mm */,
+				A08913642C0DE6F200BAF73C /* redrender_avsbdl_view.mm */,
+				A08913652C0DE6F200BAF73C /* redrender_avsbdl_view.h */,
+				A08913662C0DE6F200BAF73C /* redrender_avsbdl_layer.h */,
+				A08913672C0DE6F200BAF73C /* avsbdl_video_renderer.h */,
+				A08913682C0DE6F200BAF73C /* redrender_avsbdl_layer.mm */,
+			);
+			path = avsbdl;
+			sourceTree = "<group>";
+		};
+		A08913692C0DE6F200BAF73C /* opengl */ = {
+			isa = PBXGroup;
+			children = (
+				A089136A2C0DE6F200BAF73C /* opengl_video_renderer.cpp */,
+				A089136B2C0DE6F200BAF73C /* input */,
+				A08913712C0DE6F200BAF73C /* output */,
+				A08913742C0DE6F200BAF73C /* ios */,
+				A089137B2C0DE6F200BAF73C /* opengl_video_renderer.h */,
+				A089137C2C0DE6F200BAF73C /* common */,
+				A089138A2C0DE6F200BAF73C /* filter */,
+			);
+			path = opengl;
+			sourceTree = "<group>";
+		};
+		A089136B2C0DE6F200BAF73C /* input */ = {
+			isa = PBXGroup;
+			children = (
+				A089136C2C0DE6F200BAF73C /* opengl_video_input.cpp */,
+				A089136D2C0DE6F200BAF73C /* opengl_video_input.h */,
+			);
+			path = input;
+			sourceTree = "<group>";
+		};
+		A08913712C0DE6F200BAF73C /* output */ = {
+			isa = PBXGroup;
+			children = (
+				A08913722C0DE6F200BAF73C /* opengl_video_output.h */,
+				A08913732C0DE6F200BAF73C /* opengl_video_output.cpp */,
+			);
+			path = output;
+			sourceTree = "<group>";
+		};
+		A08913742C0DE6F200BAF73C /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A08913752C0DE6F200BAF73C /* redrender_gl_texture.h */,
+				A08913762C0DE6F200BAF73C /* eagl_context.h */,
+				A08913772C0DE6F200BAF73C /* redrender_gl_texture.mm */,
+				A08913782C0DE6F200BAF73C /* eagl_context.mm */,
+				A08913792C0DE6F200BAF73C /* redrender_gl_view.h */,
+				A089137A2C0DE6F200BAF73C /* redrender_gl_view.mm */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		A089137C2C0DE6F200BAF73C /* common */ = {
+			isa = PBXGroup;
+			children = (
+				A089137D2C0DE6F200BAF73C /* gl_program.cpp */,
+				A089137F2C0DE6F200BAF73C /* context.cpp */,
+				A08913802C0DE6F200BAF73C /* framebuffer.cpp */,
+				A08913812C0DE6F200BAF73C /* gl_util.cpp */,
+				A08913822C0DE6F200BAF73C /* context.h */,
+				A08913832C0DE6F200BAF73C /* framebuffer.h */,
+				A08913842C0DE6F200BAF73C /* gl_util.h */,
+				A08913852C0DE6F200BAF73C /* gl_program.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		A089138A2C0DE6F200BAF73C /* filter */ = {
+			isa = PBXGroup;
+			children = (
+				A089138B2C0DE6F200BAF73C /* opengl_filter_base.h */,
+				A089138D2C0DE6F200BAF73C /* filter_shader.cpp */,
+				A08913922C0DE6F200BAF73C /* opengl_filter_base.cpp */,
+				A08913932C0DE6F200BAF73C /* filter_shader.h */,
+				A08913962C0DE6F200BAF73C /* opengl_device_filter.cpp */,
+				A08913982C0DE6F200BAF73C /* opengl_device_filter.h */,
+			);
+			path = filter;
+			sourceTree = "<group>";
+		};
+		A08913992C0DE6F200BAF73C /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				A089139A2C0DE6F200BAF73C /* audio_render_factory.h */,
+				A089139E2C0DE6F200BAF73C /* ios */,
+				A08913A12C0DE6F200BAF73C /* audio_common.h */,
+				A08913A92C0DE6F200BAF73C /* audio_info.h */,
+				A08913AA2C0DE6F200BAF73C /* audio_render_factory.cc */,
+				A08913AB2C0DE6F200BAF73C /* audio_render_interface.h */,
+			);
+			name = audio;
+			path = ../redplayercore/redrender/audio;
+			sourceTree = "<group>";
+		};
+		A089139E2C0DE6F200BAF73C /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A089139F2C0DE6F200BAF73C /* audio_queue_render.cc */,
+				A08913A02C0DE6F200BAF73C /* audio_queue_render.h */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		A08913AC2C0DE6F200BAF73C /* common */ = {
+			isa = PBXGroup;
+			children = (
+				A08913AD2C0DE6F200BAF73C /* redrender_buffer.h */,
+				A08913AF2C0DE6F200BAF73C /* logger.h */,
+			);
+			name = common;
+			path = ../redplayercore/redrender/common;
+			sourceTree = "<group>";
+		};
+		A08914222C0DE71A00BAF73C /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				A08914232C0DE71A00BAF73C /* Cipher.h */,
+				A08914242C0DE71A00BAF73C /* Cipher.cpp */,
+				A08914252C0DE71A00BAF73C /* Utility.h */,
+				A08914262C0DE71A00BAF73C /* Utility.cpp */,
+			);
+			name = utility;
+			path = ../redplayercore/reddownload/utility;
+			sourceTree = "<group>";
+		};
+		A08914332C0DE71B00BAF73C /* wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				A08914342C0DE71B00BAF73C /* reddownload_datasource_wrapper.cpp */,
+				A08914352C0DE71B00BAF73C /* reddownload_datasource_wrapper.h */,
+			);
+			name = wrapper;
+			path = ../redplayercore/reddownload/wrapper;
+			sourceTree = "<group>";
+		};
+		A08914432C0DE71B00BAF73C /* dnscache */ = {
+			isa = PBXGroup;
+			children = (
+				A08914442C0DE71B00BAF73C /* REDDnsCache.h */,
+				A08914452C0DE71B00BAF73C /* REDDnsCache.cpp */,
+				A08914462C0DE71B00BAF73C /* REDPing.h */,
+				A08914472C0DE71B00BAF73C /* REDPing.cpp */,
+			);
+			name = dnscache;
+			path = ../redplayercore/reddownload/dnscache;
+			sourceTree = "<group>";
+		};
+		A0D697842C0DCACD00F2D09B /* RedRender */ = {
+			isa = PBXGroup;
+			children = (
+				A08913992C0DE6F200BAF73C /* audio */,
+				A08913AC2C0DE6F200BAF73C /* common */,
+				A08913B02C0DE6F200BAF73C /* redrender_macro_definition.h */,
+				A089132C2C0DE6F200BAF73C /* video */,
+			);
+			name = RedRender;
+			sourceTree = "<group>";
+		};
+		FA9348062C07109800BF252C /* soundTouch */ = {
+			isa = PBXGroup;
+			children = (
+				FA93480E2C0710ED00BF252C /* AAFilter.cpp */,
+				FA93481C2C0710ED00BF252C /* AAFilter.h */,
+				FA93480D2C0710ED00BF252C /* BPMDetect.cpp */,
+				FA9348082C0710ED00BF252C /* BPMDetect.h */,
+				FA9348192C0710ED00BF252C /* cpu_detect_x86.cpp */,
+				FA9348072C0710ED00BF252C /* cpu_detect.h */,
+				FA9348182C0710ED00BF252C /* FIFOSampleBuffer.cpp */,
+				FA93481D2C0710ED00BF252C /* FIFOSampleBuffer.h */,
+				FA9348232C0710ED00BF252C /* FIFOSamplePipe.h */,
+				FA9348212C0710ED00BF252C /* FIRFilter.cpp */,
+				FA93480F2C0710ED00BF252C /* FIRFilter.h */,
+				FA9348202C0710ED00BF252C /* InterpolateCubic.cpp */,
+				FA93480A2C0710ED00BF252C /* InterpolateCubic.h */,
+				FA93481B2C0710ED00BF252C /* InterpolateLinear.cpp */,
+				FA9348122C0710ED00BF252C /* InterpolateLinear.h */,
+				FA9348152C0710ED00BF252C /* InterpolateShannon.cpp */,
+				FA9348112C0710ED00BF252C /* InterpolateShannon.h */,
+				FA93480B2C0710ED00BF252C /* mmx_optimized.cpp */,
+				FA93481F2C0710ED00BF252C /* PeakFinder.cpp */,
+				FA93481E2C0710ED00BF252C /* PeakFinder.h */,
+				FA9348222C0710ED00BF252C /* RateTransposer.cpp */,
+				FA9348162C0710ED00BF252C /* RateTransposer.h */,
+				FA9348102C0710ED00BF252C /* soundtouch_config.h */,
+				FA93481A2C0710ED00BF252C /* SoundTouch.cpp */,
+				FA9348092C0710ED00BF252C /* SoundTouch.h */,
+				FA9348172C0710ED00BF252C /* sse_optimized.cpp */,
+				FA9348132C0710ED00BF252C /* STTypes.h */,
+				FA93480C2C0710ED00BF252C /* TDStretch.cpp */,
+				FA9348142C0710ED00BF252C /* TDStretch.h */,
+			);
+			path = soundTouch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		351E23472976478C008266C5 /* Headers */ = {
+		A08914942C0DFD2E00BAF73C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B01CBF2A3C4D490018CBDB /* RedPlayer-umbrella.h in Headers */,
-				351E24F029767721008266C5 /* RedMediaPlayBack.h in Headers */,
-				351E24EE29767721008266C5 /* RedPlayerController.h in Headers */,
-				A0DF4EFD2B4E95A000A38074 /* RedPreLoad.h in Headers */,
-				B3D4D8D7298D057200395AAD /* RedSampler.h in Headers */,
-				35AEFE09298A139800EA98CA /* RedBuffer.h in Headers */,
-				35AEFE08298A139800EA98CA /* RedPacket.h in Headers */,
-				FA943CC6299E06BB0048D720 /* RedConfig.h in Headers */,
-				351E250029767721008266C5 /* VideoProcesser.h in Headers */,
-				351E254029767722008266C5 /* RedQueue.h in Headers */,
-				351E24FF29767721008266C5 /* RedSourceController.h in Headers */,
-				351E24F729767721008266C5 /* RedRenderVideoHal.h in Headers */,
-				351E24FC29767721008266C5 /* RedFormat.h in Headers */,
-				351E24E629767721008266C5 /* RedPlayer.h in Headers */,
-				351E254329767722008266C5 /* RedClock.h in Headers */,
-				351E254429767722008266C5 /* RedMsgQueue.h in Headers */,
-				351E250329767721008266C5 /* AudioProcesser.h in Headers */,
-				351E24F529767721008266C5 /* RedCore.h in Headers */,
-				351E24F929767721008266C5 /* RedRenderAudioHal.h in Headers */,
-				A0DF4EEE2B4D375100A38074 /* SoundTouchHal.h in Headers */,
-				FA47B9F429C9973000234C7B /* redioapplication.h in Headers */,
+				A08916322C0DFD9F00BAF73C /* RedPreLoad.h in Headers */,
+				A08916332C0DFD9F00BAF73C /* RedMediaPlayBack.h in Headers */,
+				A08916342C0DFD9F00BAF73C /* RedPlayerController.h in Headers */,
+				A08916562C0DFD9F00BAF73C /* RedPlayer-umbrella.h in Headers */,
+				A08915B72C0DFD9E00BAF73C /* RedDef.h in Headers */,
+				A08915B82C0DFD9E00BAF73C /* RedLog.h in Headers */,
+				A08915B92C0DFD9E00BAF73C /* RedMsg.h in Headers */,
+				A08915BA2C0DFD9E00BAF73C /* RedDict.h in Headers */,
+				A08915BB2C0DFD9E00BAF73C /* RedBase.h in Headers */,
+				A08915BC2C0DFD9E00BAF73C /* RedDebug.h in Headers */,
+				A08915BD2C0DFD9E00BAF73C /* RedError.h in Headers */,
+				A08915BE2C0DFD9E00BAF73C /* Env.h in Headers */,
+				A08915BF2C0DFD9E00BAF73C /* Debug.h in Headers */,
+				A08915C02C0DFD9E00BAF73C /* Bundle.h in Headers */,
+				A08915C12C0DFD9E00BAF73C /* ByteBuffer.h in Headers */,
+				A08915C22C0DFD9E00BAF73C /* Util.h in Headers */,
+				A08915C32C0DFD9E00BAF73C /* ArrayList.h in Headers */,
+				A08915C42C0DFD9E00BAF73C /* RedMeta.h in Headers */,
+				A08915C52C0DFD9E00BAF73C /* RedProp.h in Headers */,
+				A08915C62C0DFD9E00BAF73C /* IRedExtractor.h in Headers */,
+				A08915C72C0DFD9E00BAF73C /* RedExtractorFactory.h in Headers */,
+				A08915C82C0DFD9E00BAF73C /* RedFFExtractor.h in Headers */,
+				A08915C92C0DFD9E00BAF73C /* RedFFUtil.h in Headers */,
+				A08915CA2C0DFD9E00BAF73C /* RedSource.h in Headers */,
+				A08915CB2C0DFD9E00BAF73C /* RedSourceCommon.h in Headers */,
+				A08915CC2C0DFD9E00BAF73C /* RedPlaylistJsonParser.h in Headers */,
+				A08915CD2C0DFD9E00BAF73C /* RedPlaylist.h in Headers */,
+				A08915CE2C0DFD9E00BAF73C /* RedPlaylistParser.h in Headers */,
+				A08915CF2C0DFD9E00BAF73C /* RedAdaptiveConfig.h in Headers */,
+				A08915D02C0DFD9E00BAF73C /* AbstractAdaptationLogic.h in Headers */,
+				A08915D12C0DFD9E00BAF73C /* AlwaysBestAdaptationLogic.h in Headers */,
+				A08915D22C0DFD9E00BAF73C /* AdaptiveAdaptationLogic.h in Headers */,
+				A08915D32C0DFD9E00BAF73C /* AlwaysLowestAdaptationLogic.h in Headers */,
+				A08915D42C0DFD9E00BAF73C /* NetworkEvaluate.h in Headers */,
+				A08915D52C0DFD9E00BAF73C /* NetworkEvaluateV1.h in Headers */,
+				A08915D62C0DFD9E00BAF73C /* IDownloadObserver.h in Headers */,
+				A08915D72C0DFD9E00BAF73C /* RedStrategyCenter.h in Headers */,
+				A08915D82C0DFD9E00BAF73C /* RedStrategyCenterCommon.h in Headers */,
+				A08915D92C0DFD9E00BAF73C /* RedAdaptiveStrategy.h in Headers */,
+				A08915DA2C0DFD9E00BAF73C /* audio_common_definition.h in Headers */,
+				A08915DB2C0DFD9E00BAF73C /* audio_codec_info.h in Headers */,
+				A08915DC2C0DFD9E00BAF73C /* audio_decoder_factory.h in Headers */,
+				A08915DD2C0DFD9E00BAF73C /* audio_decoder.h in Headers */,
+				A08915DE2C0DFD9E00BAF73C /* ffmpeg_audio_decoder.h in Headers */,
+				A08915DF2C0DFD9E00BAF73C /* buffer.h in Headers */,
+				A08915E02C0DFD9E00BAF73C /* logger.h in Headers */,
+				A08915E12C0DFD9E00BAF73C /* ffmpeg_video_decoder.h in Headers */,
+				A08915E22C0DFD9E00BAF73C /* video_decoder_factory.h in Headers */,
+				A08915E32C0DFD9E00BAF73C /* vtb_video_decoder.h in Headers */,
+				A08915E42C0DFD9E00BAF73C /* cf_obj_helper.h in Headers */,
+				A08915E52C0DFD9E00BAF73C /* video_decoder.h in Headers */,
+				A08915E62C0DFD9E00BAF73C /* h264_parser.h in Headers */,
+				A08915E72C0DFD9E00BAF73C /* format_convert_helper.h in Headers */,
+				A08915E82C0DFD9E00BAF73C /* video_common_definition.h in Headers */,
+				A08915E92C0DFD9E00BAF73C /* video_codec_info.h in Headers */,
+				A08915EA2C0DFD9E00BAF73C /* audio_render_factory.h in Headers */,
+				A08915EB2C0DFD9E00BAF73C /* audio_queue_render.h in Headers */,
+				A08915EC2C0DFD9E00BAF73C /* audio_common.h in Headers */,
+				A08915ED2C0DFD9E00BAF73C /* audio_info.h in Headers */,
+				A08915EE2C0DFD9E00BAF73C /* audio_render_interface.h in Headers */,
+				A08915EF2C0DFD9E00BAF73C /* redrender_buffer.h in Headers */,
+				A08915F02C0DFD9E00BAF73C /* logger.h in Headers */,
+				A08915F12C0DFD9E00BAF73C /* redrender_macro_definition.h in Headers */,
+				A08915F22C0DFD9E00BAF73C /* video_inc_internal.h in Headers */,
+				A08915F32C0DFD9E00BAF73C /* video_renderer.h in Headers */,
+				A08915F42C0DFD9E00BAF73C /* video_renderer_info.h in Headers */,
+				A08915F52C0DFD9E00BAF73C /* metal_video_input.h in Headers */,
+				A08915F62C0DFD9E00BAF73C /* redrender_metal_view.h in Headers */,
+				A08915F72C0DFD9E00BAF73C /* metal_video_output.h in Headers */,
+				A08915F82C0DFD9E00BAF73C /* metal_common.h in Headers */,
+				A08915F92C0DFD9E00BAF73C /* metal_video_cmd_queue.h in Headers */,
+				A08915FA2C0DFD9E00BAF73C /* metal_video_texture.h in Headers */,
+				A08915FC2C0DFD9E00BAF73C /* metal_video_renderer.h in Headers */,
+				A08915FD2C0DFD9E00BAF73C /* metal_filter_base.h in Headers */,
+				A08915FE2C0DFD9E00BAF73C /* metal_filter_device.h in Headers */,
+				A08916022C0DFD9E00BAF73C /* video_filter.h in Headers */,
+				A08916032C0DFD9E00BAF73C /* video_renderer_factory.h in Headers */,
+				A08916042C0DFD9E00BAF73C /* redrender_view_protocol.h in Headers */,
+				A08916052C0DFD9E00BAF73C /* video_macro_definition.h in Headers */,
+				A08916062C0DFD9E00BAF73C /* redrender_avsbdl_view.h in Headers */,
+				A08916072C0DFD9E00BAF73C /* redrender_avsbdl_layer.h in Headers */,
+				A08916082C0DFD9E00BAF73C /* avsbdl_video_renderer.h in Headers */,
+				A08916092C0DFD9E00BAF73C /* opengl_video_input.h in Headers */,
+				A089160A2C0DFD9E00BAF73C /* opengl_video_output.h in Headers */,
+				A089160B2C0DFD9E00BAF73C /* redrender_gl_texture.h in Headers */,
+				A089160C2C0DFD9E00BAF73C /* eagl_context.h in Headers */,
+				A089160D2C0DFD9E00BAF73C /* redrender_gl_view.h in Headers */,
+				A089160E2C0DFD9E00BAF73C /* opengl_video_renderer.h in Headers */,
+				A08916102C0DFD9E00BAF73C /* context.h in Headers */,
+				A08916112C0DFD9E00BAF73C /* framebuffer.h in Headers */,
+				A08916122C0DFD9E00BAF73C /* gl_util.h in Headers */,
+				A08916132C0DFD9E00BAF73C /* gl_program.h in Headers */,
+				A08916142C0DFD9E00BAF73C /* opengl_filter_base.h in Headers */,
+				A08916162C0DFD9E00BAF73C /* filter_shader.h in Headers */,
+				A089161A2C0DFD9E00BAF73C /* opengl_device_filter.h in Headers */,
+				A089161B2C0DFD9E00BAF73C /* REDDnsCache.h in Headers */,
+				A089161C2C0DFD9E00BAF73C /* REDPing.h in Headers */,
+				A089161D2C0DFD9E00BAF73C /* NetworkQuality.h in Headers */,
+				A089161E2C0DFD9E00BAF73C /* REDCurl.h in Headers */,
+				A089161F2C0DFD9E00BAF73C /* REDDownloadCache.h in Headers */,
+				A08916202C0DFD9E00BAF73C /* REDDownloadCacheManager.h in Headers */,
+				A08916212C0DFD9F00BAF73C /* REDDownloadCacheManagerImpl.h in Headers */,
+				A08916222C0DFD9F00BAF73C /* RedDownloadConfig.h in Headers */,
+				A08916232C0DFD9F00BAF73C /* REDDownloader.h in Headers */,
+				A08916242C0DFD9F00BAF73C /* REDDownloaderBase.h in Headers */,
+				A08916252C0DFD9F00BAF73C /* REDDownloaderFactory.h in Headers */,
+				A08916262C0DFD9F00BAF73C /* REDDownloadListen.h in Headers */,
+				A08916272C0DFD9F00BAF73C /* REDDownloadTask.h in Headers */,
+				A08916282C0DFD9F00BAF73C /* REDFileCache.h in Headers */,
+				A08916292C0DFD9F00BAF73C /* REDFileManager.h in Headers */,
+				A089162A2C0DFD9F00BAF73C /* REDnocopyable.h in Headers */,
+				A089162B2C0DFD9F00BAF73C /* REDRingBuffer.h in Headers */,
+				A089162C2C0DFD9F00BAF73C /* REDThreadPool.h in Headers */,
+				A089162D2C0DFD9F00BAF73C /* REDURLParser.h in Headers */,
+				A089162E2C0DFD9F00BAF73C /* Cipher.h in Headers */,
+				A089162F2C0DFD9F00BAF73C /* Utility.h in Headers */,
+				A08916302C0DFD9F00BAF73C /* reddownload_datasource_wrapper.h in Headers */,
+				A08916312C0DFD9F00BAF73C /* RedPlayer.h in Headers */,
+				A08916352C0DFD9F00BAF73C /* NSString+REDMedia.h in Headers */,
+				A08916362C0DFD9F00BAF73C /* RedNotificationManager.h in Headers */,
+				A08916372C0DFD9F00BAF73C /* RedCore.h in Headers */,
+				A08916382C0DFD9F00BAF73C /* AAFilter.h in Headers */,
+				A08916392C0DFD9F00BAF73C /* BPMDetect.h in Headers */,
+				A089163A2C0DFD9F00BAF73C /* cpu_detect.h in Headers */,
+				A089163B2C0DFD9F00BAF73C /* FIFOSampleBuffer.h in Headers */,
+				A089163C2C0DFD9F00BAF73C /* FIFOSamplePipe.h in Headers */,
+				A089163D2C0DFD9F00BAF73C /* FIRFilter.h in Headers */,
+				A089163E2C0DFD9F00BAF73C /* InterpolateCubic.h in Headers */,
+				A089163F2C0DFD9F00BAF73C /* InterpolateLinear.h in Headers */,
+				A08916402C0DFD9F00BAF73C /* InterpolateShannon.h in Headers */,
+				A08916412C0DFD9F00BAF73C /* PeakFinder.h in Headers */,
+				A08916422C0DFD9F00BAF73C /* RateTransposer.h in Headers */,
+				A08916432C0DFD9F00BAF73C /* soundtouch_config.h in Headers */,
+				A08916442C0DFD9F00BAF73C /* SoundTouch.h in Headers */,
+				A08916452C0DFD9F00BAF73C /* STTypes.h in Headers */,
+				A08916462C0DFD9F00BAF73C /* TDStretch.h in Headers */,
+				A08916472C0DFD9F00BAF73C /* SoundTouchHal.h in Headers */,
+				A08916482C0DFD9F00BAF73C /* RedRenderVideoHal.h in Headers */,
+				A08916492C0DFD9F00BAF73C /* RedRenderAudioHal.h in Headers */,
+				A089164A2C0DFD9F00BAF73C /* RedSourceController.h in Headers */,
+				A089164B2C0DFD9F00BAF73C /* redioapplication.h in Headers */,
+				A089164C2C0DFD9F00BAF73C /* RedFormat.h in Headers */,
+				A089164D2C0DFD9F00BAF73C /* VideoProcesser.h in Headers */,
+				A089164E2C0DFD9F00BAF73C /* AudioProcesser.h in Headers */,
+				A089164F2C0DFD9F00BAF73C /* RedConfig.h in Headers */,
+				A08916502C0DFD9F00BAF73C /* RedSampler.h in Headers */,
+				A08916512C0DFD9F00BAF73C /* RedBuffer.h in Headers */,
+				A08916522C0DFD9F00BAF73C /* RedPacket.h in Headers */,
+				A08916532C0DFD9F00BAF73C /* RedClock.h in Headers */,
+				A08916542C0DFD9F00BAF73C /* RedQueue.h in Headers */,
+				A08916552C0DFD9F00BAF73C /* RedMsgQueue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,20 +1571,35 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 351E23532976478C008266C5 /* Build configuration list for PBXNativeTarget "RedPlayer" */;
 			buildPhases = (
-				351E23472976478C008266C5 /* Headers */,
-				351E23482976478C008266C5 /* Sources */,
 				351E23492976478C008266C5 /* Frameworks */,
 				351E234A2976478C008266C5 /* Resources */,
+				A08914942C0DFD2E00BAF73C /* Headers */,
+				A08914952C0DFD4D00BAF73C /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A05D69922BA08DEF00B62E0F /* PBXTargetDependency */,
+				A08914932C0DFCCB00BAF73C /* PBXTargetDependency */,
 			);
 			name = RedPlayer;
 			productName = RedPlayer;
 			productReference = 351E234C2976478C008266C5 /* RedPlayer.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		A08914842C0DFC8E00BAF73C /* RedRenderShaders */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A08914892C0DFC8E00BAF73C /* Build configuration list for PBXNativeTarget "RedRenderShaders" */;
+			buildPhases = (
+				A08914832C0DFC8E00BAF73C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RedRenderShaders;
+			productName = RedRenderShaders;
+			productReference = A08914852C0DFC8E00BAF73C /* RedRenderShaders.metallib */;
+			productType = "com.apple.product-type.metal-library";
 		};
 /* End PBXNativeTarget section */
 
@@ -444,6 +1612,9 @@
 				TargetAttributes = {
 					351E234B2976478C008266C5 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					A08914842C0DFC8E00BAF73C = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
@@ -458,76 +1629,163 @@
 			mainGroup = 351E23422976478C008266C5;
 			productRefGroup = 351E234D2976478C008266C5 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A0E97C212BA02E01009CB4B4 /* Products */;
-					ProjectRef = A0E97C202BA02E01009CB4B4 /* RedBase.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				351E234B2976478C008266C5 /* RedPlayer */,
+				A08914842C0DFC8E00BAF73C /* RedRenderShaders */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A0E97C252BA02E01009CB4B4 /* RedBase.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = RedBase.framework;
-			remoteRef = A0E97C242BA02E01009CB4B4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		351E234A2976478C008266C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A089166A2C0EB92A00BAF73C /* RedRenderShaders.metallib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		351E23482976478C008266C5 /* Sources */ = {
+		A08914832C0DFC8E00BAF73C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA943CC8299E06D10048D720 /* RedConfig.cpp in Sources */,
-				A0DF4EFC2B4E95A000A38074 /* RedPreLoad.mm in Sources */,
-				B3D4D8D6298D057200395AAD /* RedSampler.cpp in Sources */,
-				351E24FB29767721008266C5 /* RedSourceController.cpp in Sources */,
-				FA9D943D2A2728F8000309C4 /* NSString+REDMedia.mm in Sources */,
-				A0DF4EED2B4D375100A38074 /* SoundTouchHal.cpp in Sources */,
-				35AEFE06298A139800EA98CA /* RedPacket.cpp in Sources */,
-				A0DF4F012B4ECB2300A38074 /* RedMediaPlayback.m in Sources */,
-				351E24FA29767721008266C5 /* RedRenderAudioHal.cpp in Sources */,
-				351E254829767722008266C5 /* RedMsgQueue.cpp in Sources */,
-				FA9D94412A273A5C000309C4 /* RedNotificationManager.m in Sources */,
-				35AEFE07298A139800EA98CA /* RedBuffer.cpp in Sources */,
-				351E253F29767722008266C5 /* RedClock.cpp in Sources */,
-				351E250129767721008266C5 /* AudioProcesser.cpp in Sources */,
-				351E254629767722008266C5 /* RedQueue.cpp in Sources */,
-				351E24FE29767721008266C5 /* reddownload_adapter.c in Sources */,
-				351E24FD29767721008266C5 /* RedFormat.c in Sources */,
-				351E24E529767721008266C5 /* RedPlayer.cpp in Sources */,
-				A004104E2AFE12760032169B /* RedPlayerController.mm in Sources */,
-				351E24F829767721008266C5 /* RedRenderVideoHal.cpp in Sources */,
-				351E250229767721008266C5 /* VideoProcesser.cpp in Sources */,
-				351E250529767721008266C5 /* RedCore.cpp in Sources */,
+				A089148F2C0DFC9A00BAF73C /* metal_device_filter.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A08914952C0DFD4D00BAF73C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A08914A52C0DFD6600BAF73C /* RedDict.cc in Sources */,
+				A08914A62C0DFD6600BAF73C /* RedLog.cc in Sources */,
+				A08914A72C0DFD6600BAF73C /* ByteBuffer.cc in Sources */,
+				A08914A82C0DFD6600BAF73C /* Util.cc in Sources */,
+				A08914A92C0DFD6600BAF73C /* ArrayList.cc in Sources */,
+				A08914AA2C0DFD6600BAF73C /* Bundle.cc in Sources */,
+				A08914AB2C0DFD6600BAF73C /* Env.cc in Sources */,
+				A08914AD2C0DFD6600BAF73C /* RedExtractorFactory.cc in Sources */,
+				A08914AF2C0DFD6600BAF73C /* RedFFExtractor.cc in Sources */,
+				A08914B12C0DFD6600BAF73C /* RedFFUtil.cc in Sources */,
+				A08914B32C0DFD6600BAF73C /* RedSource.cc in Sources */,
+				A08914B92C0DFD6600BAF73C /* RedPlaylistJsonParser.cc in Sources */,
+				A08914BA2C0DFD6600BAF73C /* RedAdaptiveConfig.cc in Sources */,
+				A08914BF2C0DFD6600BAF73C /* AlwaysBestAdaptationLogic.cc in Sources */,
+				A08914C02C0DFD6600BAF73C /* AdaptiveAdaptationLogic.cc in Sources */,
+				A08914C22C0DFD6600BAF73C /* AlwaysLowestAdaptationLogic.cc in Sources */,
+				A08914C42C0DFD6600BAF73C /* NetworkEvaluate.cc in Sources */,
+				A08914C72C0DFD6600BAF73C /* RedStrategyCenter.cc in Sources */,
+				A08914CA2C0DFD6600BAF73C /* RedAdaptiveStrategy.cc in Sources */,
+				A08914CD2C0DFD6600BAF73C /* audio_codec_info.cpp in Sources */,
+				A08914D02C0DFD6600BAF73C /* audio_decoder.cpp in Sources */,
+				A08914D32C0DFD6600BAF73C /* audio_decoder_factory.cpp in Sources */,
+				A08914D42C0DFD6600BAF73C /* ffmpeg_audio_decoder.cpp in Sources */,
+				A08914D52C0DFD6600BAF73C /* buffer.cpp in Sources */,
+				A08914D92C0DFD6600BAF73C /* video_decoder.cpp in Sources */,
+				A08914DB2C0DFD6600BAF73C /* video_decoder_factory.cpp in Sources */,
+				A08914DE2C0DFD6600BAF73C /* vtb_video_decoder.mm in Sources */,
+				A08914DF2C0DFD6600BAF73C /* ffmpeg_video_decoder.cpp in Sources */,
+				A08914E12C0DFD6600BAF73C /* h264_parser.cpp in Sources */,
+				A08914E42C0DFD6600BAF73C /* format_convert_helper.cpp in Sources */,
+				A08914E62C0DFD6600BAF73C /* video_codec_info.cpp in Sources */,
+				A08914E92C0DFD6600BAF73C /* audio_queue_render.cc in Sources */,
+				A08914ED2C0DFD6600BAF73C /* audio_render_factory.cc in Sources */,
+				A08914F32C0DFD6600BAF73C /* video_renderer_factory.cpp in Sources */,
+				A08914F82C0DFD6600BAF73C /* video_filter.cpp in Sources */,
+				A08914F92C0DFD6600BAF73C /* metal_video_renderer.mm in Sources */,
+				A08914FD2C0DFD6600BAF73C /* metal_video_output.mm in Sources */,
+				A08915022C0DFD6600BAF73C /* metal_common.mm in Sources */,
+				A08915032C0DFD6600BAF73C /* metal_video_texture.mm in Sources */,
+				A08915052C0DFD6600BAF73C /* metal_video_cmd_queue.mm in Sources */,
+				A089150B2C0DFD6600BAF73C /* redrender_metal_view.mm in Sources */,
+				A089150E2C0DFD6600BAF73C /* metal_filter_base.mm in Sources */,
+				A08915102C0DFD6600BAF73C /* metal_filter_device.mm in Sources */,
+				A08915152C0DFD6600BAF73C /* video_renderer_info.cpp in Sources */,
+				A08915192C0DFD6600BAF73C /* video_renderer.cpp in Sources */,
+				A089151B2C0DFD6600BAF73C /* avsbdl_video_renderer.mm in Sources */,
+				A089151C2C0DFD6600BAF73C /* redrender_avsbdl_view.mm in Sources */,
+				A08915202C0DFD6600BAF73C /* redrender_avsbdl_layer.mm in Sources */,
+				A08915212C0DFD6600BAF73C /* opengl_video_renderer.cpp in Sources */,
+				A08915222C0DFD6600BAF73C /* opengl_video_input.cpp in Sources */,
+				A08915252C0DFD6600BAF73C /* opengl_video_output.cpp in Sources */,
+				A08915282C0DFD6600BAF73C /* redrender_gl_texture.mm in Sources */,
+				A08915292C0DFD6600BAF73C /* eagl_context.mm in Sources */,
+				A089152B2C0DFD6600BAF73C /* redrender_gl_view.mm in Sources */,
+				A089152D2C0DFD6600BAF73C /* gl_program.cpp in Sources */,
+				A089152F2C0DFD6600BAF73C /* context.cpp in Sources */,
+				A08915302C0DFD6600BAF73C /* framebuffer.cpp in Sources */,
+				A08915312C0DFD6600BAF73C /* gl_util.cpp in Sources */,
+				A08915392C0DFD6600BAF73C /* filter_shader.cpp in Sources */,
+				A089153E2C0DFD6600BAF73C /* opengl_filter_base.cpp in Sources */,
+				A08915422C0DFD6600BAF73C /* opengl_device_filter.cpp in Sources */,
+				A08915462C0DFD6600BAF73C /* REDDnsCache.cpp in Sources */,
+				A08915482C0DFD6600BAF73C /* REDPing.cpp in Sources */,
+				A08915492C0DFD6600BAF73C /* NetworkQuality.cpp in Sources */,
+				A089154B2C0DFD6600BAF73C /* REDCurl.cpp in Sources */,
+				A089154D2C0DFD6600BAF73C /* REDDownloadCache.cpp in Sources */,
+				A08915502C0DFD6600BAF73C /* REDDownloadCacheManagerImpl.cpp in Sources */,
+				A08915522C0DFD6600BAF73C /* RedDownloadConfig.cpp in Sources */,
+				A08915552C0DFD6600BAF73C /* REDDownloaderBase.cpp in Sources */,
+				A08915572C0DFD6600BAF73C /* REDDownloaderFactory.cpp in Sources */,
+				A089155A2C0DFD6600BAF73C /* REDDownloadTask.cpp in Sources */,
+				A089155C2C0DFD6600BAF73C /* REDFileCache.cpp in Sources */,
+				A089155E2C0DFD6600BAF73C /* REDFileManager.cpp in Sources */,
+				A08915612C0DFD6600BAF73C /* REDRingBuffer.cpp in Sources */,
+				A08915632C0DFD6600BAF73C /* REDThreadPool.cpp in Sources */,
+				A08915652C0DFD6600BAF73C /* REDURLParser.cpp in Sources */,
+				A08915682C0DFD6600BAF73C /* Cipher.cpp in Sources */,
+				A089156A2C0DFD6600BAF73C /* Utility.cpp in Sources */,
+				A089156B2C0DFD6600BAF73C /* reddownload_datasource_wrapper.cpp in Sources */,
+				A089156D2C0DFD6600BAF73C /* RedPlayer.cpp in Sources */,
+				A08915702C0DFD6600BAF73C /* RedPreLoad.mm in Sources */,
+				A08915722C0DFD6600BAF73C /* RedMediaPlayback.m in Sources */,
+				A08915742C0DFD6600BAF73C /* RedPlayerController.mm in Sources */,
+				A08915752C0DFD6600BAF73C /* NSString+REDMedia.mm in Sources */,
+				A08915782C0DFD6600BAF73C /* RedNotificationManager.m in Sources */,
+				A08915792C0DFD6600BAF73C /* RedCore.cpp in Sources */,
+				A089157B2C0DFD6600BAF73C /* AAFilter.cpp in Sources */,
+				A089157D2C0DFD6600BAF73C /* BPMDetect.cpp in Sources */,
+				A089157F2C0DFD6600BAF73C /* cpu_detect_x86.cpp in Sources */,
+				A08915812C0DFD6600BAF73C /* FIFOSampleBuffer.cpp in Sources */,
+				A08915842C0DFD6600BAF73C /* FIRFilter.cpp in Sources */,
+				A08915862C0DFD6600BAF73C /* InterpolateCubic.cpp in Sources */,
+				A08915882C0DFD6600BAF73C /* InterpolateLinear.cpp in Sources */,
+				A089158A2C0DFD6600BAF73C /* InterpolateShannon.cpp in Sources */,
+				A089158C2C0DFD6600BAF73C /* mmx_optimized.cpp in Sources */,
+				A089158D2C0DFD6600BAF73C /* PeakFinder.cpp in Sources */,
+				A089158F2C0DFD6600BAF73C /* RateTransposer.cpp in Sources */,
+				A08915922C0DFD6600BAF73C /* SoundTouch.cpp in Sources */,
+				A08915942C0DFD6600BAF73C /* sse_optimized.cpp in Sources */,
+				A08915962C0DFD6600BAF73C /* TDStretch.cpp in Sources */,
+				A08915982C0DFD6600BAF73C /* SoundTouchHal.cpp in Sources */,
+				A089159A2C0DFD6600BAF73C /* RedRenderVideoHal.cpp in Sources */,
+				A089159C2C0DFD6600BAF73C /* RedRenderAudioHal.cpp in Sources */,
+				A089159E2C0DFD6700BAF73C /* RedSourceController.cpp in Sources */,
+				A08915A12C0DFD6700BAF73C /* RedFormat.c in Sources */,
+				A08915A32C0DFD6700BAF73C /* reddownload_adapter.c in Sources */,
+				A08915A42C0DFD6700BAF73C /* VideoProcesser.cpp in Sources */,
+				A08915A62C0DFD6700BAF73C /* AudioProcesser.cpp in Sources */,
+				A08915A82C0DFD6700BAF73C /* RedConfig.cpp in Sources */,
+				A08915AA2C0DFD6700BAF73C /* RedSampler.cpp in Sources */,
+				A08915AC2C0DFD6700BAF73C /* RedBuffer.cpp in Sources */,
+				A08915AE2C0DFD6700BAF73C /* RedPacket.cpp in Sources */,
+				A08915B02C0DFD6700BAF73C /* RedClock.cpp in Sources */,
+				A08915B22C0DFD6700BAF73C /* RedQueue.cpp in Sources */,
+				A08915B42C0DFD6700BAF73C /* RedMsgQueue.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A05D69922BA08DEF00B62E0F /* PBXTargetDependency */ = {
+		A08914932C0DFCCB00BAF73C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = RedBase;
-			targetProxy = A05D69912BA08DEF00B62E0F /* PBXContainerItemProxy */;
+			target = A08914842C0DFC8E00BAF73C /* RedRenderShaders */;
+			targetProxy = A08914922C0DFCCB00BAF73C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -666,26 +1924,21 @@
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "armv7s armv7 arm64";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Submodules/opensoundtouch/Sources\"",
-					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources\"",
-					"\"$(SRCROOT)/../redplayercore/extra/reddownload/ios\"",
-					"\"$(SRCROOT)/../redplayercore/extra/redrender/ios\"",
-					"\"$(SRCROOT)/../redplayercore/extra/redsource/ios\"",
-					"\"$(SRCROOT)/../redplayercore/extra/redstrategycenter/ios\"",
-					"\"$(SRCROOT)/../redplayercore/extra/reddecoder/ios\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources\"";
+				GCC_INPUT_FILETYPE = automatic;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../redplayercore/redplayer\"",
-					"\"$(SRCROOT)/../redplayercore/extra/reddecoder/ios/reddecoder.framework/Headers\"",
-					"\"$(SRCROOT)/../redplayercore/extra/redsource/ios/redsource.framework/Headers/redsource\"",
-					"\"$(SRCROOT)/../redplayercore/extra/RedStrategyCenter/ios/RedStrategyCenter.framework/Headers\"",
-					"\"$(SRCROOT)/../redplayercore/extra/RedRender/ios/RedRender.framework/Headers\"",
-					"\"$(SRCROOT)/../redplayercore/extra/RedDownload/ios/RedDownload.framework/Headers\"",
+					"\"$(SRCROOT)/../redplayercore/redsource\"",
+					"\"$(SRCROOT)/../redplayercore/redstrategycenter\"",
+					"\"$(SRCROOT)/../redplayercore/redrender\"",
+					"\"$(SRCROOT)/../redplayercore/reddownload\"",
 					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources/XYMediaFfmpeg.framework/Headers\"",
-					"\"$(SRCROOT)/Submodules/opensoundtouch/Sources/opensoundtouch.framework/Headers\"",
 					"\"$(SRCROOT)/../redplayercore/redbase/include\"",
+					"\"$(SRCROOT)/../redplayercore/\"",
+					"\"$(SRCROOT)/../redplayercore/extra/cares/ios/include\"",
+					"\"$(SRCROOT)/../redplayercore/extra/curl/ios/include\"",
+					"\"$(SRCROOT)/../redplayercore/extra/nlohmann-json\"",
 				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -695,7 +1948,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../redplayercore/extra/cares/ios/lib\"",
+					"\"$(SRCROOT)/../redplayercore/extra/curl/ios/lib\"",
+				);
 				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULEMAP_FILE = RedPlayer/RedPlayer.modulemap;
@@ -728,26 +1984,21 @@
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "armv7s armv7 arm64";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SRCROOT)/Submodules/opensoundtouch/Sources\"",
-					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources\"",
-					"\"$(SRCROOT)/../redplayercore/extra/reddownload/ios\"",
-					"\"$(SRCROOT)/../redplayercore/extra/redrender/ios\"",
-					"\"$(SRCROOT)/../redplayercore/extra/redsource/ios\"",
-					"\"$(SRCROOT)/../redplayercore/extra/redstrategycenter/ios\"",
-					"\"$(SRCROOT)/../redplayercore/extra/reddecoder/ios\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources\"";
+				GCC_INPUT_FILETYPE = automatic;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../redplayercore/redplayer\"",
-					"\"$(SRCROOT)/../redplayercore/extra/reddecoder/ios/reddecoder.framework/Headers\"",
-					"\"$(SRCROOT)/../redplayercore/extra/redsource/ios/redsource.framework/Headers/redsource\"",
-					"\"$(SRCROOT)/../redplayercore/extra/RedStrategyCenter/ios/RedStrategyCenter.framework/Headers\"",
-					"\"$(SRCROOT)/../redplayercore/extra/RedRender/ios/RedRender.framework/Headers\"",
-					"\"$(SRCROOT)/../redplayercore/extra/RedDownload/ios/RedDownload.framework/Headers\"",
+					"\"$(SRCROOT)/../redplayercore/redsource\"",
+					"\"$(SRCROOT)/../redplayercore/redstrategycenter\"",
+					"\"$(SRCROOT)/../redplayercore/redrender\"",
+					"\"$(SRCROOT)/../redplayercore/reddownload\"",
 					"\"$(SRCROOT)/Submodules/XYMediaFfmpeg/Sources/XYMediaFfmpeg.framework/Headers\"",
-					"\"$(SRCROOT)/Submodules/opensoundtouch/Sources/opensoundtouch.framework/Headers\"",
 					"\"$(SRCROOT)/../redplayercore/redbase/include\"",
+					"\"$(SRCROOT)/../redplayercore/\"",
+					"\"$(SRCROOT)/../redplayercore/extra/cares/ios/include\"",
+					"\"$(SRCROOT)/../redplayercore/extra/curl/ios/include\"",
+					"\"$(SRCROOT)/../redplayercore/extra/nlohmann-json\"",
 				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -757,7 +2008,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../redplayercore/extra/cares/ios/lib\"",
+					"\"$(SRCROOT)/../redplayercore/extra/curl/ios/lib\"",
+				);
 				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULEMAP_FILE = RedPlayer/RedPlayer.modulemap;
@@ -773,6 +2027,28 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		A089148A2C0DFC8E00BAF73C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
+			};
+			name = Debug;
+		};
+		A089148B2C0DFC8E00BAF73C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
 		};
@@ -793,6 +2069,15 @@
 			buildConfigurations = (
 				351E23542976478C008266C5 /* Debug */,
 				351E23552976478C008266C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A08914892C0DFC8E00BAF73C /* Build configuration list for PBXNativeTarget "RedRenderShaders" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A089148A2C0DFC8E00BAF73C /* Debug */,
+				A089148B2C0DFC8E00BAF73C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

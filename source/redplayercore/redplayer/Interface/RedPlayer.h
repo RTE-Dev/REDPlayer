@@ -47,6 +47,7 @@ public:
   int id() const;
 
   RED_ERR setDataSource(std::string url);
+  RED_ERR setDataSourceFd(int64_t fd);
   RED_ERR prepareAsync();
   RED_ERR start();
   RED_ERR pause();
@@ -83,6 +84,12 @@ public:
 
 #if defined(__ANDROID__)
   RED_ERR setVideoSurface(JNIEnv *env, jobject jsurface);
+#endif
+
+#ifdef __HARMONY__
+  RED_ERR setVideoSurface(OHNativeWindow *native_window);
+  void getWidth(int32_t &width);
+  void getHeight(int32_t &height);
 #endif
 
 #if defined(__APPLE__)
@@ -126,6 +133,9 @@ private:
   PlayerState mPlayerState{MP_STATE_IDLE};
 #if defined(__ANDROID__)
   jobject mSurface{nullptr};
+#endif
+#if defined(__HARMONY__)
+  OHNativeWindow *mWindow{nullptr};
 #endif
 };
 
