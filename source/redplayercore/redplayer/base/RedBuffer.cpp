@@ -54,6 +54,13 @@ void CGlobalBuffer::free() {
       delete reinterpret_cast<FFmpegBufferContext *>(opaque);
       break;
     }
+    case kHarmonyVideoDecoderBuffer: {
+      HarmonyMediaBufferContext *ctx =
+          reinterpret_cast<HarmonyMediaBufferContext *>(opaque);
+      ctx->release_output_buffer(ctx, false);
+      delete reinterpret_cast<HarmonyMediaBufferContext *>(opaque);
+      break;
+    }
 
     default:
       AV_LOGW(

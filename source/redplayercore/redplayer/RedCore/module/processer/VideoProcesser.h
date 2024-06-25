@@ -24,6 +24,10 @@ extern "C" {
 #include <android/native_window.h>
 #endif
 
+#if defined(__HARMONY__)
+#include "harmony/redplayer_harmony_def.h"
+#endif
+
 #include <iostream>
 #include <stdint.h>
 #include <unistd.h>
@@ -55,7 +59,7 @@ public:
   void setConfig(const sp<CoreGeneralConfig> &config);
   void setNotifyCb(NotifyCallback notify_cb);
   void release();
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
   RED_ERR setVideoSurface(const sp<RedNativeWindow> &surface);
 #endif
   void ThreadFunc();
@@ -99,12 +103,12 @@ private:
   bool mDecoderRecovery{false};
   bool mFirstFrameDecoded{false};
   bool mFirstPacketInDecoder{false};
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
   sp<RedNativeWindow> mCurNativeWindow;
   sp<RedNativeWindow> mPrevNativeWindow;
+  bool mSurfaceUpdated{false};
 #endif
   bool mCodecConfigured{false};
-  bool mSurfaceUpdated{false};
   bool mEOF{false};
   bool mRefreshSession{false};
   bool mIsHevc{false};

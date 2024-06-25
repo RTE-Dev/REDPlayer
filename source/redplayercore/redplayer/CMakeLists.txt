@@ -7,44 +7,45 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wno-deprecated")
 set(CMAKE_CXX_FLAGS_DEBUG "-O0")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG ")
 
-message("CMAKE_SYSTEM NAME: ${CMAKE_SYSTEM_NAME}")
-message("CMAKE_OSX_ARCHITECTURES: ${CMAKE_OSX_ARCHITECTURES}")
-
 set(ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(EXTRA_DIR "${ROOT_DIR}/../extra")
 set(REDBASE_DIR "${ROOT_DIR}/../redbase")
+set(REDSOURCE_DIR "${ROOT_DIR}/../redsource")
+set(REDDOWNLOAD_DIR "${ROOT_DIR}/../reddownload")
+set(REDSTRATEGYCENTER_DIR "${ROOT_DIR}/../redstrategycenter")
+set(REDPLAYERCORE_DIR "${ROOT_DIR}/../")
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Android")
-    set(TARGET_PLATFORM android)
+  set(TARGET_PLATFORM android)
+  set(CMAKE_SYSTEM_VERSION 21)
+  set(CMAKE_ANDROID_NDK $ENV{ANDROID_NDK})
+  set(EXTRA_FFMPEG_DIR
+      "${EXTRA_DIR}/ffmpeg/${TARGET_PLATFORM}/${CMAKE_ANDROID_ARCH_ABI}"
+  )
+elseif(CMAKE_SYSTEM_NAME STREQUAL "OHOS")
+  add_definitions(-D__HARMONY__)
+  set(TARGET_PLATFORM harmony)
+  set(CMAKE_CXX_FLAGS
+      "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument -Wno-c99-designator"
+  )
+  set(EXTRA_FFMPEG_DIR "${EXTRA_DIR}/ffmpeg/${TARGET_PLATFORM}/${OHOS_ARCH}")
 else()
-    message(FATAL_ERROR "This CMake script currently only supports Android!")
+  message(
+    FATAL_ERROR "This CMake script does not support ${CMAKE_SYSTEM_NAME}!"
+  )
 endif()
 
-set(EXTRA_REDBASE_DIR "${REDBASE_DIR}")
-set(EXTRA_FFMPEG_DIR "${EXTRA_DIR}/ffmpeg/${TARGET_PLATFORM}/${CMAKE_ANDROID_ARCH_ABI}")
-set(EXTRA_REDRENDER_DIR "${EXTRA_DIR}/redrender/${TARGET_PLATFORM}/${CMAKE_ANDROID_ARCH_ABI}")
-set(EXTRA_REDDOWNLOAD_DIR "${EXTRA_DIR}/reddownload/${TARGET_PLATFORM}/${CMAKE_ANDROID_ARCH_ABI}")
-set(EXTRA_REDSOURCE_DIR "${EXTRA_DIR}/redsource/${TARGET_PLATFORM}/${CMAKE_ANDROID_ARCH_ABI}")
-set(EXTRA_REDDECODER_DIR "${EXTRA_DIR}/reddecoder/${TARGET_PLATFORM}/${CMAKE_ANDROID_ARCH_ABI}")
-set(EXTRA_REDSTRATEGYCENTER_DIR "${EXTRA_DIR}/redstrategycenter/${TARGET_PLATFORM}/${CMAKE_ANDROID_ARCH_ABI}")
-set(EXTRA_SOUNDTOUCH_DIR "${EXTRA_DIR}/soundtouch/${TARGET_PLATFORM}/${CMAKE_ANDROID_ARCH_ABI}")
+include_directories(
+  "${EXTRA_FFMPEG_DIR}/include"
+  "${REDBASE_DIR}/include"
+  "${REDDOWNLOAD_DIR}/"
+  "${REDSOURCE_DIR}"
+  "${REDSTRATEGYCENTER_DIR}"
+  "${REDPLAYERCORE_DIR}"
+  ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
-include_directories("${EXTRA_FFMPEG_DIR}/include"
-    "${EXTRA_REDBASE_DIR}/include"
-    "${EXTRA_REDDOWNLOAD_DIR}/include"
-    "${EXTRA_REDRENDER_DIR}/include"
-    "${EXTRA_REDSOURCE_DIR}/include"
-    "${EXTRA_REDDECODER_DIR}/include"
-    "${EXTRA_REDSTRATEGYCENTER_DIR}/include"
-    "${EXTRA_SOUNDTOUCH_DIR}/include"
-    ${CMAKE_CURRENT_SOURCE_DIR})
-link_directories("${EXTRA_FFMPEG_DIR}"
-    "${EXTRA_REDRENDER_DIR}/lib"
-    "${EXTRA_REDDOWNLOAD_DIR}/lib"
-    "${EXTRA_REDSOURCE_DIR}/lib"
-    "${EXTRA_REDDECODER_DIR}/lib"
-    "${EXTRA_REDSTRATEGYCENTER_DIR}/lib"
-    "${EXTRA_SOUNDTOUCH_DIR}/lib")
+link_directories("${EXTRA_FFMPEG_DIR}")
 
 set(SRC_LIST
     base/RedBuffer.cpp
@@ -63,23 +64,45 @@ set(SRC_LIST
     RedCore/module/renderHal/RedRenderVideoHal.cpp
     RedCore/module/sourcer/format/RedFormat.c
     RedCore/module/sourcer/format/reddownload_adapter.c
-    android/redplayer_jni.cpp
     RedCore/module/renderHal/SoundTouchHal.cpp
+    RedCore/module/renderHal/soundTouch/AAFilter.cpp
+    RedCore/module/renderHal/soundTouch/BPMDetect.cpp
+    RedCore/module/renderHal/soundTouch/cpu_detect_x86.cpp
+    RedCore/module/renderHal/soundTouch/FIFOSampleBuffer.cpp
+    RedCore/module/renderHal/soundTouch/FIRFilter.cpp
+    RedCore/module/renderHal/soundTouch/InterpolateCubic.cpp
+    RedCore/module/renderHal/soundTouch/InterpolateLinear.cpp
+    RedCore/module/renderHal/soundTouch/InterpolateShannon.cpp
+    RedCore/module/renderHal/soundTouch/mmx_optimized.cpp
+    RedCore/module/renderHal/soundTouch/PeakFinder.cpp
+    RedCore/module/renderHal/soundTouch/RateTransposer.cpp
+    RedCore/module/renderHal/soundTouch/SoundTouch.cpp
+    RedCore/module/renderHal/soundTouch/sse_optimized.cpp
+    RedCore/module/renderHal/soundTouch/TDStretch.cpp
 )
 
-message(STATUS "SRC_LIST= ${SRC_LIST}")
+if(CMAKE_SYSTEM_NAME STREQUAL "Android")
+  set(SRC_LIST ${SRC_LIST} android/redplayer_jni.cpp)
+elseif(CMAKE_SYSTEM_NAME STREQUAL "OHOS")
+  set(SRC_LIST
+      ${SRC_LIST}
+      harmony/redplayer_callarktslog.cpp
+      harmony/redplayer_event_dispatcher.cpp
+      harmony/redplayer_logcallback.cpp
+      harmony/preload_event_dispatcher.cpp
+      harmony/redplayerproxy.cpp
+  )
+else()
+  message(
+    FATAL_ERROR "This CMake script does not support ${CMAKE_SYSTEM_NAME}!"
+  )
+endif()
 
 add_library(redplayer SHARED ${SRC_LIST})
 
-set(CMAKE_SYSTEM_VERSION 21)
-set(CMAKE_ANDROID_NDK $ENV{ANDROID_NDK})
-
-find_library(
-    log-lib
-    log
-)
-
-target_link_libraries(
+if(CMAKE_SYSTEM_NAME STREQUAL "Android")
+  find_library(log-lib log)
+  target_link_libraries(
     redplayer
     ${log-lib}
     redbase
@@ -91,44 +114,66 @@ target_link_libraries(
     ffmpeg
     mediandk
     android
-    soundtouch
-)
-
-set(LIBRARY_OUTPUT_DIRECTORY "${ROOT_DIR}/../../android/OpenRedPlayerCore/libs/${CMAKE_ANDROID_ARCH_ABI}")
+  )
+  set(LIBRARY_OUTPUT_DIRECTORY
+      "${ROOT_DIR}/../../android/OpenRedPlayerCore/libs/${CMAKE_ANDROID_ARCH_ABI}"
+  )
+elseif(CMAKE_SYSTEM_NAME STREQUAL "OHOS")
+  find_library(EGL-lib EGL)
+  find_library(GLES-lib GLESv3)
+  find_library(libace-lib ace_ndk.z)
+  target_link_libraries(
+    redplayer
+    ace_napi.z
+    hilog_ndk.z
+    native_media_core
+    native_media_adec
+    native_media_vdec
+    native_media_avdemuxer
+    native_media_avsource
+    native_media_codecbase
+    z
+    c
+    m
+    ${EGL-lib}
+    ${GLES-lib}
+    ${libace-lib}
+    redbase
+    ffmpeg
+    reddecoder
+    redrender
+    reddownload
+    redsource
+    redstrategycenter
+    uv
+  )
+  set(LIBRARY_OUTPUT_DIRECTORY
+      "${ROOT_DIR}/../../harmony/redplayerproxy/libs/${OHOS_ARCH}"
+  )
+else()
+  message(
+    FATAL_ERROR "This CMake script does not support ${CMAKE_SYSTEM_NAME}!"
+  )
+endif()
 
 file(MAKE_DIRECTORY ${LIBRARY_OUTPUT_DIRECTORY})
 
-add_custom_command(TARGET redplayer PRE_BUILD
-                   COMMAND ${CMAKE_COMMAND} -E copy
-                   ${EXTRA_FFMPEG_DIR}/libffmpeg.so
-                   ${LIBRARY_OUTPUT_DIRECTORY})
-
-add_custom_command(TARGET redplayer PRE_BUILD
-                   COMMAND ${CMAKE_COMMAND} -E copy
-                   ${EXTRA_SOUNDTOUCH_DIR}/lib/libsoundtouch.so
-                   ${LIBRARY_OUTPUT_DIRECTORY})
-
-add_custom_command(TARGET redplayer PRE_BUILD
-                   COMMAND ${CMAKE_COMMAND} -E copy
-                   ${EXTRA_REDRENDER_DIR}/lib/libredrender.so
-                   ${LIBRARY_OUTPUT_DIRECTORY})
-
-add_custom_command(TARGET redplayer PRE_BUILD
-                   COMMAND ${CMAKE_COMMAND} -E copy
-                   ${EXTRA_REDDOWNLOAD_DIR}/lib/libreddownload.so
-                   ${LIBRARY_OUTPUT_DIRECTORY})
-
-add_custom_command(TARGET redplayer PRE_BUILD
-                   COMMAND ${CMAKE_COMMAND} -E copy
-                   ${EXTRA_REDSOURCE_DIR}/lib/libredsource.so
-                   ${LIBRARY_OUTPUT_DIRECTORY})
-
-add_custom_command(TARGET redplayer PRE_BUILD
-                   COMMAND ${CMAKE_COMMAND} -E copy
-                   ${EXTRA_REDDECODER_DIR}/lib/libreddecoder.so
-                   ${LIBRARY_OUTPUT_DIRECTORY})
-
-add_custom_command(TARGET redplayer PRE_BUILD
-                   COMMAND ${CMAKE_COMMAND} -E copy
-                   ${EXTRA_REDSTRATEGYCENTER_DIR}/lib/libredstrategycenter.so
-                   ${LIBRARY_OUTPUT_DIRECTORY})
+if(CMAKE_SYSTEM_NAME STREQUAL "Android")
+  add_custom_command(
+    TARGET redplayer
+    PRE_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy ${EXTRA_FFMPEG_DIR}/libffmpeg.so
+            ${LIBRARY_OUTPUT_DIRECTORY}
+  )
+elseif(CMAKE_SYSTEM_NAME STREQUAL "OHOS")
+  add_custom_command(
+    TARGET redplayer
+    PRE_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy ${EXTRA_FFMPEG_DIR}/libffmpeg.so
+            ${LIBRARY_OUTPUT_DIRECTORY}
+  )
+else()
+  message(
+    FATAL_ERROR "This CMake script does not support ${CMAKE_SYSTEM_NAME}!"
+  )
+endif()

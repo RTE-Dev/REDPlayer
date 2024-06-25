@@ -1,14 +1,8 @@
-/*
- * RedPlayer.cpp
- *
- *  Created on: 2022年3月25日
- *      Author: liuhongda
- */
 #include "RedPlayer.h"
 #include "RedLog.h"
 #include "RedMeta.h"
-#include "reddownload_datasource_wrapper.h"
 #include "strategy/RedAdaptiveStrategy.h"
+#include "wrapper/reddownload_datasource_wrapper.h"
 #include <atomic>
 
 #define TAG "RedPlayer"
@@ -69,12 +63,6 @@ static inline int logLevelAvToApp(int red_level) {
   return app_level;
 }
 
-static void redLogCallback(void *ptr, int level, const char *buf) {
-  if (buf) {
-    av_log(nullptr, level, "%s", buf);
-  }
-}
-
 static void logCallbackReport(void *ptr, int level, const char *fmt,
                               va_list vl) {
   std::unique_lock<std::mutex> lck(*g_log_mutex);
@@ -97,6 +85,19 @@ static void logCallbackReport(void *ptr, int level, const char *fmt,
   va_end(vl2);
 
   g_log_callback(app_level, TAG, line);
+}
+
+static void logCallbackWrapper(void *ptr, int level, const char *fmt, ...) {
+  va_list args;
+  va_start(args, fmt);
+  logCallbackReport(ptr, level, fmt, args);
+  va_end(args);
+}
+
+static void redLogCallback(void *ptr, int level, const char *buf) {
+  if (buf) {
+    logCallbackWrapper(nullptr, level, "%s", buf);
+  }
 }
 
 void globalInit() {
@@ -211,6 +212,18 @@ RED_ERR CRedPlayer::setDataSource(std::string url) {
   lck.unlock();
   checkInputIsJson(url);
   mRedCore->setDataSource(mDataSource);
+  lck.lock();
+  changeState(MP_STATE_INITIALIZED);
+  return OK;
+}
+RED_ERR CRedPlayer::setDataSourceFd(int64_t fd) {
+  AV_LOGD_ID(TAG, mID, "%s %" PRId64 "\n", __func__, fd);
+  std::unique_lock<std::mutex> lck(mLock);
+  if (mPlayerState != MP_STATE_IDLE) {
+    return ME_STATE_ERROR;
+  }
+  lck.unlock();
+  mRedCore->setDataSourceFd(fd);
   lck.lock();
   changeState(MP_STATE_INITIALIZED);
   return OK;
@@ -473,6 +486,48 @@ RED_ERR CRedPlayer::setVideoSurface(JNIEnv *env, jobject jsurface) {
 }
 #endif
 
+#ifdef __HARMONY__
+RED_ERR CRedPlayer::setVideoSurface(OHNativeWindow *native_window) {
+  RED_ERR ret = OK;
+  bool ignore = false;
+  std::unique_lock<std::mutex> lck(mSurfaceLock);
+  OHNativeWindow *prev_window = mWindow;
+  lck.unlock();
+
+  if (prev_window == native_window) {
+    ignore = true;
+  }
+
+  if (ignore) {
+    AV_LOGI_ID(TAG, mID, "%s ignore same window\n", __func__);
+    return ret;
+  }
+
+  sp<RedNativeWindow> native_window_p =
+      std::make_shared<RedNativeWindow>(native_window);
+
+  ret = mRedCore->setVideoSurface(native_window_p);
+  return ret;
+}
+
+void CRedPlayer::getWidth(int32_t &width) {
+  if (!mRedCore) {
+    width = 0;
+    return;
+  }
+  return mRedCore->getWidth(width);
+}
+
+void CRedPlayer::getHeight(int32_t &height) {
+  if (!mRedCore) {
+    height = 0;
+    return;
+  }
+  return mRedCore->getHeight(height);
+}
+
+#endif
+
 #if defined(__APPLE__)
 UIView *CRedPlayer::initWithFrame(int type, CGRect cgrect) {
   Autolock lck(mLock);
@@ -654,7 +709,8 @@ void CRedPlayer::checkInputIsJson(const std::string &url) {
     if (is_input_json > 0) {
       std::unique_ptr<RedAdaptiveStrategy> strategy = nullptr;
       strategy = std::make_unique<RedAdaptiveStrategy>(
-          AbstractAdaptationLogic::LogicType::Adaptive);
+          redstrategycenter::adaptive::logic::AbstractAdaptationLogic::
+              LogicType::Adaptive);
       if (strategy) {
         strategy->setPlaylist(url);
         strategy->setReddownloadUrlCachedFunc(

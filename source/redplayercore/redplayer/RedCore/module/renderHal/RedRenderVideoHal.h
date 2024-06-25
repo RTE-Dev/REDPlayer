@@ -46,7 +46,7 @@ public:
                      const sp<VideoState> &state, NotifyCallback notify_cb);
   ~CRedRenderVideoHal();
   RED_ERR Prepare(sp<MetaData> &metadata);
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
   RED_ERR setVideoSurface(const sp<RedNativeWindow> &surface);
 #endif
 #if defined(__APPLE__)
@@ -95,9 +95,8 @@ private:
   std::condition_variable mPausedCond;
   std::condition_variable mSurfaceSet;
   const int mID{0};
-  bool mForceRefresh{false};
+  bool mForceRefresh{true};
   bool mPaused{false};
-  bool mSurfaceUpdate{false};
   bool mReleased{false};
   bool mMetaDataSetuped{false};
   bool mRenderSetuped{false};
@@ -112,9 +111,15 @@ private:
   // redrender video
   std::unique_ptr<RedRender::VideoRenderer> mVideoRender{nullptr};
   RedRender::VideoFrameMetaData mVideoFrameMetaData;
-  RedRender::VideoMediaCodecBufferContext mVideoMediaCodecBufferContext;
 #if defined(__ANDROID__)
+  RedRender::VideoMediaCodecBufferContext mVideoMediaCodecBufferContext;
+#endif
+#if defined(__HARMONY__)
+  RedRender::VideoHarmonyDecoderBufferContext mVideoHarmonyDecoderBufferContext;
+#endif
+#if defined(__ANDROID__) || defined(__HARMONY__)
   sp<RedNativeWindow> mNativeWindow;
+  bool mSurfaceUpdate{false};
 #endif
   RedRender::VRClusterType mClusterType{RedRender::VRClusterTypeUnknown};
   SwsContext *mSwsContext{nullptr};

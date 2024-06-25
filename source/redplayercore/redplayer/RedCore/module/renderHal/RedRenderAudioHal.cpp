@@ -337,9 +337,9 @@ void CRedRenderAudioHal::GetAudioData(char *data, int &len) {
     mVolumeChanged = false;
     if (mAudioRender) {
       AV_LOGI_ID(TAG, mID, "volume changed %f %f\n", mLeftVolume, mRightVolume);
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
       mAudioRender->SetStereoVolume(mLeftVolume, mRightVolume);
-#elif __APPLE__
+#elif defined(__APPLE__)
       mAudioRender->SetPlaybackVolume((mLeftVolume + mRightVolume) / 2);
 #endif
     }
@@ -443,8 +443,8 @@ void CRedRenderAudioHal::GetAudioData(char *data, int &len) {
   if (mAudioBuffer->serial >= 0 &&
       mVideoState->latest_audio_seek_load_serial == mAudioBuffer->serial) {
     int latest_audio_seek_load_serial =
-        __atomic_exchange_n(&(mVideoState->latest_audio_seek_load_serial), -1,
-                            std::memory_order_seq_cst);
+        mVideoState->latest_audio_seek_load_serial.exchange(
+            -1, std::memory_order_seq_cst);
     if (latest_audio_seek_load_serial == mAudioBuffer->serial) {
       if (getMasterSyncType(mVideoState) == CLOCK_AUDIO) {
         notifyListener(RED_MSG_AUDIO_SEEK_RENDERING_START, 1);

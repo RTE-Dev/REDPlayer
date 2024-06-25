@@ -8,7 +8,7 @@
 #include "RedCore/RedCore.h"
 #include "RedCore/module/sourcer/format/redioapplication.h"
 #include "RedMsg.h"
-#include "reddownload_datasource_wrapper.h"
+#include "wrapper/reddownload_datasource_wrapper.h"
 #include <sys/socket.h>
 
 #define TAG "RedCore"
@@ -170,6 +170,18 @@ void CRedCore::setDataSource(std::string url) {
   mUrl = url;
 }
 
+void CRedCore::setDataSourceFd(int64_t fd) {
+  std::unique_lock<std::mutex> lck(mLock);
+  if (mFd >= 0) {
+    close(mFd);
+    mFd = -1;
+  }
+  mFd = dup(fd);
+  char url[128];
+  snprintf(url, sizeof(url), "pipe:%" PRId64 "", mFd);
+  mUrl = url;
+}
+
 RED_ERR CRedCore::prepareAsync() {
   PlayerConfig *player_config = mGeneralConfig->playerConfig->get();
   auto source_controller = mRedSourceController;
@@ -238,6 +250,7 @@ RED_ERR CRedCore::getCurrentPosition(int64_t &pos_ms) {
   }
   if (mCompleted.load()) {
     pos_ms = mMetaData->duration / 1000;
+    return OK;
   } else if (source_controller &&
              getMasterClockSerial(mVideoState) ==
                  source_controller->getSerial() &&
@@ -247,6 +260,7 @@ RED_ERR CRedCore::getCurrentPosition(int64_t &pos_ms) {
   } else {
     int64_t curSeekPos = mCurSeekPos.load();
     pos_ms = curSeekPos > 0 ? curSeekPos : 0;
+    return OK;
   }
   if (pos_ms < 0 || pos_ms < start_time_ms) {
     pos_ms = 0;
@@ -730,6 +744,11 @@ void CRedCore::release() {
     render_audio_hal->release();
   }
 
+  if (mFd >= 0) {
+    close(mFd);
+    mFd = -1;
+  }
+
   AV_LOGD_ID(TAG, mID, "%s end\n", __func__);
 }
 
@@ -1190,7 +1209,7 @@ void CRedCore::dumpFormatInfo() {
   }
 }
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
 RED_ERR CRedCore::setVideoSurface(const sp<RedNativeWindow> &surface) {
   sp<CVideoProcesser> video_processer;
   sp<CRedRenderVideoHal> render_video_hal;
@@ -1220,6 +1239,32 @@ RED_ERR CRedCore::setVideoSurface(const sp<RedNativeWindow> &surface) {
     }
   }
   return OK;
+}
+
+void CRedCore::getWidth(int32_t &width) {
+  width = 0;
+  if (!mMetaData) {
+    return;
+  }
+
+  int video_index = mMetaData->video_index;
+  if (video_index >= 0) {
+    width = mMetaData->track_info[video_index].width;
+  }
+  return;
+}
+
+void CRedCore::getHeight(int32_t &height) {
+  height = 0;
+  if (!mMetaData) {
+    return;
+  }
+
+  int video_index = mMetaData->video_index;
+  if (video_index >= 0) {
+    height = mMetaData->track_info[video_index].height;
+  }
+  return;
 }
 #endif
 

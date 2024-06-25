@@ -66,6 +66,7 @@ struct PlayerConfig {
   int32_t mediacodec_auto_rotate;
   int32_t is_input_json;
   int32_t enable_ndkvdec;
+  int32_t enable_harmony_vdec;
   int32_t vtb_max_error_count;
   FFDemuxCacheControl dcc;
 };
@@ -149,6 +150,10 @@ static const RedCfg allCfg[] = {
      CONFIG_OFFSET(mediacodec_auto_rotate), CONFIG_INT(0, 0, 1)},
     {"enable-ndkvdec", "use ndk mediacodec", CONFIG_OFFSET(enable_ndkvdec),
      CONFIG_INT(0, 0, 1)},
+
+    // Harmony only options
+    {"enable-harmony_vdec", "use harmony codec",
+     CONFIG_OFFSET(enable_harmony_vdec), CONFIG_INT(1, 0, 1)},
     {NULL}};
 
 class RedPlayerConfig {

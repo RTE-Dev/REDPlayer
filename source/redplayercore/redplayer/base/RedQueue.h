@@ -121,9 +121,9 @@ typedef struct FFStatistic {
   SpeedSampler2 tcp_read_sampler;
   int64_t latest_seek_load_duration{0};
   int64_t byte_count{0};
-  int64_t byte_count_inet{0};  // ipv4  下载量
-  int64_t byte_count_inet6{0}; // ipv6  下载量
-  bool isaf_inet6{false};      // 是否ipv6 协议
+  int64_t byte_count_inet{0};
+  int64_t byte_count_inet6{0};
+  bool isaf_inet6{false};
   int64_t cache_physical_pos{0};
   int64_t cache_file_forwards{0};
   int64_t cache_file_pos{0};
@@ -144,8 +144,8 @@ struct VideoState {
   int frame_drops_early{0};
   int continuous_frame_drops_early{0};
 
-  volatile int latest_video_seek_load_serial{-1};
-  volatile int latest_audio_seek_load_serial{-1};
+  std::atomic<int> latest_video_seek_load_serial{-1};
+  std::atomic<int> latest_audio_seek_load_serial{-1};
   volatile int64_t latest_seek_load_start_at{0};
 
   int64_t current_position_ms{0};

@@ -64,6 +64,7 @@ RED_ERR CVideoProcesser::Prepare(sp<MetaData> &metadata) {
   if (ret != OK) {
     player_config->videotoolbox = !player_config->videotoolbox;
     player_config->enable_ndkvdec = !player_config->enable_ndkvdec;
+    player_config->enable_harmony_vdec = !player_config->enable_harmony_vdec;
     ret = Init();
     if (ret != OK) {
       notifyListener(RED_MSG_ERROR, ERROR_STREAM_OPEN);
@@ -127,6 +128,12 @@ RED_ERR CVideoProcesser::Init() {
         AV_LOGD_ID(TAG, mID, "init decoder with null surface\n");
       }
     }
+#elif defined(__HARMONY__)
+    else if (player_config->enable_harmony_vdec) {
+      type = reddecoder::VideoCodecImplementationType::kHardwareHarmony;
+      mVideoState->stat.vdec_type = RED_PROPV_DECODER_HARMONY_VIDEO_DECODER;
+      codec_module = HARMONY_VIDEO_DECODER_MODULE_NAME;
+    }
 #endif
     else {
       type = reddecoder::VideoCodecImplementationType::kSoftware;
@@ -149,13 +156,15 @@ RED_ERR CVideoProcesser::Init() {
 
   reddecoder::VideoCodecError err = mVideoDecoder->init();
   if (err != reddecoder::VideoCodecError::kNoError) {
-    AV_LOGE_ID(TAG, mID, "Video decoder init error %d\n", (int)err);
+    AV_LOGE_ID(TAG, mID, "Video decoder init error %d\n",
+               static_cast<int>(err));
     return ME_ERROR;
   }
 
   err = mVideoDecoder->register_decode_complete_callback(this);
   if (err != reddecoder::VideoCodecError::kNoError) {
-    AV_LOGE_ID(TAG, mID, "Video decoder init error %d\n", (int)err);
+    AV_LOGE_ID(TAG, mID, "Video decoder init error %d\n",
+               static_cast<int>(err));
     return ME_ERROR;
   }
 
@@ -241,6 +250,20 @@ reddecoder::VideoCodecError CVideoProcesser::on_decoded_frame(
   PlayerConfig *player_config = mGeneralConfig->playerConfig->get();
   mVideoState->stat.vdps = mSpeedSampler.add();
   mDecoderErrorCount = 0;
+
+  if (mAbort) {
+    return reddecoder::VideoCodecError::kNoError;
+  }
+  if (!mFrameQueue) {
+    return reddecoder::VideoCodecError::kInitError;
+  }
+  if (mDecoderRecovery) {
+    return reddecoder::VideoCodecError::kNoError;
+  }
+  if (pktQueueFrontIsFlush()) {
+    return reddecoder::VideoCodecError::kNoError;
+  }
+
   auto meta = decoded_frame->get_video_frame_meta();
   std::unique_ptr<CGlobalBuffer> buffer(new CGlobalBuffer());
   if (!buffer) {
@@ -299,13 +322,48 @@ reddecoder::VideoCodecError CVideoProcesser::on_decoded_frame(
         media_codec_ctx.media_codec = ctx->media_codec;
         media_codec_ctx.decoder_serial = ctx->decoder_serial;
         void (*release_output_buffer)(
-            reddecoder::MediaCodecBufferContext *context, bool render) =
-            (void (*)(reddecoder::MediaCodecBufferContext *context,
-                      bool render))ctx->opaque;
+            reddecoder::MediaCodecBufferContext * context, bool render) =
+            (void (*)(reddecoder::MediaCodecBufferContext * context,
+                      bool render)) ctx->opaque;
         release_output_buffer(&media_codec_ctx, render);
       };
       buffer->opaque = buffer_context;
       delete (reddecoder::MediaCodecBufferContext *)meta->buffer_context;
+    }
+#endif
+    break;
+  case reddecoder::PixelFormat::kHarmonyVideoDecoderBuffer:
+    buffer->pixel_format = CGlobalBuffer::kHarmonyVideoDecoderBuffer;
+#if defined(__HARMONY__)
+    if (meta->buffer_context) {
+      auto buffer_context = new CGlobalBuffer::HarmonyMediaBufferContext();
+      auto od_buffer_context = ((reddecoder::HarmonyVideoDecoderBufferContext *)
+                                    meta->buffer_context);
+      buffer_context->buffer_index = od_buffer_context->buffer_index;
+      buffer_context->decoder = od_buffer_context->decoder;
+      buffer_context->decoder_serial = od_buffer_context->decoder_serial;
+      buffer_context->video_decoder = od_buffer_context->video_decoder;
+      buffer_context->opaque =
+          reinterpret_cast<void *>(od_buffer_context->release_output_buffer);
+
+      buffer_context->release_output_buffer =
+          [](CGlobalBuffer::HarmonyMediaBufferContext *ctx,
+             bool render) -> void {
+        reddecoder::HarmonyVideoDecoderBufferContext video_decoder_ctx;
+        video_decoder_ctx.buffer_index = ctx->buffer_index;
+        video_decoder_ctx.decoder = ctx->decoder;
+        video_decoder_ctx.video_decoder = ctx->video_decoder;
+        video_decoder_ctx.decoder_serial = ctx->decoder_serial;
+        void (*release_output_buffer)(
+            reddecoder::HarmonyVideoDecoderBufferContext * context,
+            bool render) =
+            (void (*)(reddecoder::HarmonyVideoDecoderBufferContext * context,
+                      bool render)) ctx->opaque;
+        release_output_buffer(&video_decoder_ctx, render);
+      };
+      buffer->opaque = buffer_context;
+      delete (
+          reddecoder::HarmonyVideoDecoderBufferContext *)meta->buffer_context;
     }
 #endif
     break;
@@ -331,8 +389,8 @@ reddecoder::VideoCodecError CVideoProcesser::on_decoded_frame(
           [](CGlobalBuffer::FFmpegBufferContext *ctx) -> void {
         reddecoder::FFmpegBufferContext ffmpeg_ctx;
         ffmpeg_ctx.av_frame = ctx->av_frame;
-        void (*release_av_frame)(reddecoder::FFmpegBufferContext *context) =
-            (void (*)(reddecoder::FFmpegBufferContext *context))ctx->opaque;
+        void (*release_av_frame)(reddecoder::FFmpegBufferContext * context) =
+            (void (*)(reddecoder::FFmpegBufferContext * context)) ctx->opaque;
         release_av_frame(&ffmpeg_ctx);
       };
       buffer->opaque = buffer_context;
@@ -345,21 +403,13 @@ reddecoder::VideoCodecError CVideoProcesser::on_decoded_frame(
     break;
   }
 
-  if (mAbort) {
-    return reddecoder::VideoCodecError::kNoError;
-  }
-
-  if (!mFrameQueue) {
-    return reddecoder::VideoCodecError::kInitError;
-  }
-
   if ((player_config->framedrop > 0) ||
       (player_config->framedrop &&
        getMasterSyncType(mVideoState) != CLOCK_VIDEO)) {
     mVideoState->stat.decode_frame_count++;
     double dpts = buffer->pts / 1000;
     double diff = dpts - getMasterClock(mVideoState);
-    if (!isnan(diff) && std::abs(diff) < AV_NOSYNC_THRESHOLD &&
+    if (!isnan(diff) && std::abs(diff) < AV_NOSYNC_THRESHOLD && diff < 0 &&
         mVideoState->stat.video_cache.packets > 0 &&
         mSerial == getMasterClockSerial(mVideoState) &&
         mVideoState->first_video_frame_rendered &&
@@ -382,10 +432,6 @@ reddecoder::VideoCodecError CVideoProcesser::on_decoded_frame(
   }
 
   if (checkAccurateSeek(buffer)) {
-    return reddecoder::VideoCodecError::kNoError;
-  }
-
-  if (mDecoderRecovery) {
     return reddecoder::VideoCodecError::kNoError;
   }
 
@@ -468,13 +514,13 @@ RED_ERR CVideoProcesser::PerformFlush() {
   mSerial++;
   mEOF = false;
   mFinishedSerial = -1;
+  if (mFrameQueue) {
+    mFrameQueue->flush();
+  }
   if (mVideoDecoder &&
       (mInputPacketCount > 0 ||
        mVideoState->stat.vdec_type != RED_PROPV_DECODER_MEDIACODEC)) {
     mVideoDecoder->flush();
-  }
-  if (mFrameQueue) {
-    mFrameQueue->flush();
   }
   mInputPacketCount = 0;
   if (mVideoState->pause_req) {
@@ -618,8 +664,7 @@ RED_ERR CVideoProcesser::ResetDecoderFormat() {
 
 void CVideoProcesser::DecodeLastCacheGop() {
   mDecoderRecovery = true;
-  if ((mVideoState->stat.vdec_type == RED_PROPV_DECODER_VIDEOTOOLBOX) &&
-      (!mPktQueue.empty()) &&
+  if ((!mPktQueue.empty()) &&
       mPktQueue.front()->IsKeyOrIdrPacket(mIdrBasedIdentified, mIsHevc)) {
     AV_LOGD_ID(TAG, mID, "%s start\n", __func__);
     for (auto it = mPktQueue.begin(); it != mPktQueue.end(); it++) {
@@ -649,8 +694,6 @@ bool CVideoProcesser::checkAccurateSeek(
   int64_t video_seek_pos = 0;
   int64_t now = 0;
   int64_t deviation = 0;
-  int64_t deviation2 = 0;
-  int64_t deviation3 = 0;
   double pts = buffer->pts / 1000;
   PlayerConfig *player_config = mGeneralConfig->playerConfig->get();
   if (player_config->enable_accurate_seek &&
@@ -658,8 +701,6 @@ bool CVideoProcesser::checkAccurateSeek(
     if (!isnan(pts)) {
       video_seek_pos = mVideoState->seek_pos;
       mVideoState->accurate_seek_vframe_pts = pts * 1000 * 1000;
-      deviation = std::abs(
-          (static_cast<int64_t>(pts * 1000 * 1000) - mVideoState->seek_pos));
       if (pts * 1000 * 1000 < mVideoState->seek_pos) {
         now = CurrentTimeMs();
         if (mVideoState->drop_vframe_count == 0) {
@@ -681,10 +722,9 @@ bool CVideoProcesser::checkAccurateSeek(
       } else {
         while (mVideoState->audio_accurate_seek_req && !mAbort) {
           int64_t apts = mVideoState->accurate_seek_aframe_pts;
-          deviation2 = apts - pts * 1000 * 1000;
-          deviation3 = apts - mVideoState->seek_pos;
+          deviation = apts - mVideoState->seek_pos;
 
-          if (deviation3 <= 0) {
+          if (deviation <= 0) {
             usleep(20 * 1000);
           } else {
             break;
@@ -692,6 +732,9 @@ bool CVideoProcesser::checkAccurateSeek(
           now = CurrentTimeMs();
           if ((now - mVideoState->accurate_seek_start_time) >
               player_config->accurate_seek_timeout) {
+            break;
+          }
+          if (video_seek_pos != mVideoState->seek_pos) {
             break;
           }
         }
@@ -797,7 +840,7 @@ void CVideoProcesser::release() {
 void CVideoProcesser::ThreadFunc() {
 #if defined(__APPLE__)
   pthread_setname_np("videodec");
-#elif __ANDROID__
+#elif defined(__ANDROID__) || defined(__HARMONY__)
   pthread_setname_np(pthread_self(), "videodec");
 #endif
   PlayerConfig *player_config = mGeneralConfig->playerConfig->get();
@@ -831,6 +874,37 @@ void CVideoProcesser::ThreadFunc() {
           ResetDecoder();
         }
         mSurfaceUpdated = false;
+        continue;
+      }
+      if ((!mCurNativeWindow || !mCurNativeWindow->get()) && !mAbort) {
+        mSurfaceSet.wait_for(lck, std::chrono::milliseconds(10));
+        continue;
+      }
+    }
+#elif defined(__HARMONY__)
+    // wait for surface config
+    if (mVideoState->stat.vdec_type ==
+        RED_PROPV_DECODER_HARMONY_VIDEO_DECODER) {
+      std::unique_lock<std::mutex> lck(mSurfaceLock);
+      if (mSurfaceUpdated) {
+        mSurfaceUpdated = false;
+        mPendingPkt.reset();
+        mInputPacketCount = 0;
+        if (mFrameQueue) {
+          mFrameQueue->flush();
+        }
+        if (mVideoDecoder) {
+          OHNativeWindow *window =
+              mCurNativeWindow ? mCurNativeWindow->get() : nullptr;
+          reddecoder::HardWareContext *hardware_context =
+              new reddecoder::HarmonyHardWareContext(window);
+          mVideoDecoder->update_hardware_context(hardware_context);
+        }
+
+        if (mCurNativeWindow && mCurNativeWindow->get()) {
+          lck.unlock();
+          ResetDecoder();
+        }
         continue;
       }
       if ((!mCurNativeWindow || !mCurNativeWindow->get()) && !mAbort) {
@@ -962,7 +1036,7 @@ sp<FrameQueue> CVideoProcesser::frameQueue() {
   return mFrameQueue;
 }
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
 RED_ERR CVideoProcesser::setVideoSurface(const sp<RedNativeWindow> &surface) {
   std::unique_lock<std::mutex> lck(mSurfaceLock);
   if (!surface) {

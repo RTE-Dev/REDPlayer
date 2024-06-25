@@ -39,6 +39,7 @@ public:
   RED_ERR init();
 
   void setDataSource(std::string url);
+  void setDataSourceFd(int64_t fd);
   RED_ERR prepareAsync();
   RED_ERR start();
   RED_ERR startFrom(int64_t msec);
@@ -66,8 +67,10 @@ public:
   sp<RedDict> getConfig(int config_type);
   RED_ERR getVideoCodecInfo(std::string &codec_info);
   RED_ERR getAudioCodecInfo(std::string &codec_info);
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
   RED_ERR setVideoSurface(const sp<RedNativeWindow> &surface);
+  void getWidth(int32_t &width);
+  void getHeight(int32_t &height);
 #endif
 #if defined(__APPLE__)
   UIView *initWithFrame(int type, CGRect cgrect);
@@ -113,6 +116,7 @@ private:
   std::atomic_bool mSeeking{false};
   std::atomic_bool mCompleted{false};
   bool mAbort{false};
+  int64_t mFd{-1};
 
   sp<CRedSourceController> mRedSourceController;
   sp<CVideoProcesser> mVideoProcesser;
@@ -126,7 +130,7 @@ private:
   sp<RedDict> mSwsConfig;
   sp<RedDict> mSwrConfig;
   sp<RedDict> mPlayerConfig;
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(__HARMONY__)
   sp<RedNativeWindow> mNativeWindow;
 #endif
 

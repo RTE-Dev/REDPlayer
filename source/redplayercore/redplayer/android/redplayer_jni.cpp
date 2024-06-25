@@ -28,8 +28,8 @@ extern "C" {
 #include "jni/Util.h"
 
 #include "RedCore/module/sourcer/format/redioapplication.h"
-#include "reddownload_datasource_wrapper.h"
 #include "redrender/audio/android/jni/audio_track_jni.h"
+#include "wrapper/reddownload_datasource_wrapper.h"
 
 #define TAG "RedPlayerJNI"
 #define JNI_CLASS_REDPLAYER_INTERFACE                                          \

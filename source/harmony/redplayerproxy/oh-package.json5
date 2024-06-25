@@ -1,0 +1,11 @@
+{
+  "name": "redplayerproxy",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "libredplayer.so": "file:./src/main/cpp/types/libredplayer"
+  }
+}

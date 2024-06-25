@@ -205,6 +205,9 @@ RED_ERR CAudioProcesser::PerformFlush() {
   RED_ERR ret = OK;
   mSerial++;
   mEOF = false;
+  if (mAudioDecoder) {
+    mAudioDecoder->flush();
+  }
   if (mFrameQueue) {
     mFrameQueue->flush();
   }
@@ -295,6 +298,9 @@ bool CAudioProcesser::checkAccurateSeek(
           now = CurrentTimeMs();
           if ((now - mVideoState->accurate_seek_start_time) >
               player_config->accurate_seek_timeout) {
+            break;
+          }
+          if (audio_seek_pos != mVideoState->seek_pos) {
             break;
           }
         }
@@ -389,7 +395,7 @@ void CAudioProcesser::release() {
 void CAudioProcesser::ThreadFunc() {
 #if defined(__APPLE__)
   pthread_setname_np("audiodec");
-#elif __ANDROID__
+#elif defined(__ANDROID__) || defined(__HARMONY__)
   pthread_setname_np(pthread_self(), "audiodec");
 #endif
   PlayerConfig *player_config = mGeneralConfig->playerConfig->get();
