@@ -3,9 +3,17 @@
 /local.properties
 /build
 /captures
-.externalNativeBuild
 local.properties
+.idea/
+
+.cxx/
+.externalNativeBuild
 
 /OpenRedPlayerCore/libs/
+/OpenRedPlayerCore/build/
 /OpenRedPlayerCore/.idea/
+
+/OpenRedPreload/build/
+
 /app/release
+/app/build
