@@ -1,31 +1,6 @@
-# CocoaPods
-Pods
-!Podfile
-!Podfile.lock
-*/build/*
-*.xcworkspace
-!default.xcworkspace
-Pods*project.pbxproj
-
-#Octopusfile
-Octopusfile_Customed
-
 # Xcode
-#*.xcodeproj/*
-#!*.xcodeproj/xcshareddata
-#!*.xcodeproj/xcshareddata/*
-#!*.xcodeproj/project.pbxproj
-#!*.xcworkspace/contents.xcworkspacedata
-#!*.xcworkspace/xcshareddata
 #
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
-## Build generated
 build/
-DerivedData
-xcodebuild.log
-
-## Various settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -35,48 +10,29 @@ xcodebuild.log
 *.perspectivev3
 !default.perspectivev3
 xcuserdata
-xcshareddata
-
-## Other
 *.xccheckout
 *.moved-aside
-*.xcuserstate
-*.xcscmblueprint
-
-## Obj-C/Swift specific
+DerivedData
 *.hmap
 *.ipa
-*.app.dSYM.zip
+*.xcuserstate
+.DS_Store
+*.pyc
+*.xcuserstate
 
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
-# Pods/
+#Pods/
+Pods
+Podfile.lock
 
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
+redPodDependencies/*
 
-Carthage/Build
-
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the 
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://github.com/fastlane/fastlane/blob/master/docs/Gitignore.md
-
-fastlane/report.xml
-fastlane/screenshots
-# fastlane/.env
-
-# OS X
-.DS_Store
+# Idea project files
 .idea
-
-**/.build
-
+spacecommander/
+.clang-format
