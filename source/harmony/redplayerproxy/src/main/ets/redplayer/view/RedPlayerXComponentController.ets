@@ -22,8 +22,8 @@ export class RedPlayerXComponentController extends XComponentController {
     return this.getXComponentSurfaceId()
   }
 
-  getSurfaceType(): string {
-    return 'surface'
+  getSurfaceType(): XComponentType {
+    return XComponentType.SURFACE
   }
 
   getLibraryName(): string | null {
