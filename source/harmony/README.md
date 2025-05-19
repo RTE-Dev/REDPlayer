@@ -6,7 +6,7 @@
 # My build environment
 - MacOS 13.3.1
 - M1 Pro CPU
-- DevEco Studio NEXT Developer Beta1(5.0.3.403)
+- DevEco Studio 5.0.4 Release(5.0.11.100)
 
 ⚠️NOTICE: HarmonyOS is in internal testing stage, APIs may change in different DevEco Studio version. If different DevEco version is used, there may be some extra adaptation work.
 
