@@ -1,10 +1,10 @@
 {
-  "name": "redplayerproxy",
+  "name": "@rte-xhs/redplayer",
   "version": "1.0.0",
-  "description": "Please describe the basic information.",
+  "description": "REDplayer",
   "main": "index.ets",
-  "author": "",
-  "license": "Apache-2.0",
+  "author": "Red",
+  "license": "LGPL v2.1",
   "dependencies": {
     "libredplayer.so": "file:./src/main/cpp/types/libredplayer"
   }
