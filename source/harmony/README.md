@@ -2,6 +2,7 @@
 - Module [entry](./entry): Demo guide of Harmony RedPlayer
 - Module [redplayerproxy](./redplayerproxy): Harmony RedPlayer SDK
 - Shell [build.sh](./build.sh): Harmony RedPlayer SDK HAR build shell
+- -OHPM link https://ohpm.openharmony.cn/#/cn/detail/@rte-xhs%2Fredplayer
 
 # My build environment
 - MacOS 13.3.1
@@ -19,6 +20,11 @@ DevEco Studio Download Path: https://developer.huawei.com/consumer/cn/deveco-stu
 - Configure your compile environment in [build.sh](./build.sh)
 - Run [build.sh](./build.sh), then get HAR product in path /output/redplayerproxy.har
 #### STEP-2: Integrate SDK HAR to your project
+OHPM HAR dependency:
+```shell
+ohpm install @rte-xhs/redplayer
+```
+Local HAR dependency:
 - Copy [HAR](/output/redplayerproxy.har) product to your project target module libs
 - Open oh-package.json5 file in your project target module, and add har dependency
 ```json
