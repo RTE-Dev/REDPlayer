@@ -9,6 +9,7 @@
 #include "RedBase.h"
 #include <string>
 #include <vector>
+#include <functional>
 
 #define BUFFERING_CHECK_PER_MILLISECONDS (500)
 #define FAST_BUFFERING_CHECK_PER_MILLISECONDS (50)
