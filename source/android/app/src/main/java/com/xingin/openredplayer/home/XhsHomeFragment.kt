@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.kelin.photoselector.PhotoSelector
-import com.tbruyelle.rxpermissions3.RxPermissions
 import com.xingin.openredplayer.R
 import com.xingin.openredplayer.feed.XhsFeedActivity
 import com.xingin.openredplayer.feed.model.VIDEO_ONE
@@ -19,7 +18,7 @@ import com.xingin.openredplayer.floating.XhsFloatingWindowHelper
 import com.xingin.openredplayer.input.XhsInputActivity
 import com.xingin.openredplayer.live.XhsLiveInputActivity
 import com.xingin.openredplayer.player.XhsPlayerActivity
-import io.reactivex.rxjava3.disposables.Disposable
+import com.xingin.openredplayer.utils.PermissionUtils
 import java.io.Serializable
 
 class XhsHomeFragment : Fragment() {
@@ -30,8 +29,6 @@ class XhsHomeFragment : Fragment() {
     private lateinit var itemFeedView: View
     private lateinit var itemWindowView: View
 
-    private lateinit var rxPermissions: RxPermissions
-    private var permissionDisposable: Disposable? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -47,11 +44,6 @@ class XhsHomeFragment : Fragment() {
         return rootView
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        permissionDisposable?.dispose()
-    }
-
     private fun initView() {
         itemUrlView = rootView.findViewById(R.id.layout_play_url)
         itemUrlView.setOnClickListener { openInputPage() }
@@ -63,8 +55,6 @@ class XhsHomeFragment : Fragment() {
         itemFeedView.setOnClickListener { openFeedPage() }
         itemWindowView = rootView.findViewById(R.id.layout_window)
         itemWindowView.setOnClickListener { openWindow() }
-        // init permission
-        rxPermissions = RxPermissions(this)
     }
 
     private fun openInputPage() {
@@ -77,29 +67,42 @@ class XhsHomeFragment : Fragment() {
         startActivity(intent)
     }
 
+    private val OPEN_ALBUM_PERMISSION_CODE = 1002
+    private val OPEN_ALBUM_PERMISSIONS = arrayOf(
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.ACCESS_NETWORK_STATE,
+    )
     private fun openAlbumPage() {
-        permissionDisposable = rxPermissions.request(
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.ACCESS_NETWORK_STATE,
-        ).subscribe { granted ->
-            if (!granted) {
-                return@subscribe
-            }
-            // open the album
-            PhotoSelector.openVideoSelector(
-                this,
-                100,
-                PhotoSelector.ID_REPEATABLE
-            ) { photos ->
-                if (photos?.isNotEmpty() == true) {
-                    val intent = Intent(this.activity, XhsPlayerActivity::class.java)
-                    intent.putExtra(
-                        XhsPlayerActivity.INTENT_KEY_URLS,
-                        covertToVideoUrls(photos) as Serializable
-                    )
-                    startActivity(intent)
-                }
+        val activity = activity ?: return
+        if (PermissionUtils.hasPermission(activity, OPEN_ALBUM_PERMISSIONS)) {
+            onOpenAlbumPermissionGranted()
+        } else {
+            PermissionUtils.request(activity, OPEN_ALBUM_PERMISSIONS, OPEN_ALBUM_PERMISSION_CODE)
+        }
+    }
+
+    fun onActivityRequestPermissionsResult(requestCode: Int) {
+        val activity = this.activity ?: return
+        if (requestCode == OPEN_ALBUM_PERMISSION_CODE && PermissionUtils.hasPermission(activity, OPEN_ALBUM_PERMISSIONS)) {
+            onOpenAlbumPermissionGranted()
+        }
+    }
+
+    private fun onOpenAlbumPermissionGranted() {
+        // open the album
+        PhotoSelector.openVideoSelector(
+            this,
+            100,
+            PhotoSelector.ID_REPEATABLE
+        ) { photos ->
+            if (photos?.isNotEmpty() == true) {
+                val intent = Intent(this.activity, XhsPlayerActivity::class.java)
+                intent.putExtra(
+                    XhsPlayerActivity.INTENT_KEY_URLS,
+                    covertToVideoUrls(photos) as Serializable
+                )
+                startActivity(intent)
             }
         }
     }

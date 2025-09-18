@@ -14,6 +14,7 @@ import com.xingin.openredplayer.setting.SettingsFragment
 class XhsHomeActivity : AppCompatActivity() {
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager
+    private var homeFragment: XhsHomeFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +26,21 @@ class XhsHomeActivity : AppCompatActivity() {
     private fun initViewPager() {
         viewPager = findViewById(R.id.view_pager)
         val fragments: MutableList<Fragment> = ArrayList()
-        fragments.add(XhsHomeFragment.newInstance())
+        val homeFragment = XhsHomeFragment.newInstance()
+        this.homeFragment = homeFragment
+        fragments.add(homeFragment)
         fragments.add(SettingsFragment.newInstance())
         val adapter = XhsHomePagerAdapter(supportFragmentManager, fragments)
         viewPager.adapter = adapter
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        homeFragment?.onActivityRequestPermissionsResult(requestCode)
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.tbruyelle.rxpermissions3.RxPermissions
 import com.xingin.openredplayer.R
 import com.xingin.openredplayer.feed.model.XhsFeedModel
 import com.xingin.openredplayer.feed.model.XhsVisibleItemInfo
@@ -22,6 +21,7 @@ import com.xingin.openredplayer.player.XhsPlayerActivity
 import com.xingin.openredplayer.player.XhsPlayerActivity.Companion.INTENT_KEY_SHOW_LOADING
 import com.xingin.openredplayer.player.XhsPlayerActivity.Companion.INTENT_KEY_URLS
 import com.xingin.openredplayer.setting.XhsPlayerSettings
+import com.xingin.openredplayer.utils.PermissionUtils
 import com.xingin.openredplayer.utils.Utils
 import com.xingin.openredpreload.api.IMediaPreload
 import com.xingin.openredpreload.api.PreloadCacheListener
@@ -53,8 +53,6 @@ class XhsFeedActivity : AppCompatActivity(), XhsFeedAdapter.OnItemClickListener 
     private lateinit var mediaPreload: IMediaPreload
     private var preloadDisposable: Disposable? = null
 
-    /** premission */
-    private val rxPermissions = RxPermissions(this)
     private var permissionDisposable: Disposable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,18 +73,35 @@ class XhsFeedActivity : AppCompatActivity(), XhsFeedAdapter.OnItemClickListener 
     }
 
     /** request storage permission：when grant the permission，start preload the video stream data */
+    private val PERMISSION_CODE = 1001
+    private val PERMISSIONS = arrayOf(
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.ACCESS_NETWORK_STATE,
+    )
     private fun initPermission() {
-        permissionDisposable = rxPermissions.request(
-            Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.ACCESS_NETWORK_STATE,
-        ).subscribe { granted ->
-            if (granted) {
-                feedRecyclerView.postDelayed({
-                    tryPreCacheVideoIfNeed(feedRecyclerView, "initPreload")
-                }, 1000)
-            }
+        if (PermissionUtils.hasPermission(this, PERMISSIONS)) {
+            onPermissionGranted()
+        } else {
+            PermissionUtils.request(this, PERMISSIONS, PERMISSION_CODE)
         }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == PERMISSION_CODE && PermissionUtils.hasPermission(this, PERMISSIONS)) {
+            onPermissionGranted()
+        }
+    }
+
+    private fun onPermissionGranted() {
+        feedRecyclerView.postDelayed({
+            tryPreCacheVideoIfNeed(feedRecyclerView, "initPreload")
+        }, 1000)
     }
 
     private fun initView() {
