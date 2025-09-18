@@ -119,6 +119,5 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation "io.reactivex.rxjava3:rxjava:3.1.8"
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
-    implementation 'com.github.tbruyelle:rxpermissions:0.12'
     implementation 'io.github.maitrungduc1410:AVLoadingIndicatorView:2.1.4'
 }
